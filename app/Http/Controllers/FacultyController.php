@@ -7,58 +7,54 @@ use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return response()->json(Faculty::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'faculty_id' => 'required|string|max:50',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|unique:faculties,email',
+            'department' => 'required|string|max:100',
+            'position' => 'required|string|max:100',
+            'status' => 'required|string|max:20',
+        ]);
+
+        $faculty = Faculty::create($data);
+        return response()->json($faculty, 201);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Faculty  $faculty
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Faculty $faculty)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Faculty  $faculty
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Faculty $faculty)
     {
-        //
+        $data = $request->validate([
+            'faculty_id' => 'required|string|max:50',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|unique:faculties,email,' . $faculty->id,
+            'department' => 'required|string|max:100',
+            'position' => 'required|string|max:100',
+            'status' => 'required|string|max:20',
+        ]);
+
+        $faculty->update($data);
+        return response()->json($faculty);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Faculty  $faculty
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Faculty $faculty)
     {
-        //
+        $faculty->delete();
+        return response()->json(['message' => 'Faculty deleted successfully']);
+    }
+
+    public function updateStatus(Request $request, Faculty $faculty)
+    {
+        $data = $request->validate([
+            'status' => 'required|in:Active,Inactive,Archived',
+        ]);
+
+        $faculty->update(['status' => $data['status']]);
+        return response()->json(['message' => 'Faculty status updated', 'faculty' => $faculty]);
     }
 }

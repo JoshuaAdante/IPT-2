@@ -1,15 +1,24 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
+require("./bootstrap");
 
-require('./bootstrap');
+import React from "react";
+import { createRoot } from "react-dom/client";
+import Layout from "./components/Layout"; // ✅ your main layout file
+import { CountProvider } from "./context/CountContext"; // ✅ React Context for Dashboard counts
 
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+// ✅ Optional: React Router (if you use routing)
+import { BrowserRouter as Router } from "react-router-dom";
 
-require('./components/Example');
+// ✅ Mount React to the #app element in Blade
+if (document.getElementById("app")) {
+    const root = createRoot(document.getElementById("app"));
+    root.render(
+        <React.StrictMode>
+            <CountProvider>
+                {/* Optional: Router wrapper (if you have navigation between pages) */}
+                <Router>
+                    <Layout />
+                </Router>
+            </CountProvider>
+        </React.StrictMode>
+    );
+}
