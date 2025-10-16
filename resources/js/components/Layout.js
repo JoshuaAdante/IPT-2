@@ -1,67 +1,50 @@
+// resources/js/components/Layout.js
 import React, { useState } from "react";
 import Dashboard from "./Dashboard";
 import Faculty from "./Faculty";
 import Students from "./Students";
+import "../../sass/layout.scss";
 
 export default function Layout() {
   const [page, setPage] = useState("dashboard");
 
+  const menuItems = [
+    { key: "dashboard", label: "Dashboard" },
+    { key: "faculty", label: "Faculty" },
+    { key: "students", label: "Students" },
+    { key: "reports", label: "Reports" },
+    { key: "settings", label: "Settings" },
+    { key: "profile", label: "Profile" },
+  ];
+
   return (
-    <div className="flex h-screen">
+    <div className="layout">
       {/* Sidebar */}
-      <div className="w-64 bg-white shadow-md p-4 flex flex-col">
-        {/* Logo + Title */}
-        <div className="flex items-center mb-8">
-          <img src="/logo.png" alt="Logo" className="w-10 h-10 mr-2" />
-          <h1 className="text-xl font-bold text-blue-600">AcadeMe</h1>
+      <aside className="sidebar">
+        <div className="logo-section">
+          <img src="/logo.png" alt="Logo" className="logo" />
+          <h1 className="brand">AcadMe</h1>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex-1">
-          <ul className="space-y-1">
+        <ul className="nav-menu">
+          {menuItems.map((item) => (
             <li
-              className={`p-2 cursor-pointer hover:bg-gray-100 rounded ${
-                page === "dashboard" && "bg-gray-200 font-semibold"
-              }`}
-              onClick={() => setPage("dashboard")}
+              key={item.key}
+              className={`nav-item ${page === item.key ? "active" : ""}`}
+              onClick={() => setPage(item.key)}
             >
-              Dashboard
+              {item.label}
             </li>
-            <li
-              className={`p-2 cursor-pointer hover:bg-gray-100 rounded ${
-                page === "faculty" && "bg-gray-200 font-semibold"
-              }`}
-              onClick={() => setPage("faculty")}
-            >
-              Faculty
-            </li>
-            <li
-              className={`p-2 cursor-pointer hover:bg-gray-100 rounded ${
-                page === "students" && "bg-gray-200 font-semibold"
-              }`}
-              onClick={() => setPage("students")}
-            >
-              Students
-            </li>
-            <li className="p-2 cursor-pointer hover:bg-gray-100 rounded">
-              Reports
-            </li>
-            <li className="p-2 cursor-pointer hover:bg-gray-100 rounded">
-              Settings
-            </li>
-            <li className="p-2 cursor-pointer hover:bg-gray-100 rounded">
-              My Profile
-            </li>
-          </ul>
-        </nav>
-      </div>
+          ))}
+        </ul>
+      </aside>
 
       {/* Main Content */}
-      <div className="flex-1 p-6 bg-gray-100 overflow-y-auto">
+      <main className="main-content">
         {page === "dashboard" && <Dashboard />}
         {page === "faculty" && <Faculty />}
         {page === "students" && <Students />}
-      </div>
+      </main>
     </div>
   );
 }

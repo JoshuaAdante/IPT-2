@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {
+    // ✅ List all faculties (active + archived)
     public function index()
     {
-        return response()->json(Faculty::all());
+        return Faculty::orderBy('id', 'desc')->get();
     }
 
+    // ✅ Store a new faculty
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $validated = $request->validate([
             'faculty_id' => 'required|string|max:50',
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:faculties,email',
@@ -23,13 +25,24 @@ class FacultyController extends Controller
             'status' => 'required|string|max:20',
         ]);
 
-        $faculty = Faculty::create($data);
-        return response()->json($faculty, 201);
+        $faculty = Faculty::create($validated);
+
+        return response()->json([
+            'message' => '✅ Faculty created successfully!',
+            'faculty' => $faculty
+        ], 201);
     }
 
+    // ✅ Show specific faculty
+    public function show(Faculty $faculty)
+    {
+        return response()->json($faculty);
+    }
+
+    // ✅ Update faculty
     public function update(Request $request, Faculty $faculty)
     {
-        $data = $request->validate([
+        $validated = $request->validate([
             'faculty_id' => 'required|string|max:50',
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:faculties,email,' . $faculty->id,
@@ -38,16 +51,22 @@ class FacultyController extends Controller
             'status' => 'required|string|max:20',
         ]);
 
-        $faculty->update($data);
-        return response()->json($faculty);
+        $faculty->update($validated);
+
+        return response()->json([
+            'message' => '✅ Faculty updated successfully!',
+            'faculty' => $faculty
+        ]);
     }
 
+    // ✅ Delete faculty (permanent)
     public function destroy(Faculty $faculty)
     {
         $faculty->delete();
-        return response()->json(['message' => 'Faculty deleted successfully']);
+        return response()->json(['message' => 'Faculty deleted permanently']);
     }
 
+    // ✅ Update faculty status (Active/Inactive/Archived)
     public function updateStatus(Request $request, Faculty $faculty)
     {
         $data = $request->validate([
@@ -56,5 +75,19 @@ class FacultyController extends Controller
 
         $faculty->update(['status' => $data['status']]);
         return response()->json(['message' => 'Faculty status updated', 'faculty' => $faculty]);
+    }
+
+    // 🆕 Archive a faculty (soft delete)
+    public function archive(Faculty $faculty)
+    {
+        $faculty->update(['status' => 'Archived']);
+        return response()->json(['message' => 'Faculty archived successfully', 'faculty' => $faculty]);
+    }
+
+    // 🆕 Restore a faculty
+    public function restore(Faculty $faculty)
+    {
+        $faculty->update(['status' => 'Active']);
+        return response()->json(['message' => 'Faculty restored successfully', 'faculty' => $faculty]);
     }
 }

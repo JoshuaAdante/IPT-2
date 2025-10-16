@@ -2,56 +2,77 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
-| Registers all API routes used by your frontend (React app).
-| Each resource has full CRUD + a status update route.
+| All backend endpoints for your React frontend.
+| Includes CRUD, Archive, Restore, and Dashboard Count logic.
 |--------------------------------------------------------------------------
 */
 
-// ✅ Profile API (optional)
+// ✅ Profiles (optional)
 Route::apiResource('profiles', ProfileController::class);
 
-// ✅ Faculty API
+// ✅ Faculties CRUD
 Route::apiResource('faculties', FacultyController::class);
 Route::patch('faculties/{faculty}/status', [FacultyController::class, 'updateStatus']);
+Route::patch('faculties/{faculty}/archive', [FacultyController::class, 'archive']);
+Route::patch('faculties/{faculty}/restore', [FacultyController::class, 'restore']);
 
-// ✅ Student API
+// ✅ Students CRUD
 Route::apiResource('students', StudentController::class);
 Route::patch('students/{student}/status', [StudentController::class, 'updateStatus']);
+Route::patch('students/{student}/archive', [StudentController::class, 'archive']);
+Route::patch('students/{student}/restore', [StudentController::class, 'restore']);
 
-// ✅ Course API
-Route::apiResource('courses', CourseController::class);
-Route::patch('courses/{course}/status', [CourseController::class, 'updateStatus']);
-
-// ✅ Department API
-Route::apiResource('departments', DepartmentController::class);
-Route::patch('departments/{department}/status', [DepartmentController::class, 'updateStatus']);
-
-// ✅ Dashboard Counter — fetches live totals
+// ✅ Dashboard Counters
 Route::get('/dashboard-counts', function () {
+    $facultyCount = \App\Models\Faculty::where('status', 'Active')->count();
+    $studentCount = \App\Models\Student::where('status', 'Active')->count();
+
+    $departmentCount = DB::table('faculties')
+        ->where('status', 'Active')
+        ->distinct('department')
+        ->count('department');
+
+    $courseCount = DB::table('students')
+        ->where('status', 'Active')
+        ->distinct('course')
+        ->count('course');
+
     return response()->json([
-        'faculties' => \App\Models\Faculty::count(),
-        'students' => \App\Models\Student::count(),
-        'courses' => \App\Models\Course::count(),
-        'departments' => \App\Models\Department::count(),
+        'faculties' => $facultyCount,
+        'students' => $studentCount,
+        'departments' => $departmentCount,
+        'courses' => $courseCount,
     ]);
 });
 
-// ✅ Optional: Refresh counts endpoint after add/delete (used by React Context)
+// ✅ Optional: Quick refresh route (used by React Context)
 Route::get('/refresh-counts', function () {
+    $facultyCount = \App\Models\Faculty::where('status', 'Active')->count();
+    $studentCount = \App\Models\Student::where('status', 'Active')->count();
+
+    $departmentCount = DB::table('faculties')
+        ->where('status', 'Active')
+        ->distinct('department')
+        ->count('department');
+
+    $courseCount = DB::table('students')
+        ->where('status', 'Active')
+        ->distinct('course')
+        ->count('course');
+
     return response()->json([
-        'faculties' => \App\Models\Faculty::count(),
-        'students' => \App\Models\Student::count(),
-        'courses' => \App\Models\Course::count(),
-        'departments' => \App\Models\Department::count(),
+        'faculties' => $facultyCount,
+        'students' => $studentCount,
+        'departments' => $departmentCount,
+        'courses' => $courseCount,
     ]);
 });

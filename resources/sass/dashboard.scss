@@ -1,0 +1,111 @@
+// resources/sass/dashboard.scss
+
+.dashboard-container {
+  color: #2d2d2d;
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .signout-btn {
+      background: #e5e7eb;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: 0.2s;
+      &:hover {
+        background: #d1d5db;
+      }
+    }
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      .card-icon {
+        font-size: 2rem;
+      }
+
+      .card-details {
+        text-align: right;
+
+        h3 {
+          font-size: 1rem;
+          color: #6b7280;
+        }
+
+        p {
+          font-size: 1.8rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .chart-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .chart-box {
+      background: white;
+      border-radius: 12px;
+      height: 240px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #6b7280;
+    }
+  }
+
+  .activity-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #4b5563;
+      margin-bottom: 0.3rem;
+    }
+
+    span {
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+  }
+}
