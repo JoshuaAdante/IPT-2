@@ -1,3 +1,4 @@
+// resources/js/components/Reports.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../sass/reports.scss";
@@ -25,7 +26,7 @@ export default function Reports() {
   };
 
   return (
-    <div className="reports-container">
+    <div className="reports-container text-black">
       <div className="reports-header">
         <h2>Reports</h2>
         <p>Generate and download reports for students and faculty</p>
@@ -61,6 +62,7 @@ export default function Reports() {
                   <th>Email</th>
                   <th>Department</th>
                   <th>Course</th>
+                  <th>Year Level</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -72,6 +74,7 @@ export default function Reports() {
                     <td>{s.email}</td>
                     <td>{s.department}</td>
                     <td>{s.course}</td>
+                    <td>{s.year_level}</td>
                     <td>{s.status}</td>
                   </tr>
                 ))}
