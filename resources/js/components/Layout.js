@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Dashboard from "./Dashboard";
 import Faculty from "./Faculty";
 import Students from "./Students";
+import Reports from "./Reports";
 import "../../sass/layout.scss";
 
 export default function Layout() {
@@ -22,8 +23,10 @@ export default function Layout() {
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="logo-section">
-          <img src="/logo.png" alt="Logo" className="logo" />
-          <h1 className="brand">AcadMe</h1>
+          <div className="logo-box">
+            <img src="/logo.png" alt="AcadMe Logo" className="logo-icon" />
+            <h1 className="logo-text">AcadMe</h1>
+          </div>
         </div>
 
         <ul className="nav-menu">
@@ -44,6 +47,7 @@ export default function Layout() {
         {page === "dashboard" && <Dashboard />}
         {page === "faculty" && <Faculty />}
         {page === "students" && <Students />}
+        {page === "reports" && <Reports />}
       </main>
     </div>
   );
