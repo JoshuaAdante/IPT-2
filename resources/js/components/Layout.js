@@ -1,13 +1,111 @@
 // resources/js/components/Layout.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AdminLogin from "./AdminLogin";
+import AdminRegister from "./AdminRegister";
 import Dashboard from "./Dashboard";
 import Faculty from "./Faculty";
 import Students from "./Students";
 import Reports from "./Reports";
+import Settings from "./Settings";
+import Profile from "./Profile";
+import { GraduationCap } from "lucide-react";
 import "../../sass/layout.scss";
 
 export default function Layout() {
-  const [page, setPage] = useState("dashboard");
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    // Check localStorage for existing session on initial load
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const savedUser = localStorage.getItem('user');
+    
+    // Validate session: if logged in but no user data, clear invalid session
+    if (loggedIn && !savedUser) {
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('user');
+      window.history.replaceState({}, '', '/adminlogin');
+      return false;
+    }
+    
+    // If not logged in, ensure we're on the login page
+    if (!loggedIn && window.location.pathname !== '/adminlogin') {
+      window.history.replaceState({}, '', '/adminlogin');
+    }
+    return loggedIn;
+  });
+  const [showRegister, setShowRegister] = useState(false);
+  const [page, setPage] = useState(() => {
+    // Default to dashboard only if logged in, otherwise null
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const savedUser = localStorage.getItem('user');
+    return (loggedIn && savedUser) ? "dashboard" : null;
+  });
+  const [user, setUser] = useState(() => {
+    // Restore user data from localStorage on initial load
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+  const handleLogin = (userData) => {
+    setUser(userData);
+    setIsLoggedIn(true);
+    // Persist login state to localStorage
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('user', JSON.stringify(userData));
+    // Navigate to dashboard after login
+    window.history.pushState({}, '', '/dashboard');
+    setPage("dashboard");
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setIsLoggedIn(false);
+    setPage("dashboard");
+    // Clear localStorage on logout
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('user');
+    window.history.pushState({}, '', '/adminlogin');
+  };
+
+  // Sync page state with URL on mount and browser back/forward
+  useEffect(() => {
+    const updatePageFromURL = () => {
+      const path = window.location.pathname.replace('/', '') || 'adminlogin';
+      
+      if (path === 'adminlogin' && isLoggedIn) {
+        // If logged in and on adminlogin, redirect to dashboard
+        window.history.replaceState({}, '', '/dashboard');
+        setPage('dashboard');
+      } else if (path !== 'adminlogin' && !isLoggedIn) {
+        // If not logged in and not on adminlogin, redirect to adminlogin
+        window.history.replaceState({}, '', '/adminlogin');
+      } else if (isLoggedIn) {
+        // Set page based on URL
+        const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+        if (validPages.includes(path)) {
+          setPage(path);
+        } else {
+          setPage('dashboard');
+          window.history.replaceState({}, '', '/dashboard');
+        }
+      }
+    };
+
+    updatePageFromURL();
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', updatePageFromURL);
+
+    return () => {
+      window.removeEventListener('popstate', updatePageFromURL);
+    };
+  }, [isLoggedIn]);
+
+  // If not logged in, show AdminLogin or AdminRegister
+  if (!isLoggedIn) {
+    if (showRegister) {
+      return <AdminRegister onBackToLogin={() => setShowRegister(false)} />;
+    }
+    return <AdminLogin onLogin={handleLogin} onRegister={() => setShowRegister(true)} />;
+  }
 
   const menuItems = [
     { key: "dashboard", label: "Dashboard" },
@@ -24,8 +122,10 @@ export default function Layout() {
       <aside className="sidebar">
         <div className="logo-section">
           <div className="logo-box">
-            <img src="/logo.png" alt="AcadMe Logo" className="logo-icon" />
             <h1 className="logo-text">AcadMe</h1>
+            <div className="logo-icon-wrapper">
+              <GraduationCap size={40} strokeWidth={1.5} className="logo-icon" />
+            </div>
           </div>
         </div>
 
@@ -34,7 +134,11 @@ export default function Layout() {
             <li
               key={item.key}
               className={`nav-item ${page === item.key ? "active" : ""}`}
-              onClick={() => setPage(item.key)}
+              onClick={(e) => {
+                e.preventDefault();
+                setPage(item.key);
+                window.history.pushState({}, '', `/${item.key}`);
+              }}
             >
               {item.label}
             </li>
@@ -44,10 +148,12 @@ export default function Layout() {
 
       {/* Main Content */}
       <main className="main-content">
-        {page === "dashboard" && <Dashboard />}
+        {page === "dashboard" && <Dashboard user={user} onLogout={handleLogout} />}
         {page === "faculty" && <Faculty />}
         {page === "students" && <Students />}
         {page === "reports" && <Reports />}
+        {page === "settings" && <Settings />}
+        {page === "profile" && <Profile user={user} onLogout={handleLogout} />}
       </main>
     </div>
   );

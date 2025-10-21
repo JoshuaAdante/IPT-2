@@ -2,6 +2,33 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Inter', 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+// Modern Color Palette
+$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+$success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+$info-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+$warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+
+// Colors
+$primary-color: #667eea;
+$secondary-color: #764ba2;
+$accent-color: #4facfe;
+$success-color: #43e97b;
+$danger-color: #f5576c;
+$dark-color: #1a202c;
+$light-color: #f7fafc;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+// Glass Effect
+$glass-background: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$backdrop-blur: blur(10px);

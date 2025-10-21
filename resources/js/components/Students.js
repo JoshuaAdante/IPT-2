@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useCounts } from "../context/CountContext";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useCounts } from '../Context/CountContext';
+import { Search, Plus, Edit2, Archive, ArchiveRestore } from 'lucide-react';
+import '../../sass/students.scss';
 
 export default function Students() {
   const { refreshCounts } = useCounts();
@@ -8,56 +10,131 @@ export default function Students() {
   const [editingId, setEditingId] = useState(null);
   const [showArchive, setShowArchive] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [courseFilter, setCourseFilter] = useState('All');
+  const [departments, setDepartments] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   const [form, setForm] = useState({
-    student_id: "",
-    name: "",
-    email: "",
-    department: "",
-    course: "",
-    year_level: "",
-    status: "Active",
+    student_id: '',
+    name: '',
+    email: '',
+    department: '',
+    course: '',
+    year_level: '',
+    status: 'Active',
   });
 
-  // ✅ Fetch Students
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("/api/students");
+      const res = await axios.get('/api/students');
       setStudents(res.data);
     } catch (err) {
-      console.error("Failed to fetch students:", err);
+      console.error('Failed to fetch students:', err);
+    }
+  };
+
+  const fetchDepartmentsAndCourses = async () => {
+    try {
+      console.log('Fetching departments and courses...');
+      const [deptRes, courseRes] = await Promise.all([
+        axios.get('/api/departments'),
+        axios.get('/api/courses')
+      ]);
+      console.log('Departments response:', deptRes.data);
+      console.log('Courses response:', courseRes.data);
+      
+      const activeDepts = deptRes.data.filter(d => d.status !== 'Archived');
+      const activeCourses = courseRes.data.filter(c => c.status !== 'Archived');
+      
+      console.log('Active departments:', activeDepts);
+      console.log('Active courses:', activeCourses);
+      
+      setDepartments(activeDepts);
+      setCourses(activeCourses);
+    } catch (err) {
+      console.error('Failed to fetch departments/courses:', err);
+      console.error('Error response:', err.response);
     }
   };
 
   useEffect(() => {
     fetchStudents();
+    fetchDepartmentsAndCourses();
+    
+    // Listen for data updates from Settings
+    const handleDataUpdate = (event) => {
+      console.log('Students: Data updated, refetching dropdowns...', event.detail);
+      if (event.detail.type === 'departments' || event.detail.type === 'courses') {
+        fetchDepartmentsAndCourses();
+      }
+      // Also refresh students list to show updated counts in dashboard
+      fetchStudents();
+    };
+    
+    window.addEventListener('dataUpdated', handleDataUpdate);
+    
+    return () => {
+      window.removeEventListener('dataUpdated', handleDataUpdate);
+    };
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate form fields
+    if (!form.student_id || !form.name || !form.email || !form.department || !form.course || !form.year_level) {
+      alert('⚠️ Please fill in all required fields.');
+      return;
+    }
+    
+    console.log('Submitting student form:', form);
+    
     try {
       if (editingId) {
-        await axios.put(`/api/students/${editingId}`, form);
-        alert("✅ Student updated successfully!");
+        const response = await axios.put(`/api/students/${editingId}`, form);
+        console.log('Update response:', response.data);
+        alert('✅ Student updated successfully!');
       } else {
-        await axios.post("/api/students", form);
-        alert("✅ Student added successfully!");
+        const response = await axios.post('/api/students', form);
+        console.log('Create response:', response.data);
+        alert('✅ Student added successfully!');
       }
       await fetchStudents();
       await refreshCounts();
+      
+      // Broadcast update event for dashboard to refresh
+      window.dispatchEvent(new CustomEvent('dataUpdated', { 
+        detail: { type: 'students', timestamp: Date.now() } 
+      }));
+      
       closeForm();
     } catch (error) {
-      console.error("Save Student Error:", error);
-      alert("❌ Failed to save student.");
+      console.error('Save Student Error:', error);
+      console.error('Error response:', error.response);
+      
+      // Show detailed error message
+      let errorMessage = '❌ Failed to save student.';
+      if (error.response?.data?.message) {
+        errorMessage += '\n' + error.response.data.message;
+      }
+      if (error.response?.data?.errors) {
+        const errors = Object.values(error.response.data.errors).flat();
+        errorMessage += '\n' + errors.join('\n');
+      }
+      alert(errorMessage);
     }
   };
 
-  const openForm = (student = null) => {
+  const openForm = async (student = null) => {
+    // Refresh departments and courses when form opens
+    await fetchDepartmentsAndCourses();
+    
     if (student) {
       setEditingId(student.id);
       setForm({
         student_id: student.student_id,
-        name: student.name,
+        name: student.name || '',
         email: student.email,
         department: student.department,
         course: student.course,
@@ -67,13 +144,13 @@ export default function Students() {
     } else {
       setEditingId(null);
       setForm({
-        student_id: "",
-        name: "",
-        email: "",
-        department: "",
-        course: "",
-        year_level: "",
-        status: "Active",
+        student_id: '',
+        name: '',
+        email: '',
+        department: '',
+        course: '',
+        year_level: '',
+        status: 'Active',
       });
     }
     setShowForm(true);
@@ -85,15 +162,21 @@ export default function Students() {
   };
 
   const handleArchive = async (id) => {
-    if (!confirm("Archive this student?")) return;
+    if (!confirm('Archive this student?')) return;
     try {
       await axios.patch(`/api/students/${id}/archive`);
       await fetchStudents();
       await refreshCounts();
-      alert("📦 Student archived successfully!");
+      
+      // Broadcast update event for dashboard to refresh
+      window.dispatchEvent(new CustomEvent('dataUpdated', { 
+        detail: { type: 'students', timestamp: Date.now() } 
+      }));
+      
+      alert('📦 Student archived successfully!');
     } catch (err) {
-      console.error("Archive Student Error:", err);
-      alert("❌ Failed to archive student.");
+      console.error('Archive Student Error:', err);
+      alert('❌ Failed to archive student.');
     }
   };
 
@@ -102,143 +185,177 @@ export default function Students() {
       await axios.patch(`/api/students/${id}/restore`);
       await fetchStudents();
       await refreshCounts();
-      alert("✅ Student restored successfully!");
+      
+      // Broadcast update event for dashboard to refresh
+      window.dispatchEvent(new CustomEvent('dataUpdated', { 
+        detail: { type: 'students', timestamp: Date.now() } 
+      }));
+      
+      alert('✅ Student restored successfully!');
     } catch (err) {
-      console.error("Restore Student Error:", err);
-      alert("❌ Failed to restore student.");
+      console.error('Restore Student Error:', err);
+      alert('❌ Failed to restore student.');
     }
   };
 
-  // ✅ Filters
-  const activeStudents = students.filter((s) => s.status !== "Archived");
-  const archivedStudents = students.filter((s) => s.status === "Archived");
+  const courseOptions = ['All', ...new Set(students.map(s => s.course))];
 
-  // ✅ Optional: Sort by Year Level
-  const sortedStudents = [...activeStudents].sort((a, b) =>
-    a.year_level.localeCompare(b.year_level)
-  );
+  // Filter students based on search and course (show all including archived)
+  const filteredStudents = students.filter(s => {
+    const matchesSearch = (s.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         (s.student_id || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         (s.email || '').toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCourse = courseFilter === 'All' || s.course === courseFilter;
+    return matchesSearch && matchesCourse;
+  });
 
   return (
-    <div className="p-6 text-black">
-      {/* Header + Buttons */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold text-gray-800">
-          Student Management
-        </h2>
-
-        <div className="flex gap-3">
-          <button
-            onClick={() => setShowArchive(!showArchive)}
-            className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
-          >
-            {showArchive ? "⬅ Back to Active Students" : "📦 View Archived Students"}
-          </button>
-
-          {!showArchive && (
-            <button
-              onClick={() => openForm()}
-              className="bg-blue-200 text-black px-4 py-2 rounded hover:bg-blue-300"
-            >
-              ➕ Add Student
-            </button>
-          )}
+    <div className='settings-container'>
+      <div className='settings-header'>
+        <div>
+          <h2>Student Management</h2>
+          <p className='subtitle'>Manage students and their information</p>
         </div>
       </div>
 
-      {/* ✅ Modal Form */}
+      <div className='settings-content'>
+        <div className='settings-tabs'>
+          <button className='tab-button active'>
+            Students
+          </button>
+        </div>
+
+        <div className='settings-body'>
+          <div className='table-header'>
+            <div style={{display: 'flex', gap: '1rem', alignItems: 'center', flex: 1}}>
+              <h3>Students</h3>
+              <div className='search-box' style={{maxWidth: '250px'}}>
+                <Search size={18} className='search-icon' />
+                <input
+                  type='text'
+                  placeholder='Search Students'
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <select 
+                className='department-filter'
+                value={courseFilter}
+                onChange={(e) => setCourseFilter(e.target.value)}
+              >
+                {courseOptions.map(course => (
+                  <option key={course} value={course}>{course === 'All' ? 'All Courses' : course}</option>
+                ))}
+              </select>
+            </div>
+            <button className='btn-add-setting' onClick={() => openForm()}>
+              + Add Student
+            </button>
+          </div>
+
       {showForm && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg text-black">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">
-              {editingId ? "Edit Student" : "Add New Student"}
+        <div className='modal-overlay' onClick={closeForm}>
+          <div className='modal-content' onClick={(e) => e.stopPropagation()}>
+            <h3 className='modal-title'>
+              {editingId ? 'Edit Student' : 'Add New Student'}
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <input
-                type="text"
-                placeholder="Student ID"
-                value={form.student_id}
-                onChange={(e) =>
-                  setForm({ ...form, student_id: e.target.value })
-                }
-                className="border p-2 w-full rounded"
-                required
-              />
+            <form onSubmit={handleSubmit} className='modal-form'>
+              <div className='form-row'>
+                <div className='form-group'>
+                  <label>Student ID</label>
+                  <input
+                    type='text'
+                    placeholder='Enter Student ID'
+                    value={form.student_id}
+                    onChange={(e) => setForm({ ...form, student_id: e.target.value })}
+                    required
+                  />
+                </div>
 
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="border p-2 w-full rounded"
-                required
-              />
+                <div className='form-group'>
+                  <label>Full Name</label>
+                  <input
+                    type='text'
+                    placeholder='Enter Full Name'
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="border p-2 w-full rounded"
-                required
-              />
+              <div className='form-row'>
+                <div className='form-group'>
+                  <label>Email</label>
+                  <input
+                    type='email'
+                    placeholder='Enter Email'
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    required
+                  />
+                </div>
 
-              <input
-                type="text"
-                placeholder="Department"
-                value={form.department}
-                onChange={(e) =>
-                  setForm({ ...form, department: e.target.value })
-                }
-                className="border p-2 w-full rounded"
-                required
-              />
+                <div className='form-group'>
+                  <label>Department</label>
+                  <select
+                    value={form.department}
+                    onChange={(e) => setForm({ ...form, department: e.target.value })}
+                    required
+                  >
+                    <option value=''>Select Department</option>
+                    {departments.map(dept => (
+                      <option key={dept.id} value={dept.name}>{dept.name}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
-              <input
-                type="text"
-                placeholder="Course"
-                value={form.course}
-                onChange={(e) => setForm({ ...form, course: e.target.value })}
-                className="border p-2 w-full rounded"
-                required
-              />
+              <div className='form-row'>
+                <div className='form-group'>
+                  <label>Course</label>
+                  <select
+                    value={form.course}
+                    onChange={(e) => setForm({ ...form, course: e.target.value })}
+                    required
+                  >
+                    <option value=''>Select Course</option>
+                    {courses.map(course => (
+                      <option key={course.id} value={course.name}>{course.name}</option>
+                    ))}
+                  </select>
+                </div>
 
-              {/* ✅ Fixed Year Level Dropdown */}
-              <select
-                value={form.year_level}
-                onChange={(e) => setForm({ ...form, year_level: e.target.value })}
-                className="border p-2 w-full rounded"
-                required
-              >
-                <option value=""> Select Year Level </option>
-                <option value="1st Year">1st Year</option>
-                <option value="2nd Year">2nd Year</option>
-                <option value="3rd Year">3rd Year</option>
-                <option value="4th Year">4th Year</option>
-              </select>
+                <div className='form-group'>
+                  <label>Year Level</label>
+                  <select
+                    value={form.year_level}
+                    onChange={(e) => setForm({ ...form, year_level: e.target.value })}
+                    required
+                  >
+                    <option value=''>Select Year Level</option>
+                    <option value='1st Year'>1st Year</option>
+                    <option value='2nd Year'>2nd Year</option>
+                    <option value='3rd Year'>3rd Year</option>
+                    <option value='4th Year'>4th Year</option>
+                  </select>
+                </div>
+              </div>
 
-              <select
-                value={form.status}
-                onChange={(e) => setForm({ ...form, status: e.target.value })}
-                className="border p-2 w-full rounded"
-              >
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-
-              <div className="flex justify-end gap-3 mt-4">
+              <div className='modal-actions'>
                 <button
-                  type="button"
+                  type='button'
                   onClick={closeForm}
-                  className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
+                  className='btn-cancel'
                 >
                   Cancel
                 </button>
                 <button
-                  type="submit"
-                  className="bg-blue-200 text-black px-4 py-2 rounded hover:bg-blue-300"
+                  type='submit'
+                  className='btn-submit'
                 >
-                  {editingId ? "Confirm Update" : "Confirm Add"}
+                  {editingId ? 'Update Student' : 'Add Student'}
                 </button>
               </div>
             </form>
@@ -246,91 +363,74 @@ export default function Students() {
         </div>
       )}
 
-      {/* ✅ Students Table */}
-      {!showArchive ? (
-        <div className="overflow-x-auto text-black">
-          <table className="w-full border-collapse border border-gray-400 shadow-md">
-            <thead className="bg-gray-200">
+          <div className='settings-table-wrapper'>
+          <table className='settings-table'>
+            <thead>
               <tr>
-                <th className="border p-2">Student ID</th>
-                <th className="border p-2">Name</th>
-                <th className="border p-2">Email</th>
-                <th className="border p-2">Department</th>
-                <th className="border p-2">Course</th>
-                <th className="border p-2">Year Level</th>
-                <th className="border p-2">Status</th>
-                <th className="border p-2">Actions</th>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Status</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {sortedStudents.map((s) => (
-                <tr key={s.id} className="hover:bg-gray-50">
-                  <td className="border p-2">{s.student_id}</td>
-                  <td className="border p-2">{s.name}</td>
-                  <td className="border p-2">{s.email}</td>
-                  <td className="border p-2">{s.department}</td>
-                  <td className="border p-2">{s.course}</td>
-                  <td className="border p-2">{s.year_level}</td>
-                  <td className="border p-2">{s.status}</td>
-                  <td className="border p-2 space-x-2">
-                    <button
-                      onClick={() => openForm(s)}
-                      className="bg-yellow-200 text-black px-3 py-1 rounded hover:bg-yellow-300"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleArchive(s.id)}
-                      className="bg-red-200 text-black px-3 py-1 rounded hover:bg-red-300"
-                    >
-                      Archive
-                    </button>
+              {filteredStudents.map((s) => {
+                const fullName = s.name || 'N/A';
+                  
+                return (
+                <tr key={s.id} className={s.status === 'Archived' ? 'archived-row' : ''}>
+                  <td>{s.student_id}</td>
+                  <td>{fullName}</td>
+                  <td>{s.email}</td>
+                  <td>{s.department}</td>
+                  <td>{s.course}</td>
+                  <td>{s.year_level}</td>
+                  <td>
+                    <span className={`status-badge ${s.status.toLowerCase()}`}>
+                      {s.status}
+                    </span>
+                  </td>
+                  <td>
+                    <div className='action-buttons'>
+                      <button
+                        onClick={() => openForm(s)}
+                        className='btn-icon btn-edit'
+                        title='Edit'
+                        disabled={s.status === 'Archived'}
+                      >
+                        <Edit2 size={16} />
+                      </button>
+                      {s.status !== 'Archived' ? (
+                        <button
+                          onClick={() => handleArchive(s.id)}
+                          className='btn-icon btn-archive'
+                          title='Archive'
+                        >
+                          <Archive size={16} />
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleRestore(s.id)}
+                          className='btn-icon btn-restore'
+                          title='Unarchive'
+                        >
+                          <ArchiveRestore size={16} />
+                        </button>
+                      )}
+                    </div>
                   </td>
                 </tr>
-              ))}
+              );
+              })}
             </tbody>
           </table>
         </div>
-      ) : (
-        <div>
-          <h3 className="text-xl font-semibold mb-3 text-gray-800">
-            Archived Students
-          </h3>
-          <table className="w-full border-collapse border border-gray-400 shadow-md text-black">
-            <thead className="bg-gray-200">
-              <tr>
-                <th className="border p-2">Student ID</th>
-                <th className="border p-2">Name</th>
-                <th className="border p-2">Email</th>
-                <th className="border p-2">Department</th>
-                <th className="border p-2">Course</th>
-                <th className="border p-2">Year Level</th>
-                <th className="border p-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {archivedStudents.map((s) => (
-                <tr key={s.id} className="hover:bg-gray-50">
-                  <td className="border p-2">{s.student_id}</td>
-                  <td className="border p-2">{s.name}</td>
-                  <td className="border p-2">{s.email}</td>
-                  <td className="border p-2">{s.department}</td>
-                  <td className="border p-2">{s.course}</td>
-                  <td className="border p-2">{s.year_level}</td>
-                  <td className="border p-2 text-center">
-                    <button
-                      onClick={() => handleRestore(s.id)}
-                      className="bg-green-200 text-black px-3 py-1 rounded hover:bg-green-300"
-                    >
-                      Restore
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
-      )}
+      </div>
     </div>
   );
 }

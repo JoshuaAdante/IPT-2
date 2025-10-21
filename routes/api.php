@@ -3,9 +3,15 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\AcademicYearController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +21,14 @@ use App\Http\Controllers\StudentController;
 | Includes CRUD, Archive, Restore, and Dashboard Count logic.
 |--------------------------------------------------------------------------
 */
+
+// ✅ Admin Authentication
+Route::post('admin/register', [AdminAuthController::class, 'register']);
+Route::post('admin/login', [AdminAuthController::class, 'login']);
+
+// ✅ User Profile Management
+Route::post('user/profile/update', [UserProfileController::class, 'update']);
+Route::post('user/profile/change-password', [UserProfileController::class, 'changePassword']);
 
 // ✅ Profiles (optional)
 Route::apiResource('profiles', ProfileController::class);
@@ -31,48 +45,23 @@ Route::patch('students/{student}/status', [StudentController::class, 'updateStat
 Route::patch('students/{student}/archive', [StudentController::class, 'archive']);
 Route::patch('students/{student}/restore', [StudentController::class, 'restore']);
 
+// ✅ Departments CRUD
+Route::apiResource('departments', DepartmentController::class);
+Route::patch('departments/{department}/archive', [DepartmentController::class, 'archive']);
+Route::patch('departments/{department}/restore', [DepartmentController::class, 'restore']);
+
+// ✅ Courses CRUD
+Route::apiResource('courses', CourseController::class);
+Route::patch('courses/{course}/archive', [CourseController::class, 'archive']);
+Route::patch('courses/{course}/restore', [CourseController::class, 'restore']);
+
+// ✅ Academic Years CRUD
+Route::apiResource('academic-years', AcademicYearController::class);
+Route::patch('academic-years/{academicYear}/archive', [AcademicYearController::class, 'archive']);
+Route::patch('academic-years/{academicYear}/restore', [AcademicYearController::class, 'restore']);
+
 // ✅ Dashboard Counters
-Route::get('/dashboard-counts', function () {
-    $facultyCount = \App\Models\Faculty::where('status', 'Active')->count();
-    $studentCount = \App\Models\Student::where('status', 'Active')->count();
-
-    $departmentCount = DB::table('faculties')
-        ->where('status', 'Active')
-        ->distinct('department')
-        ->count('department');
-
-    $courseCount = DB::table('students')
-        ->where('status', 'Active')
-        ->distinct('course')
-        ->count('course');
-
-    return response()->json([
-        'faculties' => $facultyCount,
-        'students' => $studentCount,
-        'departments' => $departmentCount,
-        'courses' => $courseCount,
-    ]);
-});
+Route::get('/dashboard-counts', [DashboardController::class, 'counts']);
 
 // ✅ Optional: Quick refresh route (used by React Context)
-Route::get('/refresh-counts', function () {
-    $facultyCount = \App\Models\Faculty::where('status', 'Active')->count();
-    $studentCount = \App\Models\Student::where('status', 'Active')->count();
-
-    $departmentCount = DB::table('faculties')
-        ->where('status', 'Active')
-        ->distinct('department')
-        ->count('department');
-
-    $courseCount = DB::table('students')
-        ->where('status', 'Active')
-        ->distinct('course')
-        ->count('course');
-
-    return response()->json([
-        'faculties' => $facultyCount,
-        'students' => $studentCount,
-        'departments' => $departmentCount,
-        'courses' => $courseCount,
-    ]);
-});
+Route::get('/refresh-counts', [DashboardController::class, 'counts']);

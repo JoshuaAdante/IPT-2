@@ -32,10 +32,14 @@ export const CountProvider = ({ children }) => {
     }
   }, []);
 
-  // ✅ Automatically load once on mount
+  // ✅ Automatically load once on mount, but only when logged in
   useEffect(() => {
-    fetchCounts();
-  }, [fetchCounts]);
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (isLoggedIn) {
+      fetchCounts();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ✅ Public refresh function (for Faculty.js, Student.js, etc.)
   const refreshCounts = async () => {

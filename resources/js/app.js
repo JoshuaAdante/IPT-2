@@ -3,7 +3,7 @@ require("./bootstrap");
 import React from "react";
 import { createRoot } from "react-dom/client";
 import Layout from "./components/Layout"; // ✅ your main layout file
-import { CountProvider } from "./context/CountContext"; // ✅ React Context for Dashboard counts
+import { CountProvider } from "./Context/CountContext"; // ✅ React Context for Dashboard counts
 
 // ✅ Optional: React Router (if you use routing)
 import { BrowserRouter as Router } from "react-router-dom";
