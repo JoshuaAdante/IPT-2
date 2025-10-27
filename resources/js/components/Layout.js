@@ -21,22 +21,25 @@ export default function Layout() {
     if (loggedIn && !savedUser) {
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('user');
-      window.history.replaceState({}, '', '/adminlogin');
       return false;
     }
     
-    // If not logged in, ensure we're on the login page
-    if (!loggedIn && window.location.pathname !== '/adminlogin') {
-      window.history.replaceState({}, '', '/adminlogin');
-    }
     return loggedIn;
   });
   const [showRegister, setShowRegister] = useState(false);
   const [page, setPage] = useState(() => {
-    // Default to dashboard only if logged in, otherwise null
+    // Get page from URL path
+    const path = window.location.pathname.replace('/', '') || 'dashboard';
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const savedUser = localStorage.getItem('user');
-    return (loggedIn && savedUser) ? "dashboard" : null;
+    
+    // If logged in, return the path (or default to dashboard)
+    if (loggedIn && savedUser) {
+      const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+      return validPages.includes(path) ? path : 'dashboard';
+    }
+    
+    return null; // Not logged in, will show login page
   });
   const [user, setUser] = useState(() => {
     // Restore user data from localStorage on initial load
@@ -68,23 +71,30 @@ export default function Layout() {
   // Sync page state with URL on mount and browser back/forward
   useEffect(() => {
     const updatePageFromURL = () => {
-      const path = window.location.pathname.replace('/', '') || 'adminlogin';
+      const path = window.location.pathname.replace('/', '') || 'dashboard';
       
-      if (path === 'adminlogin' && isLoggedIn) {
-        // If logged in and on adminlogin, redirect to dashboard
-        window.history.replaceState({}, '', '/dashboard');
-        setPage('dashboard');
-      } else if (path !== 'adminlogin' && !isLoggedIn) {
-        // If not logged in and not on adminlogin, redirect to adminlogin
-        window.history.replaceState({}, '', '/adminlogin');
-      } else if (isLoggedIn) {
-        // Set page based on URL
-        const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
-        if (validPages.includes(path)) {
-          setPage(path);
-        } else {
-          setPage('dashboard');
+      console.log('Layout: Current path:', path, 'Logged in:', isLoggedIn);
+      
+      if (!isLoggedIn) {
+        // Not logged in - ensure we're on admin login page
+        if (path !== 'adminlogin') {
+          window.history.replaceState({}, '', '/adminlogin');
+        }
+      } else {
+        // Logged in
+        if (path === 'adminlogin') {
+          // If logged in and on adminlogin, redirect to dashboard
           window.history.replaceState({}, '', '/dashboard');
+          setPage('dashboard');
+        } else {
+          // Set page based on URL
+          const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+          if (validPages.includes(path)) {
+            setPage(path);
+          } else {
+            setPage('dashboard');
+            window.history.replaceState({}, '', '/dashboard');
+          }
         }
       }
     };

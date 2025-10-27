@@ -96,9 +96,19 @@ export default function Profile({ user, onLogout }) {
       });
       
       if (response.data.success) {
-        setProfileData({ ...formData, profile_picture: response.data.user.profile_picture });
+        const updatedUser = response.data.user;
+        setProfileData({ ...formData, profile_picture: updatedUser.profile_picture });
         setIsEditing(false);
         setProfilePicture(null);
+        
+        // Update localStorage with new user data
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+        
+        // Update profile picture preview
+        if (updatedUser.profile_picture) {
+          setProfilePicturePreview(`/storage/${updatedUser.profile_picture}`);
+        }
+        
         alert('✅ Profile updated successfully!');
       }
     } catch (err) {

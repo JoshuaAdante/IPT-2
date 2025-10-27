@@ -15,10 +15,32 @@ class Faculty extends Model
     // Allow mass assignment for these fields
     protected $fillable = [
         'faculty_id',
+        'employee_id',
         'name',
+        'first_name',
+        'last_name',
         'email',
+        'personal_email',
         'department',
         'position',
+        'title',
+        'employment_type',
+        'date_of_joining',
         'status',
+        // Contact Details
+        'office_address',
+        'office_phone',
+        'mobile_phone',
+        // Academic Qualifications
+        'highest_degree',
+        'field_of_study',
+        'awarding_institution',
+        'year_awarded',
+        // Professional Information
+        'teaching_subjects',
+        'research_interests',
+        'publications',
+        'professional_experience',
+        'achievements_awards',
     ];
 }

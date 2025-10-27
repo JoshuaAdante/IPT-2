@@ -17,11 +17,15 @@ export default function Students() {
 
   const [form, setForm] = useState({
     student_id: '',
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
+    date_of_birth: '',
     department: '',
     course: '',
     year_level: '',
+    phone: '',
+    address: '',
     status: 'Active',
   });
 
@@ -82,8 +86,8 @@ export default function Students() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate form fields
-    if (!form.student_id || !form.name || !form.email || !form.department || !form.course || !form.year_level) {
+    // Validate required fields
+    if (!form.first_name || !form.last_name || !form.email || !form.department || !form.course || !form.year_level) {
       alert('⚠️ Please fill in all required fields.');
       return;
     }
@@ -133,23 +137,31 @@ export default function Students() {
     if (student) {
       setEditingId(student.id);
       setForm({
-        student_id: student.student_id,
-        name: student.name || '',
-        email: student.email,
-        department: student.department,
-        course: student.course,
-        year_level: student.year_level,
-        status: student.status,
+        student_id: student.student_id || '',
+        first_name: student.first_name || '',
+        last_name: student.last_name || '',
+        email: student.email || '',
+        date_of_birth: student.date_of_birth || '',
+        department: student.department || '',
+        course: student.course || '',
+        year_level: student.year_level || '',
+        phone: student.phone || '',
+        address: student.address || '',
+        status: student.status || 'Active',
       });
     } else {
       setEditingId(null);
       setForm({
         student_id: '',
-        name: '',
+        first_name: '',
+        last_name: '',
         email: '',
+        date_of_birth: '',
         department: '',
         course: '',
         year_level: '',
+        phone: '',
+        address: '',
         status: 'Active',
       });
     }
@@ -198,15 +210,37 @@ export default function Students() {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (!confirm('⚠️ PERMANENT DELETE: This will completely remove the student from the database. This action cannot be undone. Are you sure?')) return;
+    
+    try {
+      await axios.delete(`/api/students/${id}`);
+      await fetchStudents();
+      await refreshCounts();
+      
+      // Broadcast update event for dashboard to refresh
+      window.dispatchEvent(new CustomEvent('dataUpdated', { 
+        detail: { type: 'students', timestamp: Date.now() } 
+      }));
+      
+      closeForm();
+      alert('🗑️ Student permanently deleted from database!');
+    } catch (err) {
+      console.error('Delete Student Error:', err);
+      alert('❌ Failed to delete student.');
+    }
+  };
+
   const courseOptions = ['All', ...new Set(students.map(s => s.course))];
 
-  // Filter students based on search and course (show all including archived)
+  // Filter students based on search, course, and archive view
   const filteredStudents = students.filter(s => {
     const matchesSearch = (s.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (s.student_id || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (s.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCourse = courseFilter === 'All' || s.course === courseFilter;
-    return matchesSearch && matchesCourse;
+    const matchesArchive = showArchive ? s.status === 'Archived' : s.status !== 'Archived';
+    return matchesSearch && matchesCourse && matchesArchive;
   });
 
   return (
@@ -220,15 +254,24 @@ export default function Students() {
 
       <div className='settings-content'>
         <div className='settings-tabs'>
-          <button className='tab-button active'>
+          <button 
+            className={`tab-button ${!showArchive ? 'active' : ''}`}
+            onClick={() => setShowArchive(false)}
+          >
             Students
+          </button>
+          <button 
+            className={`tab-button ${showArchive ? 'active' : ''}`}
+            onClick={() => setShowArchive(true)}
+          >
+            📦 Archived
           </button>
         </div>
 
         <div className='settings-body'>
           <div className='table-header'>
             <div style={{display: 'flex', gap: '1rem', alignItems: 'center', flex: 1}}>
-              <h3>Students</h3>
+              <h3>{showArchive ? 'Archived Students' : 'Students'}</h3>
               <div className='search-box' style={{maxWidth: '250px'}}>
                 <Search size={18} className='search-icon' />
                 <input
@@ -248,9 +291,11 @@ export default function Students() {
                 ))}
               </select>
             </div>
-            <button className='btn-add-setting' onClick={() => openForm()}>
-              + Add Student
-            </button>
+            {!showArchive && (
+              <button className='btn-add-setting' onClick={() => openForm()}>
+                + Add Student
+              </button>
+            )}
           </div>
 
       {showForm && (
@@ -261,25 +306,26 @@ export default function Students() {
             </h3>
 
             <form onSubmit={handleSubmit} className='modal-form'>
+              <h4 style={{marginTop: 0, color: '#1e3a8a'}}>Student Information</h4>
+              
               <div className='form-row'>
                 <div className='form-group'>
-                  <label>Student ID</label>
+                  <label>First Name *</label>
                   <input
                     type='text'
-                    placeholder='Enter Student ID'
-                    value={form.student_id}
-                    onChange={(e) => setForm({ ...form, student_id: e.target.value })}
+                    placeholder='Enter First Name'
+                    value={form.first_name}
+                    onChange={(e) => setForm({ ...form, first_name: e.target.value })}
                     required
                   />
                 </div>
-
                 <div className='form-group'>
-                  <label>Full Name</label>
+                  <label>Last Name *</label>
                   <input
                     type='text'
-                    placeholder='Enter Full Name'
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder='Enter Last Name'
+                    value={form.last_name}
+                    onChange={(e) => setForm({ ...form, last_name: e.target.value })}
                     required
                   />
                 </div>
@@ -287,18 +333,51 @@ export default function Students() {
 
               <div className='form-row'>
                 <div className='form-group'>
-                  <label>Email</label>
+                  <label>Email *</label>
                   <input
                     type='email'
-                    placeholder='Enter Email'
+                    placeholder='example@example.com'
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     required
                   />
                 </div>
-
                 <div className='form-group'>
-                  <label>Department</label>
+                  <label>Date of Birth</label>
+                  <input
+                    type='date'
+                    value={form.date_of_birth}
+                    onChange={(e) => setForm({ ...form, date_of_birth: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className='form-row'>
+                <div className='form-group'>
+                  <label>Phone</label>
+                  <input
+                    type='tel'
+                    placeholder='Phone Number'
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  />
+                </div>
+                <div className='form-group'>
+                  <label>Address</label>
+                  <input
+                    type='text'
+                    placeholder='Home Address'
+                    value={form.address}
+                    onChange={(e) => setForm({ ...form, address: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <h4 style={{marginTop: '1.5rem', color: '#1e3a8a'}}>Academic Information *</h4>
+
+              <div className='form-row'>
+                <div className='form-group'>
+                  <label>Department *</label>
                   <select
                     value={form.department}
                     onChange={(e) => setForm({ ...form, department: e.target.value })}
@@ -310,11 +389,8 @@ export default function Students() {
                     ))}
                   </select>
                 </div>
-              </div>
-
-              <div className='form-row'>
                 <div className='form-group'>
-                  <label>Course</label>
+                  <label>Course *</label>
                   <select
                     value={form.course}
                     onChange={(e) => setForm({ ...form, course: e.target.value })}
@@ -326,37 +402,63 @@ export default function Students() {
                     ))}
                   </select>
                 </div>
-
-                <div className='form-group'>
-                  <label>Year Level</label>
-                  <select
-                    value={form.year_level}
-                    onChange={(e) => setForm({ ...form, year_level: e.target.value })}
-                    required
-                  >
-                    <option value=''>Select Year Level</option>
-                    <option value='1st Year'>1st Year</option>
-                    <option value='2nd Year'>2nd Year</option>
-                    <option value='3rd Year'>3rd Year</option>
-                    <option value='4th Year'>4th Year</option>
-                  </select>
-                </div>
               </div>
 
-              <div className='modal-actions'>
-                <button
-                  type='button'
-                  onClick={closeForm}
-                  className='btn-cancel'
+              <div className='form-group' style={{maxWidth: '48%'}}>
+                <label>Year Level *</label>
+                <select
+                  value={form.year_level}
+                  onChange={(e) => setForm({ ...form, year_level: e.target.value })}
+                  required
                 >
-                  Cancel
-                </button>
-                <button
-                  type='submit'
-                  className='btn-submit'
-                >
-                  {editingId ? 'Update Student' : 'Add Student'}
-                </button>
+                  <option value=''>Select Year Level</option>
+                  <option value='1st Year'>1st Year</option>
+                  <option value='2nd Year'>2nd Year</option>
+                  <option value='3rd Year'>3rd Year</option>
+                  <option value='4th Year'>4th Year</option>
+                </select>
+              </div>
+
+              <div className='modal-actions' style={{marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #ddd', display: 'flex', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', gap: '0.5rem'}}>
+                  {editingId && (
+                    <>
+                      <button
+                        type='button'
+                        onClick={() => handleArchive(editingId)}
+                        className='btn-icon'
+                        style={{padding: '0.5rem 1rem', background: '#f59e0b', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}
+                        title='Archive Student'
+                      >
+                        📦 Archive
+                      </button>
+                      <button
+                        type='button'
+                        onClick={() => handleDelete(editingId)}
+                        className='btn-icon'
+                        style={{padding: '0.5rem 1rem', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}
+                        title='Permanently Delete'
+                      >
+                        🗑️ Delete
+                      </button>
+                    </>
+                  )}
+                </div>
+                <div style={{display: 'flex', gap: '0.5rem'}}>
+                  <button
+                    type='button'
+                    onClick={closeForm}
+                    className='btn-cancel'
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type='submit'
+                    className='btn-submit'
+                  >
+                    {editingId ? 'Update Student' : 'Add Student'}
+                  </button>
+                </div>
               </div>
             </form>
           </div>

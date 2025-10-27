@@ -89828,15 +89828,19 @@ function Dashboard(_ref) {
     _useState4 = _slicedToArray(_useState3, 2),
     faculties = _useState4[0],
     setFaculties = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    chartKey = _useState6[0],
+    setChartKey = _useState6[1]; // Key to force chart re-render
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       totalStudents: 0,
       totalFaculty: 0,
       totalCourses: 0,
       totalDepartments: 0
     }),
-    _useState6 = _slicedToArray(_useState5, 2),
-    dashboardData = _useState6[0],
-    setDashboardData = _useState6[1];
+    _useState8 = _slicedToArray(_useState7, 2),
+    dashboardData = _useState8[0],
+    setDashboardData = _useState8[1];
 
   // Color palette for departments and courses
   var colorPalette = ['#3b82f6',
@@ -89892,6 +89896,10 @@ function Dashboard(_ref) {
       console.log('Dashboard: Data updated, refetching...', event.detail);
       // Refresh dashboard for any data update (departments, courses, faculties, students)
       fetchDashboardData();
+      // Force chart re-render by updating key
+      setChartKey(function (prevKey) {
+        return prevKey + 1;
+      });
     };
     window.addEventListener('dataUpdated', handleDataUpdate);
     return function () {
@@ -89900,11 +89908,12 @@ function Dashboard(_ref) {
   }, []);
   var fetchDashboardData = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-      var _yield$Promise$all, _yield$Promise$all2, studentsRes, facultiesRes, countsRes, _t;
+      var _yield$Promise$all, _yield$Promise$all2, studentsRes, facultiesRes, countsRes, activeStudents, activeFaculties, _t;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.p = _context.n) {
           case 0:
             _context.p = 0;
+            console.log('Dashboard: Fetching data...');
             _context.n = 1;
             return Promise.all([axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/students"), axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/faculties"), axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/dashboard-counts")]);
           case 1:
@@ -89913,18 +89922,29 @@ function Dashboard(_ref) {
             studentsRes = _yield$Promise$all2[0];
             facultiesRes = _yield$Promise$all2[1];
             countsRes = _yield$Promise$all2[2];
-            setStudents(studentsRes.data.filter(function (s) {
+            console.log('Dashboard: Students data:', studentsRes.data);
+            console.log('Dashboard: Faculties data:', facultiesRes.data);
+            console.log('Dashboard: Counts data:', countsRes.data);
+            activeStudents = studentsRes.data.filter(function (s) {
               return s.status !== "Archived";
-            }));
-            setFaculties(facultiesRes.data.filter(function (f) {
+            });
+            activeFaculties = facultiesRes.data.filter(function (f) {
               return f.status !== "Archived";
-            }));
+            });
+            setStudents(activeStudents);
+            setFaculties(activeFaculties);
             setDashboardData({
               totalStudents: countsRes.data.students,
               totalFaculty: countsRes.data.faculties,
               totalCourses: countsRes.data.courses,
               totalDepartments: countsRes.data.departments
             });
+
+            // Force chart re-render
+            setChartKey(function (prevKey) {
+              return prevKey + 1;
+            });
+            console.log('Dashboard: Data updated successfully');
             _context.n = 3;
             break;
           case 2:
@@ -90125,7 +90145,7 @@ function Dashboard(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
             data: studentsPerCourseData,
             options: chartOptions
-          })
+          }, "course-chart-".concat(chartKey))
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "chart-box",
@@ -90142,7 +90162,7 @@ function Dashboard(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Doughnut, {
             data: facultyPerDeptData,
             options: doughnutOptions
-          })
+          }, "faculty-chart-".concat(chartKey))
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "chart-box",
@@ -90159,7 +90179,7 @@ function Dashboard(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
             data: studentsPerDeptData,
             options: chartOptions
-          })
+          }, "dept-chart-".concat(chartKey))
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "chart-box",
@@ -90176,7 +90196,7 @@ function Dashboard(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
             data: enrollmentData,
             options: chartOptions
-          })
+          }, "year-chart-".concat(chartKey))
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -90282,10 +90302,14 @@ function Faculty() {
     setDepartmentsList = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       faculty_id: "",
-      name: "",
+      employee_id: "",
+      first_name: "",
+      last_name: "",
       email: "",
       department: "",
       position: "",
+      employment_type: "",
+      office_phone: "",
       status: "Active"
     }),
     _useState14 = _slicedToArray(_useState13, 2),
@@ -90373,8 +90397,10 @@ function Faculty() {
     };
   }, []);
 
-  // Position options
+  // Position and Type options
   var positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Dean', 'Department Head', 'Coordinator'];
+  var employmentTypes = ['Full-time', 'Part-time', 'Adjunct', 'Visiting'];
+  var degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
   var handleSubmit = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(e) {
       var response, _response, _error$response, _error$response2, errorMessage, errors, _t3;
@@ -90383,8 +90409,8 @@ function Faculty() {
           case 0:
             e.preventDefault();
 
-            // Validate form fields
-            if (!(!form.faculty_id || !form.name || !form.email || !form.department || !form.position)) {
+            // Validate required fields
+            if (!(!form.first_name || !form.last_name || !form.email || !form.department || !form.position)) {
               _context3.n = 1;
               break;
             }
@@ -90468,21 +90494,29 @@ function Faculty() {
             if (faculty) {
               setEditingId(faculty.id);
               setForm({
-                faculty_id: faculty.faculty_id,
-                name: faculty.name || "",
-                email: faculty.email,
-                department: faculty.department,
-                position: faculty.position,
-                status: faculty.status
+                faculty_id: faculty.faculty_id || "",
+                employee_id: faculty.employee_id || "",
+                first_name: faculty.first_name || "",
+                last_name: faculty.last_name || "",
+                email: faculty.email || "",
+                department: faculty.department || "",
+                position: faculty.position || "",
+                employment_type: faculty.employment_type || "",
+                office_phone: faculty.office_phone || "",
+                status: faculty.status || "Active"
               });
             } else {
               setEditingId(null);
               setForm({
                 faculty_id: "",
-                name: "",
+                employee_id: "",
+                first_name: "",
+                last_name: "",
                 email: "",
                 department: "",
                 position: "",
+                employment_type: "",
+                office_phone: "",
                 status: "Active"
               });
             }
@@ -90586,17 +90620,65 @@ function Faculty() {
       return _ref6.apply(this, arguments);
     };
   }();
+  var handleDelete = /*#__PURE__*/function () {
+    var _ref7 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(id) {
+      var _t6;
+      return _regenerator().w(function (_context7) {
+        while (1) switch (_context7.p = _context7.n) {
+          case 0:
+            if (confirm('⚠️ PERMANENT DELETE: This will completely remove the faculty from the database. This action cannot be undone. Are you sure?')) {
+              _context7.n = 1;
+              break;
+            }
+            return _context7.a(2);
+          case 1:
+            _context7.p = 1;
+            _context7.n = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("/api/faculties/".concat(id));
+          case 2:
+            _context7.n = 3;
+            return fetchFaculties();
+          case 3:
+            _context7.n = 4;
+            return refreshCounts();
+          case 4:
+            // Broadcast update event for dashboard to refresh
+            window.dispatchEvent(new CustomEvent('dataUpdated', {
+              detail: {
+                type: 'faculties',
+                timestamp: Date.now()
+              }
+            }));
+            closeForm();
+            alert('🗑️ Faculty permanently deleted from database!');
+            _context7.n = 6;
+            break;
+          case 5:
+            _context7.p = 5;
+            _t6 = _context7.v;
+            console.error('Delete Faculty Error:', _t6);
+            alert('❌ Failed to delete faculty.');
+          case 6:
+            return _context7.a(2);
+        }
+      }, _callee7, null, [[1, 5]]);
+    }));
+    return function handleDelete(_x4) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
 
   // Get unique departments for filter
   var departments = ["All"].concat(_toConsumableArray(new Set(faculties.map(function (f) {
     return f.department;
   }))));
 
-  // Filter faculties based on search and department (show all including archived)
+  // Filter faculties based on search, department, and archive view
   var filteredFaculties = faculties.filter(function (f) {
     var matchesSearch = (f.name || '').toLowerCase().includes(searchQuery.toLowerCase()) || (f.faculty_id || '').toLowerCase().includes(searchQuery.toLowerCase()) || (f.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     var matchesDepartment = departmentFilter === "All" || f.department === departmentFilter;
-    return matchesSearch && matchesDepartment;
+    var matchesArchive = showArchive ? f.status === 'Archived' : f.status !== 'Archived';
+    return matchesSearch && matchesDepartment && matchesArchive;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "settings-container",
@@ -90612,12 +90694,21 @@ function Faculty() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "settings-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "settings-tabs",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button active",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "tab-button ".concat(!showArchive ? 'active' : ''),
+          onClick: function onClick() {
+            return setShowArchive(false);
+          },
           children: "Faculty Members"
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "tab-button ".concat(showArchive ? 'active' : ''),
+          onClick: function onClick() {
+            return setShowArchive(true);
+          },
+          children: "\uD83D\uDCE6 Archived"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "settings-body",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -90630,7 +90721,7 @@ function Faculty() {
               flex: 1
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: "Faculty Members"
+              children: showArchive ? 'Archived Faculty' : 'Faculty Members'
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               className: "search-box",
               style: {
@@ -90660,7 +90751,7 @@ function Faculty() {
                 }, dept);
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), !showArchive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
             className: "btn-add-setting",
             onClick: function onClick() {
               return openForm();
@@ -90681,19 +90772,25 @@ function Faculty() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
               onSubmit: handleSubmit,
               className: "modal-form",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+                style: {
+                  marginTop: 0,
+                  color: '#1e3a8a'
+                },
+                children: "\uD83D\uDCCB Faculty Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "form-row",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Faculty ID"
+                    children: "First Name *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "text",
-                    placeholder: "Enter Faculty ID",
-                    value: form.faculty_id,
+                    placeholder: "First Name",
+                    value: form.first_name,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        faculty_id: e.target.value
+                        first_name: e.target.value
                       }));
                     },
                     required: true
@@ -90701,14 +90798,14 @@ function Faculty() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Full Name"
+                    children: "Last Name *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "text",
-                    placeholder: "Enter Full Name",
-                    value: form.name,
+                    placeholder: "Last Name",
+                    value: form.last_name,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        name: e.target.value
+                        last_name: e.target.value
                       }));
                     },
                     required: true
@@ -90719,10 +90816,24 @@ function Faculty() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Email"
+                    children: "Employee ID"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                    type: "text",
+                    placeholder: "Employee ID (optional)",
+                    value: form.employee_id,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        employee_id: e.target.value
+                      }));
+                    }
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Email Address *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "email",
-                    placeholder: "Enter Email",
+                    placeholder: "email@example.com",
                     value: form.email,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -90731,10 +90842,13 @@ function Faculty() {
                     },
                     required: true
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Department"
+                    children: "Department *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
                     value: form.department,
                     onChange: function onChange(e) {
@@ -90753,13 +90867,10 @@ function Faculty() {
                       }, dept.id);
                     })]
                   })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                className: "form-row",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Position"
+                    children: "Position *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
                     value: form.position,
                     onChange: function onChange(e) {
@@ -90778,18 +90889,109 @@ function Faculty() {
                       }, pos);
                     })]
                   })]
-                })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Employment Type"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                    value: form.employment_type,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        employment_type: e.target.value
+                      }));
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                      value: "",
+                      children: "Select Type"
+                    }), employmentTypes.map(function (type) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                        value: type,
+                        children: type
+                      }, type);
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Office Phone"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                    type: "tel",
+                    placeholder: "Office Phone Number",
+                    value: form.office_phone,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        office_phone: e.target.value
+                      }));
+                    }
+                  })]
+                })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "modal-actions",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  type: "button",
-                  onClick: closeForm,
-                  className: "btn-cancel",
-                  children: "Cancel"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  type: "submit",
-                  className: "btn-submit",
-                  children: editingId ? "Update Faculty" : "Add Faculty"
+                style: {
+                  marginTop: '1.5rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid #ddd',
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '0.5rem'
+                  },
+                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      type: "button",
+                      onClick: function onClick() {
+                        return handleArchive(editingId);
+                      },
+                      className: "btn-icon",
+                      style: {
+                        padding: '0.5rem 1rem',
+                        background: '#f59e0b',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                      },
+                      title: "Archive Faculty",
+                      children: "\uD83D\uDCE6 Archive"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      type: "button",
+                      onClick: function onClick() {
+                        return handleDelete(editingId);
+                      },
+                      className: "btn-icon",
+                      style: {
+                        padding: '0.5rem 1rem',
+                        background: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                      },
+                      title: "Permanently Delete",
+                      children: "\uD83D\uDDD1\uFE0F Delete"
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '0.5rem'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    type: "button",
+                    onClick: closeForm,
+                    className: "btn-cancel",
+                    children: "Cancel"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    type: "submit",
+                    className: "btn-submit",
+                    children: editingId ? "Update Faculty" : "Add Faculty"
+                  })]
                 })]
               })]
             })]
@@ -90935,13 +91137,7 @@ function Layout() {
       if (loggedIn && !savedUser) {
         localStorage.removeItem('isLoggedIn');
         localStorage.removeItem('user');
-        window.history.replaceState({}, '', '/adminlogin');
         return false;
-      }
-
-      // If not logged in, ensure we're on the login page
-      if (!loggedIn && window.location.pathname !== '/adminlogin') {
-        window.history.replaceState({}, '', '/adminlogin');
       }
       return loggedIn;
     }),
@@ -90953,10 +91149,17 @@ function Layout() {
     showRegister = _useState4[0],
     setShowRegister = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
-      // Default to dashboard only if logged in, otherwise null
+      // Get page from URL path
+      var path = window.location.pathname.replace('/', '') || 'dashboard';
       var loggedIn = localStorage.getItem('isLoggedIn') === 'true';
       var savedUser = localStorage.getItem('user');
-      return loggedIn && savedUser ? "dashboard" : null;
+
+      // If logged in, return the path (or default to dashboard)
+      if (loggedIn && savedUser) {
+        var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+        return validPages.includes(path) ? path : 'dashboard';
+      }
+      return null; // Not logged in, will show login page
     }),
     _useState6 = _slicedToArray(_useState5, 2),
     page = _useState6[0],
@@ -90992,22 +91195,28 @@ function Layout() {
   // Sync page state with URL on mount and browser back/forward
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var updatePageFromURL = function updatePageFromURL() {
-      var path = window.location.pathname.replace('/', '') || 'adminlogin';
-      if (path === 'adminlogin' && isLoggedIn) {
-        // If logged in and on adminlogin, redirect to dashboard
-        window.history.replaceState({}, '', '/dashboard');
-        setPage('dashboard');
-      } else if (path !== 'adminlogin' && !isLoggedIn) {
-        // If not logged in and not on adminlogin, redirect to adminlogin
-        window.history.replaceState({}, '', '/adminlogin');
-      } else if (isLoggedIn) {
-        // Set page based on URL
-        var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
-        if (validPages.includes(path)) {
-          setPage(path);
-        } else {
-          setPage('dashboard');
+      var path = window.location.pathname.replace('/', '') || 'dashboard';
+      console.log('Layout: Current path:', path, 'Logged in:', isLoggedIn);
+      if (!isLoggedIn) {
+        // Not logged in - ensure we're on admin login page
+        if (path !== 'adminlogin') {
+          window.history.replaceState({}, '', '/adminlogin');
+        }
+      } else {
+        // Logged in
+        if (path === 'adminlogin') {
+          // If logged in and on adminlogin, redirect to dashboard
           window.history.replaceState({}, '', '/dashboard');
+          setPage('dashboard');
+        } else {
+          // Set page based on URL
+          var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+          if (validPages.includes(path)) {
+            setPage(path);
+          } else {
+            setPage('dashboard');
+            window.history.replaceState({}, '', '/dashboard');
+          }
         }
       }
     };
@@ -91257,7 +91466,7 @@ function Profile(_ref) {
   };
   var handleSave = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-      var formDataToSend, response, _t;
+      var formDataToSend, response, updatedUser, _t;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.p = _context.n) {
           case 0:
@@ -91281,11 +91490,20 @@ function Profile(_ref) {
           case 1:
             response = _context.v;
             if (response.data.success) {
+              updatedUser = response.data.user;
               setProfileData(_objectSpread(_objectSpread({}, formData), {}, {
-                profile_picture: response.data.user.profile_picture
+                profile_picture: updatedUser.profile_picture
               }));
               setIsEditing(false);
               setProfilePicture(null);
+
+              // Update localStorage with new user data
+              localStorage.setItem('user', JSON.stringify(updatedUser));
+
+              // Update profile picture preview
+              if (updatedUser.profile_picture) {
+                setProfilePicturePreview("/storage/".concat(updatedUser.profile_picture));
+              }
               alert('✅ Profile updated successfully!');
             }
             _context.n = 3;
@@ -93009,11 +93227,15 @@ function Students() {
     setCourses = _useState14[1];
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       student_id: '',
-      name: '',
+      first_name: '',
+      last_name: '',
       email: '',
+      date_of_birth: '',
       department: '',
       course: '',
       year_level: '',
+      phone: '',
+      address: '',
       status: 'Active'
     }),
     _useState16 = _slicedToArray(_useState15, 2),
@@ -93115,8 +93337,8 @@ function Students() {
           case 0:
             e.preventDefault();
 
-            // Validate form fields
-            if (!(!form.student_id || !form.name || !form.email || !form.department || !form.course || !form.year_level)) {
+            // Validate required fields
+            if (!(!form.first_name || !form.last_name || !form.email || !form.department || !form.course || !form.year_level)) {
               _context3.n = 1;
               break;
             }
@@ -93200,23 +93422,31 @@ function Students() {
             if (student) {
               setEditingId(student.id);
               setForm({
-                student_id: student.student_id,
-                name: student.name || '',
-                email: student.email,
-                department: student.department,
-                course: student.course,
-                year_level: student.year_level,
-                status: student.status
+                student_id: student.student_id || '',
+                first_name: student.first_name || '',
+                last_name: student.last_name || '',
+                email: student.email || '',
+                date_of_birth: student.date_of_birth || '',
+                department: student.department || '',
+                course: student.course || '',
+                year_level: student.year_level || '',
+                phone: student.phone || '',
+                address: student.address || '',
+                status: student.status || 'Active'
               });
             } else {
               setEditingId(null);
               setForm({
                 student_id: '',
-                name: '',
+                first_name: '',
+                last_name: '',
                 email: '',
+                date_of_birth: '',
                 department: '',
                 course: '',
                 year_level: '',
+                phone: '',
+                address: '',
                 status: 'Active'
               });
             }
@@ -93320,15 +93550,63 @@ function Students() {
       return _ref6.apply(this, arguments);
     };
   }();
+  var handleDelete = /*#__PURE__*/function () {
+    var _ref7 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(id) {
+      var _t6;
+      return _regenerator().w(function (_context7) {
+        while (1) switch (_context7.p = _context7.n) {
+          case 0:
+            if (confirm('⚠️ PERMANENT DELETE: This will completely remove the student from the database. This action cannot be undone. Are you sure?')) {
+              _context7.n = 1;
+              break;
+            }
+            return _context7.a(2);
+          case 1:
+            _context7.p = 1;
+            _context7.n = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("/api/students/".concat(id));
+          case 2:
+            _context7.n = 3;
+            return fetchStudents();
+          case 3:
+            _context7.n = 4;
+            return refreshCounts();
+          case 4:
+            // Broadcast update event for dashboard to refresh
+            window.dispatchEvent(new CustomEvent('dataUpdated', {
+              detail: {
+                type: 'students',
+                timestamp: Date.now()
+              }
+            }));
+            closeForm();
+            alert('🗑️ Student permanently deleted from database!');
+            _context7.n = 6;
+            break;
+          case 5:
+            _context7.p = 5;
+            _t6 = _context7.v;
+            console.error('Delete Student Error:', _t6);
+            alert('❌ Failed to delete student.');
+          case 6:
+            return _context7.a(2);
+        }
+      }, _callee7, null, [[1, 5]]);
+    }));
+    return function handleDelete(_x4) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
   var courseOptions = ['All'].concat(_toConsumableArray(new Set(students.map(function (s) {
     return s.course;
   }))));
 
-  // Filter students based on search and course (show all including archived)
+  // Filter students based on search, course, and archive view
   var filteredStudents = students.filter(function (s) {
     var matchesSearch = (s.name || '').toLowerCase().includes(searchQuery.toLowerCase()) || (s.student_id || '').toLowerCase().includes(searchQuery.toLowerCase()) || (s.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     var matchesCourse = courseFilter === 'All' || s.course === courseFilter;
-    return matchesSearch && matchesCourse;
+    var matchesArchive = showArchive ? s.status === 'Archived' : s.status !== 'Archived';
+    return matchesSearch && matchesCourse && matchesArchive;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "settings-container",
@@ -93344,12 +93622,21 @@ function Students() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "settings-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "settings-tabs",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button active",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "tab-button ".concat(!showArchive ? 'active' : ''),
+          onClick: function onClick() {
+            return setShowArchive(false);
+          },
           children: "Students"
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          className: "tab-button ".concat(showArchive ? 'active' : ''),
+          onClick: function onClick() {
+            return setShowArchive(true);
+          },
+          children: "\uD83D\uDCE6 Archived"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "settings-body",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -93362,7 +93649,7 @@ function Students() {
               flex: 1
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: "Students"
+              children: showArchive ? 'Archived Students' : 'Students'
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               className: "search-box",
               style: {
@@ -93392,7 +93679,7 @@ function Students() {
                 }, course);
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), !showArchive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
             className: "btn-add-setting",
             onClick: function onClick() {
               return openForm();
@@ -93413,19 +93700,25 @@ function Students() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
               onSubmit: handleSubmit,
               className: "modal-form",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+                style: {
+                  marginTop: 0,
+                  color: '#1e3a8a'
+                },
+                children: "Student Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "form-row",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Student ID"
+                    children: "First Name *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "text",
-                    placeholder: "Enter Student ID",
-                    value: form.student_id,
+                    placeholder: "Enter First Name",
+                    value: form.first_name,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        student_id: e.target.value
+                        first_name: e.target.value
                       }));
                     },
                     required: true
@@ -93433,14 +93726,14 @@ function Students() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Full Name"
+                    children: "Last Name *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "text",
-                    placeholder: "Enter Full Name",
-                    value: form.name,
+                    placeholder: "Enter Last Name",
+                    value: form.last_name,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        name: e.target.value
+                        last_name: e.target.value
                       }));
                     },
                     required: true
@@ -93451,10 +93744,10 @@ function Students() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Email"
+                    children: "Email *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                     type: "email",
-                    placeholder: "Enter Email",
+                    placeholder: "example@example.com",
                     value: form.email,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -93466,7 +93759,60 @@ function Students() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Department"
+                    children: "Date of Birth"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                    type: "date",
+                    value: form.date_of_birth,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        date_of_birth: e.target.value
+                      }));
+                    }
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Phone"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                    type: "tel",
+                    placeholder: "Phone Number",
+                    value: form.phone,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        phone: e.target.value
+                      }));
+                    }
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Address"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                    type: "text",
+                    placeholder: "Home Address",
+                    value: form.address,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        address: e.target.value
+                      }));
+                    }
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+                style: {
+                  marginTop: '1.5rem',
+                  color: '#1e3a8a'
+                },
+                children: "Academic Information *"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                    children: "Department *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
                     value: form.department,
                     onChange: function onChange(e) {
@@ -93485,13 +93831,10 @@ function Students() {
                       }, dept.id);
                     })]
                   })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Course"
+                    children: "Course *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
                     value: form.course,
                     onChange: function onChange(e) {
@@ -93510,47 +93853,103 @@ function Students() {
                       }, course.id);
                     })]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Year Level"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
-                    value: form.year_level,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        year_level: e.target.value
-                      }));
-                    },
-                    required: true,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "",
-                      children: "Select Year Level"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "1st Year",
-                      children: "1st Year"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "2nd Year",
-                      children: "2nd Year"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "3rd Year",
-                      children: "3rd Year"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "4th Year",
-                      children: "4th Year"
-                    })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "form-group",
+                style: {
+                  maxWidth: '48%'
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: "Year Level *"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                  value: form.year_level,
+                  onChange: function onChange(e) {
+                    return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                      year_level: e.target.value
+                    }));
+                  },
+                  required: true,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    value: "",
+                    children: "Select Year Level"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    value: "1st Year",
+                    children: "1st Year"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    value: "2nd Year",
+                    children: "2nd Year"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    value: "3rd Year",
+                    children: "3rd Year"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    value: "4th Year",
+                    children: "4th Year"
                   })]
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "modal-actions",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  type: "button",
-                  onClick: closeForm,
-                  className: "btn-cancel",
-                  children: "Cancel"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  type: "submit",
-                  className: "btn-submit",
-                  children: editingId ? 'Update Student' : 'Add Student'
+                style: {
+                  marginTop: '1.5rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid #ddd',
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '0.5rem'
+                  },
+                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      type: "button",
+                      onClick: function onClick() {
+                        return handleArchive(editingId);
+                      },
+                      className: "btn-icon",
+                      style: {
+                        padding: '0.5rem 1rem',
+                        background: '#f59e0b',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                      },
+                      title: "Archive Student",
+                      children: "\uD83D\uDCE6 Archive"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      type: "button",
+                      onClick: function onClick() {
+                        return handleDelete(editingId);
+                      },
+                      className: "btn-icon",
+                      style: {
+                        padding: '0.5rem 1rem',
+                        background: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer'
+                      },
+                      title: "Permanently Delete",
+                      children: "\uD83D\uDDD1\uFE0F Delete"
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '0.5rem'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    type: "button",
+                    onClick: closeForm,
+                    className: "btn-cancel",
+                    children: "Cancel"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    type: "submit",
+                    className: "btn-submit",
+                    children: editingId ? 'Update Student' : 'Add Student'
+                  })]
                 })]
               })]
             })]

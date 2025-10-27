@@ -17,13 +17,57 @@ class FacultyController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'faculty_id' => 'required|string|max:50',
-            'name' => 'required|string|max:100',
+            'name' => 'nullable|string|max:100',
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'required|string|max:100',
+            'employee_id' => 'nullable|string|max:50',
             'email' => 'required|email|unique:faculties,email',
+            'personal_email' => 'nullable|email',
             'department' => 'required|string|max:100',
             'position' => 'required|string|max:100',
-            'status' => 'required|string|max:20',
+            'title' => 'nullable|string|max:100',
+            'employment_type' => 'nullable|string|max:50',
+            'date_of_joining' => 'nullable|date',
+            'status' => 'nullable|string|max:20',
+            // Contact Details
+            'office_address' => 'nullable|string|max:255',
+            'office_phone' => 'nullable|string|max:20',
+            'mobile_phone' => 'nullable|string|max:20',
+            // Academic Qualifications
+            'highest_degree' => 'nullable|string|max:100',
+            'field_of_study' => 'nullable|string|max:255',
+            'awarding_institution' => 'nullable|string|max:255',
+            'year_awarded' => 'nullable|string|max:10',
+            // Professional Information
+            'teaching_subjects' => 'nullable|string',
+            'research_interests' => 'nullable|string',
+            'publications' => 'nullable|string',
+            'professional_experience' => 'nullable|string',
+            'achievements_awards' => 'nullable|string',
         ]);
+
+        // Auto-generate Faculty ID
+        $year = date('Y');
+        $lastFaculty = Faculty::whereYear('created_at', $year)
+            ->orderBy('id', 'desc')
+            ->first();
+        
+        if ($lastFaculty && preg_match('/FAC-' . $year . '-(\d+)/', $lastFaculty->faculty_id, $matches)) {
+            $lastNumber = intval($matches[1]);
+            $newNumber = str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
+        } else {
+            $newNumber = '0001';
+        }
+        
+        $validated['faculty_id'] = 'FAC-' . $year . '-' . $newNumber;
+        
+        // Combine first and last name for the name field
+        $validated['name'] = trim($validated['first_name'] . ' ' . $validated['last_name']);
+        
+        // Set default status if not provided
+        if (!isset($validated['status'])) {
+            $validated['status'] = 'Active';
+        }
 
         $faculty = Faculty::create($validated);
 
@@ -43,13 +87,38 @@ class FacultyController extends Controller
     public function update(Request $request, Faculty $faculty)
     {
         $validated = $request->validate([
-            'faculty_id' => 'required|string|max:50',
-            'name' => 'required|string|max:100',
+            'faculty_id' => 'nullable|string|max:50',
+            'name' => 'nullable|string|max:100',
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'required|string|max:100',
+            'employee_id' => 'nullable|string|max:50',
             'email' => 'required|email|unique:faculties,email,' . $faculty->id,
+            'personal_email' => 'nullable|email',
             'department' => 'required|string|max:100',
             'position' => 'required|string|max:100',
-            'status' => 'required|string|max:20',
+            'title' => 'nullable|string|max:100',
+            'employment_type' => 'nullable|string|max:50',
+            'date_of_joining' => 'nullable|date',
+            'status' => 'nullable|string|max:20',
+            // Contact Details
+            'office_address' => 'nullable|string|max:255',
+            'office_phone' => 'nullable|string|max:20',
+            'mobile_phone' => 'nullable|string|max:20',
+            // Academic Qualifications
+            'highest_degree' => 'nullable|string|max:100',
+            'field_of_study' => 'nullable|string|max:255',
+            'awarding_institution' => 'nullable|string|max:255',
+            'year_awarded' => 'nullable|string|max:10',
+            // Professional Information
+            'teaching_subjects' => 'nullable|string',
+            'research_interests' => 'nullable|string',
+            'publications' => 'nullable|string',
+            'professional_experience' => 'nullable|string',
+            'achievements_awards' => 'nullable|string',
         ]);
+
+        // Update combined name field
+        $validated['name'] = trim($validated['first_name'] . ' ' . $validated['last_name']);
 
         $faculty->update($validated);
 

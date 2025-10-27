@@ -31,6 +31,7 @@ export default function Dashboard({ user, onLogout }) {
   const { counts } = useCounts();
   const [students, setStudents] = useState([]);
   const [faculties, setFaculties] = useState([]);
+  const [chartKey, setChartKey] = useState(0); // Key to force chart re-render
   const [dashboardData, setDashboardData] = useState({
     totalStudents: 0,
     totalFaculty: 0,
@@ -77,6 +78,8 @@ export default function Dashboard({ user, onLogout }) {
       console.log('Dashboard: Data updated, refetching...', event.detail);
       // Refresh dashboard for any data update (departments, courses, faculties, students)
       fetchDashboardData();
+      // Force chart re-render by updating key
+      setChartKey(prevKey => prevKey + 1);
     };
     
     window.addEventListener('dataUpdated', handleDataUpdate);
@@ -88,20 +91,33 @@ export default function Dashboard({ user, onLogout }) {
 
   const fetchDashboardData = async () => {
     try {
+      console.log('Dashboard: Fetching data...');
       const [studentsRes, facultiesRes, countsRes] = await Promise.all([
         axios.get("/api/students"),
         axios.get("/api/faculties"),
         axios.get("/api/dashboard-counts")
       ]);
       
-      setStudents(studentsRes.data.filter(s => s.status !== "Archived"));
-      setFaculties(facultiesRes.data.filter(f => f.status !== "Archived"));
+      console.log('Dashboard: Students data:', studentsRes.data);
+      console.log('Dashboard: Faculties data:', facultiesRes.data);
+      console.log('Dashboard: Counts data:', countsRes.data);
+      
+      const activeStudents = studentsRes.data.filter(s => s.status !== "Archived");
+      const activeFaculties = facultiesRes.data.filter(f => f.status !== "Archived");
+      
+      setStudents(activeStudents);
+      setFaculties(activeFaculties);
       setDashboardData({
         totalStudents: countsRes.data.students,
         totalFaculty: countsRes.data.faculties,
         totalCourses: countsRes.data.courses,
         totalDepartments: countsRes.data.departments
       });
+      
+      // Force chart re-render
+      setChartKey(prevKey => prevKey + 1);
+      
+      console.log('Dashboard: Data updated successfully');
     } catch (err) {
       console.error("Failed to fetch dashboard data:", err);
     }
@@ -268,7 +284,7 @@ export default function Dashboard({ user, onLogout }) {
             <p className="chart-subtitle">Distribution of {dashboardData.totalStudents} active students across programs</p>
           </div>
           <div className="chart-canvas">
-            <Bar data={studentsPerCourseData} options={chartOptions} />
+            <Bar key={`course-chart-${chartKey}`} data={studentsPerCourseData} options={chartOptions} />
           </div>
         </div>
 
@@ -278,7 +294,7 @@ export default function Dashboard({ user, onLogout }) {
             <p className="chart-subtitle">Distribution of faculty across various departments</p>
           </div>
           <div className="chart-canvas">
-            <Doughnut data={facultyPerDeptData} options={doughnutOptions} />
+            <Doughnut key={`faculty-chart-${chartKey}`} data={facultyPerDeptData} options={doughnutOptions} />
           </div>
         </div>
 
@@ -288,7 +304,7 @@ export default function Dashboard({ user, onLogout }) {
             <p className="chart-subtitle">Student enrollment across academic departments</p>
           </div>
           <div className="chart-canvas">
-            <Bar data={studentsPerDeptData} options={chartOptions} />
+            <Bar key={`dept-chart-${chartKey}`} data={studentsPerDeptData} options={chartOptions} />
           </div>
         </div>
 
@@ -298,7 +314,7 @@ export default function Dashboard({ user, onLogout }) {
             <p className="chart-subtitle">Student distribution across year levels</p>
           </div>
           <div className="chart-canvas">
-            <Bar data={enrollmentData} options={chartOptions} />
+            <Bar key={`year-chart-${chartKey}`} data={enrollmentData} options={chartOptions} />
           </div>
         </div>
       </div>
