@@ -7,6 +7,7 @@ import Faculty from "./Faculty";
 import Students from "./Students";
 import Reports from "./Reports";
 import Settings from "./Settings";
+import Archive from "./Archive";
 import Profile from "./Profile";
 import { GraduationCap } from "lucide-react";
 import "../../sass/layout.scss";
@@ -35,7 +36,7 @@ export default function Layout() {
     
     // If logged in, return the path (or default to dashboard)
     if (loggedIn && savedUser) {
-      const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+      const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'archive', 'profile'];
       return validPages.includes(path) ? path : 'dashboard';
     }
     
@@ -46,6 +47,24 @@ export default function Layout() {
     const savedUser = localStorage.getItem('user');
     return savedUser ? JSON.parse(savedUser) : null;
   });
+
+  // Listen for profile updates
+  useEffect(() => {
+    const handleProfileUpdate = () => {
+      const savedUser = localStorage.getItem('user');
+      if (savedUser) {
+        const updatedUser = JSON.parse(savedUser);
+        setUser(updatedUser);
+        console.log('Layout: User data refreshed from localStorage');
+      }
+    };
+
+    window.addEventListener('profileUpdated', handleProfileUpdate);
+
+    return () => {
+      window.removeEventListener('profileUpdated', handleProfileUpdate);
+    };
+  }, []);
 
   const handleLogin = (userData) => {
     setUser(userData);
@@ -88,7 +107,7 @@ export default function Layout() {
           setPage('dashboard');
         } else {
           // Set page based on URL
-          const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+          const validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'archive', 'profile'];
           if (validPages.includes(path)) {
             setPage(path);
           } else {
@@ -123,6 +142,7 @@ export default function Layout() {
     { key: "students", label: "Students" },
     { key: "reports", label: "Reports" },
     { key: "settings", label: "Settings" },
+    { key: "archive", label: "Archive" },
     { key: "profile", label: "Profile" },
   ];
 
@@ -163,6 +183,7 @@ export default function Layout() {
         {page === "students" && <Students />}
         {page === "reports" && <Reports />}
         {page === "settings" && <Settings />}
+        {page === "archive" && <Archive />}
         {page === "profile" && <Profile user={user} onLogout={handleLogout} />}
       </main>
     </div>

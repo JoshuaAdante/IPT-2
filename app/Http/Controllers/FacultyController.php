@@ -24,10 +24,18 @@ class FacultyController extends Controller
             'email' => 'required|email|unique:faculties,email',
             'personal_email' => 'nullable|email',
             'department' => 'required|string|max:100',
-            'position' => 'required|string|max:100',
-            'title' => 'nullable|string|max:100',
-            'employment_type' => 'nullable|string|max:50',
+            'position' => 'nullable|string|max:100',
+            // Enhanced Fields
+            'title' => 'nullable|string|max:10', // Mr., Ms., Dr., Prof.
+            'age' => 'nullable|integer|min:22|max:70',
+            'phone' => 'nullable|string|max:20',
+            'faculty_rank' => 'nullable|string|max:100', // Professor, Associate Professor, etc.
+            'username' => 'nullable|string|max:100',
+            'password' => 'nullable|string|min:6',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'employment_type' => 'required|string|max:50',
             'date_of_joining' => 'nullable|date',
+            'date_hired' => 'nullable|date',
             'status' => 'nullable|string|max:20',
             // Contact Details
             'office_address' => 'nullable|string|max:255',
@@ -45,6 +53,19 @@ class FacultyController extends Controller
             'professional_experience' => 'nullable|string',
             'achievements_awards' => 'nullable|string',
         ]);
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '_' . $photo->getClientOriginalName();
+            $photo->storeAs('public/faculty_photos', $photoName);
+            $validated['photo'] = 'storage/faculty_photos/' . $photoName;
+        }
+
+        // Hash password
+        if (isset($validated['password'])) {
+            $validated['password'] = bcrypt($validated['password']);
+        }
 
         // Auto-generate Faculty ID
         $year = date('Y');
@@ -95,10 +116,18 @@ class FacultyController extends Controller
             'email' => 'required|email|unique:faculties,email,' . $faculty->id,
             'personal_email' => 'nullable|email',
             'department' => 'required|string|max:100',
-            'position' => 'required|string|max:100',
-            'title' => 'nullable|string|max:100',
-            'employment_type' => 'nullable|string|max:50',
+            'position' => 'nullable|string|max:100',
+            // Enhanced Fields
+            'title' => 'nullable|string|max:10',
+            'age' => 'nullable|integer|min:22|max:70',
+            'phone' => 'nullable|string|max:20',
+            'faculty_rank' => 'nullable|string|max:100',
+            'username' => 'nullable|string|max:100',
+            'password' => 'nullable|string|min:6',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'employment_type' => 'required|string|max:50',
             'date_of_joining' => 'nullable|date',
+            'date_hired' => 'nullable|date',
             'status' => 'nullable|string|max:20',
             // Contact Details
             'office_address' => 'nullable|string|max:255',
@@ -116,6 +145,26 @@ class FacultyController extends Controller
             'professional_experience' => 'nullable|string',
             'achievements_awards' => 'nullable|string',
         ]);
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '_' . $photo->getClientOriginalName();
+            $photo->storeAs('public/faculty_photos', $photoName);
+            $validated['photo'] = 'storage/faculty_photos/' . $photoName;
+            
+            // Delete old photo if exists
+            if ($faculty->photo && file_exists(public_path($faculty->photo))) {
+                unlink(public_path($faculty->photo));
+            }
+        }
+
+        // Hash password only if provided
+        if (isset($validated['password']) && !empty($validated['password'])) {
+            $validated['password'] = bcrypt($validated['password']);
+        } else {
+            unset($validated['password']); // Don't update password if not provided
+        }
 
         // Update combined name field
         $validated['name'] = trim($validated['first_name'] . ' ' . $validated['last_name']);

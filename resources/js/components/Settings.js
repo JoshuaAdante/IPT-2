@@ -13,6 +13,9 @@ export default function Settings() {
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [formData, setFormData] = useState({});
+  const [currentAcademicYear, setCurrentAcademicYear] = useState('');
+  const [activeDepartmentsCount, setActiveDepartmentsCount] = useState(0);
+  const [activeCoursesCount, setActiveCoursesCount] = useState(0);
 
   // Fetch data based on active tab
   useEffect(() => {
@@ -21,16 +24,26 @@ export default function Settings() {
 
   const fetchData = async () => {
     try {
-      if (activeTab === 'departments') {
-        const res = await axios.get('/api/departments');
-        setDepartments(res.data);
-      } else if (activeTab === 'courses') {
-        const res = await axios.get('/api/courses');
-        setCourses(res.data);
-      } else if (activeTab === 'academic-years') {
-        const res = await axios.get('/api/academic-years');
-        setAcademicYears(res.data);
-      }
+      // Fetch all data for counts regardless of active tab
+      const [deptRes, courseRes, yearRes] = await Promise.all([
+        axios.get('/api/departments'),
+        axios.get('/api/courses'),
+        axios.get('/api/academic-years')
+      ]);
+      
+      setDepartments(deptRes.data);
+      setCourses(courseRes.data);
+      setAcademicYears(yearRes.data);
+      
+      // Calculate active counts
+      const activeDepts = deptRes.data.filter(d => d.status === 'Active').length;
+      const activeCourses = courseRes.data.filter(c => c.status === 'Active').length;
+      setActiveDepartmentsCount(activeDepts);
+      setActiveCoursesCount(activeCourses);
+      
+      // Find current academic year (the one with status 'Active')
+      const activeYear = yearRes.data.find(y => y.status === 'Active');
+      setCurrentAcademicYear(activeYear ? activeYear.year : 'N/A');
     } catch (err) {
       console.error('Failed to fetch data:', err);
     }
@@ -475,6 +488,20 @@ export default function Settings() {
         <div>
           <h2>Settings</h2>
           <p className="subtitle">Manage courses, departments, and academic years</p>
+        </div>
+        <div className="settings-info">
+          <div className="info-badge">
+            <span className="info-label">Academic Year:</span>
+            <span className="info-value">{currentAcademicYear}</span>
+          </div>
+          <div className="info-badge">
+            <span className="info-label">Active Departments:</span>
+            <span className="info-value">{activeDepartmentsCount}</span>
+          </div>
+          <div className="info-badge">
+            <span className="info-label">Active Courses:</span>
+            <span className="info-value">{activeCoursesCount}</span>
+          </div>
         </div>
       </div>
 

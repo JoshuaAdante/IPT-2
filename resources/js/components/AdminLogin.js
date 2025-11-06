@@ -79,7 +79,7 @@ export default function AdminLogin({ onLogin, onRegister }) {
               </svg>
             </div>
             <h1 className="admin-title">AcadMe</h1>
-            <p className="admin-subtitle">Admin Portal</p>
+            <p className="admin-subtitle">Management System</p>
           </div>
 
           <div className="admin-right-section">

@@ -8,7 +8,6 @@ export default function Students() {
   const { refreshCounts } = useCounts();
   const [students, setStudents] = useState([]);
   const [editingId, setEditingId] = useState(null);
-  const [showArchive, setShowArchive] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [courseFilter, setCourseFilter] = useState('All');
@@ -18,16 +17,22 @@ export default function Students() {
   const [form, setForm] = useState({
     student_id: '',
     first_name: '',
+    middle_name: '',
     last_name: '',
     email: '',
     date_of_birth: '',
+    age: '',
+    sex: '',
+    phone: '',
+    address: '',
+    photo: null,
     department: '',
     course: '',
     year_level: '',
-    phone: '',
-    address: '',
-    status: 'Active',
+    status: 'Active'
   });
+
+  const [photoPreview, setPhotoPreview] = useState(null);
 
   const fetchStudents = async () => {
     try {
@@ -83,6 +88,18 @@ export default function Students() {
     };
   }, []);
 
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setForm({ ...form, photo: file });
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhotoPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -95,12 +112,24 @@ export default function Students() {
     console.log('Submitting student form:', form);
     
     try {
+      const formData = new FormData();
+      Object.keys(form).forEach(key => {
+        if (form[key] !== null && form[key] !== '') {
+          formData.append(key, form[key]);
+        }
+      });
+
       if (editingId) {
-        const response = await axios.put(`/api/students/${editingId}`, form);
+        const response = await axios.post(`/api/students/${editingId}`, formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          params: { _method: 'PUT' }
+        });
         console.log('Update response:', response.data);
         alert('✅ Student updated successfully!');
       } else {
-        const response = await axios.post('/api/students', form);
+        const response = await axios.post('/api/students', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
         console.log('Create response:', response.data);
         alert('✅ Student added successfully!');
       }
@@ -139,31 +168,52 @@ export default function Students() {
       setForm({
         student_id: student.student_id || '',
         first_name: student.first_name || '',
+        middle_name: student.middle_name || '',
         last_name: student.last_name || '',
         email: student.email || '',
         date_of_birth: student.date_of_birth || '',
+        age: student.age || '',
+        sex: student.sex || '',
+        phone: student.phone || '',
+        address: student.address || '',
+        photo: null,
         department: student.department || '',
         course: student.course || '',
         year_level: student.year_level || '',
-        phone: student.phone || '',
-        address: student.address || '',
-        status: student.status || 'Active',
+        status: student.status || 'Active'
       });
+      
+      // Set photo preview with proper path handling
+      if (student.photo) {
+        const photoPath = student.photo.startsWith('http') 
+          ? student.photo
+          : student.photo.startsWith('storage/') || student.photo.startsWith('/storage/')
+            ? student.photo.startsWith('/') ? student.photo : `/${student.photo}`
+            : `/${student.photo}`;
+        setPhotoPreview(photoPath);
+      } else {
+        setPhotoPreview(null);
+      }
     } else {
       setEditingId(null);
       setForm({
         student_id: '',
         first_name: '',
+        middle_name: '',
         last_name: '',
         email: '',
         date_of_birth: '',
+        age: '',
+        sex: '',
+        phone: '',
+        address: '',
+        photo: null,
         department: '',
         course: '',
         year_level: '',
-        phone: '',
-        address: '',
-        status: 'Active',
+        status: 'Active'
       });
+      setPhotoPreview(null);
     }
     setShowForm(true);
   };
@@ -185,28 +235,11 @@ export default function Students() {
         detail: { type: 'students', timestamp: Date.now() } 
       }));
       
+      closeForm();
       alert('📦 Student archived successfully!');
     } catch (err) {
       console.error('Archive Student Error:', err);
       alert('❌ Failed to archive student.');
-    }
-  };
-
-  const handleRestore = async (id) => {
-    try {
-      await axios.patch(`/api/students/${id}/restore`);
-      await fetchStudents();
-      await refreshCounts();
-      
-      // Broadcast update event for dashboard to refresh
-      window.dispatchEvent(new CustomEvent('dataUpdated', { 
-        detail: { type: 'students', timestamp: Date.now() } 
-      }));
-      
-      alert('✅ Student restored successfully!');
-    } catch (err) {
-      console.error('Restore Student Error:', err);
-      alert('❌ Failed to restore student.');
     }
   };
 
@@ -233,14 +266,14 @@ export default function Students() {
 
   const courseOptions = ['All', ...new Set(students.map(s => s.course))];
 
-  // Filter students based on search, course, and archive view
+  // Filter students based on search and course (only show active students)
   const filteredStudents = students.filter(s => {
     const matchesSearch = (s.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (s.student_id || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (s.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCourse = courseFilter === 'All' || s.course === courseFilter;
-    const matchesArchive = showArchive ? s.status === 'Archived' : s.status !== 'Archived';
-    return matchesSearch && matchesCourse && matchesArchive;
+    const isActive = s.status !== 'Archived';
+    return matchesSearch && matchesCourse && isActive;
   });
 
   return (
@@ -253,25 +286,10 @@ export default function Students() {
       </div>
 
       <div className='settings-content'>
-        <div className='settings-tabs'>
-          <button 
-            className={`tab-button ${!showArchive ? 'active' : ''}`}
-            onClick={() => setShowArchive(false)}
-          >
-            Students
-          </button>
-          <button 
-            className={`tab-button ${showArchive ? 'active' : ''}`}
-            onClick={() => setShowArchive(true)}
-          >
-            📦 Archived
-          </button>
-        </div>
-
         <div className='settings-body'>
           <div className='table-header'>
             <div style={{display: 'flex', gap: '1rem', alignItems: 'center', flex: 1}}>
-              <h3>{showArchive ? 'Archived Students' : 'Students'}</h3>
+              <h3>Students</h3>
               <div className='search-box' style={{maxWidth: '250px'}}>
                 <Search size={18} className='search-icon' />
                 <input
@@ -291,11 +309,9 @@ export default function Students() {
                 ))}
               </select>
             </div>
-            {!showArchive && (
-              <button className='btn-add-setting' onClick={() => openForm()}>
-                + Add Student
-              </button>
-            )}
+            <button className='btn-add-setting' onClick={() => openForm()}>
+              + Add Student
+            </button>
           </div>
 
       {showForm && (
@@ -306,7 +322,30 @@ export default function Students() {
             </h3>
 
             <form onSubmit={handleSubmit} className='modal-form'>
-              <h4 style={{marginTop: 0, color: '#1e3a8a'}}>Student Information</h4>
+              {/* Photo Preview */}
+              {photoPreview && (
+                <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1.5rem'}}>
+                  <img 
+                    src={photoPreview} 
+                    alt="Student" 
+                    onError={(e) => {
+                      console.error('Failed to load student photo:', photoPreview);
+                      e.target.style.display = 'none';
+                      setPhotoPreview(null);
+                    }}
+                    style={{
+                      width: '120px', 
+                      height: '120px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: '3px solid #1e3a8a',
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                </div>
+              )}
+
+              <h4 style={{marginTop: 0, color: '#1e3a8a'}}>Personal Information</h4>
               
               <div className='form-row'>
                 <div className='form-group'>
@@ -317,6 +356,15 @@ export default function Students() {
                     value={form.first_name}
                     onChange={(e) => setForm({ ...form, first_name: e.target.value })}
                     required
+                  />
+                </div>
+                <div className='form-group'>
+                  <label>Middle Name</label>
+                  <input
+                    type='text'
+                    placeholder='Enter Middle Name'
+                    value={form.middle_name}
+                    onChange={(e) => setForm({ ...form, middle_name: e.target.value })}
                   />
                 </div>
                 <div className='form-group'>
@@ -333,6 +381,41 @@ export default function Students() {
 
               <div className='form-row'>
                 <div className='form-group'>
+                  <label>Date of Birth</label>
+                  <input
+                    type='date'
+                    value={form.date_of_birth}
+                    onChange={(e) => setForm({ ...form, date_of_birth: e.target.value })}
+                  />
+                </div>
+                <div className='form-group'>
+                  <label>Age</label>
+                  <input
+                    type='number'
+                    placeholder='Age'
+                    value={form.age}
+                    onChange={(e) => setForm({ ...form, age: e.target.value })}
+                    min='15'
+                    max='100'
+                  />
+                </div>
+                <div className='form-group'>
+                  <label>Sex</label>
+                  <select
+                    value={form.sex}
+                    onChange={(e) => setForm({ ...form, sex: e.target.value })}
+                  >
+                    <option value=''>Select Sex</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                  </select>
+                </div>
+              </div>
+
+              <h4 style={{marginTop: '1.5rem', color: '#1e3a8a'}}>Contact Information</h4>
+
+              <div className='form-row'>
+                <div className='form-group'>
                   <label>Email *</label>
                   <input
                     type='email'
@@ -343,18 +426,7 @@ export default function Students() {
                   />
                 </div>
                 <div className='form-group'>
-                  <label>Date of Birth</label>
-                  <input
-                    type='date'
-                    value={form.date_of_birth}
-                    onChange={(e) => setForm({ ...form, date_of_birth: e.target.value })}
-                  />
-                </div>
-              </div>
-
-              <div className='form-row'>
-                <div className='form-group'>
-                  <label>Phone</label>
+                  <label>Phone Number</label>
                   <input
                     type='tel'
                     placeholder='Phone Number'
@@ -362,15 +434,34 @@ export default function Students() {
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   />
                 </div>
-                <div className='form-group'>
-                  <label>Address</label>
-                  <input
-                    type='text'
-                    placeholder='Home Address'
-                    value={form.address}
-                    onChange={(e) => setForm({ ...form, address: e.target.value })}
-                  />
-                </div>
+              </div>
+
+              <div className='form-group'>
+                <label>Address</label>
+                <input
+                  type='text'
+                  placeholder='Complete Address'
+                  value={form.address}
+                  onChange={(e) => setForm({ ...form, address: e.target.value })}
+                />
+              </div>
+
+              <div className='form-group'>
+                <label>Photo</label>
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={handlePhotoChange}
+                  style={{
+                    padding: '0.75rem',
+                    border: '2px dashed #d0d7de',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }}
+                />
+                <small style={{display: 'block', marginTop: '0.5rem', color: '#78909c'}}>
+                  Recommended: Square image, at least 200x200px
+                </small>
               </div>
 
               <h4 style={{marginTop: '1.5rem', color: '#1e3a8a'}}>Academic Information *</h4>
@@ -424,20 +515,20 @@ export default function Students() {
                   {editingId && (
                     <>
                       <button
-                        type='button'
+                        type="button"
                         onClick={() => handleArchive(editingId)}
-                        className='btn-icon'
+                        className="btn-icon"
                         style={{padding: '0.5rem 1rem', background: '#f59e0b', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}
-                        title='Archive Student'
+                        title="Archive Student"
                       >
                         📦 Archive
                       </button>
                       <button
-                        type='button'
+                        type="button"
                         onClick={() => handleDelete(editingId)}
-                        className='btn-icon'
+                        className="btn-icon"
                         style={{padding: '0.5rem 1rem', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}
-                        title='Permanently Delete'
+                        title="Permanently Delete"
                       >
                         🗑️ Delete
                       </button>
@@ -502,27 +593,16 @@ export default function Students() {
                         onClick={() => openForm(s)}
                         className='btn-icon btn-edit'
                         title='Edit'
-                        disabled={s.status === 'Archived'}
                       >
                         <Edit2 size={16} />
                       </button>
-                      {s.status !== 'Archived' ? (
-                        <button
-                          onClick={() => handleArchive(s.id)}
-                          className='btn-icon btn-archive'
-                          title='Archive'
-                        >
-                          <Archive size={16} />
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => handleRestore(s.id)}
-                          className='btn-icon btn-restore'
-                          title='Unarchive'
-                        >
-                          <ArchiveRestore size={16} />
-                        </button>
-                      )}
+                      <button
+                        onClick={() => handleArchive(s.id)}
+                        className='btn-icon btn-archive'
+                        title='Archive'
+                      >
+                        <Archive size={16} />
+                      </button>
                     </div>
                   </td>
                 </tr>

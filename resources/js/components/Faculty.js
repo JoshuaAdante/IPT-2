@@ -8,7 +8,6 @@ export default function Faculty() {
   const { refreshCounts } = useCounts();
   const [faculties, setFaculties] = useState([]);
   const [editingId, setEditingId] = useState(null);
-  const [showArchive, setShowArchive] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [departmentFilter, setDepartmentFilter] = useState("All");
@@ -17,15 +16,23 @@ export default function Faculty() {
   const [form, setForm] = useState({
     faculty_id: "",
     employee_id: "",
+    title: "",
     first_name: "",
     last_name: "",
+    age: "",
     email: "",
+    phone: "",
     department: "",
+    faculty_rank: "",
     position: "",
-    employment_type: "",
+    employment_type: "Full-Time",
+    date_hired: "",
     office_phone: "",
+    photo: null,
     status: "Active",
   });
+
+  const [photoPreview, setPhotoPreview] = useState(null);
 
   // Fetch data
   const fetchFaculties = async () => {
@@ -74,17 +81,31 @@ export default function Faculty() {
     };
   }, []);
 
-  // Position and Type options
+  // Form options
+  const titles = ['Mr.', 'Ms.', 'Dr.', 'Prof.'];
+  const facultyRanks = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant'];
   const positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Dean', 'Department Head', 'Coordinator'];
-  const employmentTypes = ['Full-time', 'Part-time', 'Adjunct', 'Visiting'];
+  const employmentTypes = ['Full-Time', 'Part-Time', 'Adjunct'];
   const degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
+
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setForm({ ...form, photo: file });
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhotoPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validate required fields
-    if (!form.first_name || !form.last_name || !form.email || !form.department || !form.position) {
-      alert('⚠️ Please fill in all required fields.');
+    if (!form.first_name || !form.last_name || !form.email || !form.department || !form.employment_type) {
+      alert('⚠️ Please fill in all required fields (First Name, Last Name, Email, Department, Employment Type).');
       return;
     }
     
@@ -136,29 +157,54 @@ export default function Faculty() {
       setForm({
         faculty_id: faculty.faculty_id || "",
         employee_id: faculty.employee_id || "",
+        title: faculty.title || "",
         first_name: faculty.first_name || "",
         last_name: faculty.last_name || "",
+        age: faculty.age || "",
         email: faculty.email || "",
+        phone: faculty.phone || "",
         department: faculty.department || "",
+        faculty_rank: faculty.faculty_rank || "",
         position: faculty.position || "",
-        employment_type: faculty.employment_type || "",
+        employment_type: faculty.employment_type || "Full-Time",
+        date_hired: faculty.date_hired || "",
         office_phone: faculty.office_phone || "",
+        photo: null,
         status: faculty.status || "Active",
       });
+      
+      // Set photo preview with proper path handling
+      if (faculty.photo) {
+        const photoPath = faculty.photo.startsWith('http') 
+          ? faculty.photo
+          : faculty.photo.startsWith('storage/') || faculty.photo.startsWith('/storage/')
+            ? faculty.photo.startsWith('/') ? faculty.photo : `/${faculty.photo}`
+            : `/${faculty.photo}`;
+        setPhotoPreview(photoPath);
+      } else {
+        setPhotoPreview(null);
+      }
     } else {
       setEditingId(null);
       setForm({
         faculty_id: "",
         employee_id: "",
+        title: "",
         first_name: "",
         last_name: "",
+        age: "",
         email: "",
+        phone: "",
         department: "",
+        faculty_rank: "",
         position: "",
-        employment_type: "",
+        employment_type: "Full-Time",
+        date_hired: "",
         office_phone: "",
+        photo: null,
         status: "Active",
       });
+      setPhotoPreview(null);
     }
     setShowForm(true);
   };
@@ -229,14 +275,14 @@ export default function Faculty() {
   // Get unique departments for filter
   const departments = ["All", ...new Set(faculties.map(f => f.department))];
 
-  // Filter faculties based on search, department, and archive view
+  // Filter faculties based on search and department (only show active)
   const filteredFaculties = faculties.filter(f => {
     const matchesSearch = (f.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (f.faculty_id || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                          (f.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     const matchesDepartment = departmentFilter === "All" || f.department === departmentFilter;
-    const matchesArchive = showArchive ? f.status === 'Archived' : f.status !== 'Archived';
-    return matchesSearch && matchesDepartment && matchesArchive;
+    const isActive = f.status !== 'Archived';
+    return matchesSearch && matchesDepartment && isActive;
   });
 
   return (
@@ -249,25 +295,10 @@ export default function Faculty() {
       </div>
 
       <div className="settings-content">
-        <div className="settings-tabs">
-          <button 
-            className={`tab-button ${!showArchive ? 'active' : ''}`}
-            onClick={() => setShowArchive(false)}
-          >
-            Faculty Members
-          </button>
-          <button 
-            className={`tab-button ${showArchive ? 'active' : ''}`}
-            onClick={() => setShowArchive(true)}
-          >
-            📦 Archived
-          </button>
-        </div>
-
         <div className="settings-body">
           <div className="table-header">
             <div style={{display: 'flex', gap: '1rem', alignItems: 'center', flex: 1}}>
-              <h3>{showArchive ? 'Archived Faculty' : 'Faculty Members'}</h3>
+              <h3>Faculty Members</h3>
               <div className="search-box" style={{maxWidth: '250px'}}>
                 <Search size={18} className="search-icon" />
                 <input
@@ -287,11 +318,9 @@ export default function Faculty() {
                 ))}
               </select>
             </div>
-            {!showArchive && (
-              <button className="btn-add-setting" onClick={() => openForm()}>
-                + Add Faculty
-              </button>
-            )}
+            <button className="btn-add-setting" onClick={() => openForm()}>
+              + Add Faculty
+            </button>
           </div>
 
       {/* ✅ Modal Form */}
@@ -303,8 +332,57 @@ export default function Faculty() {
             </h3>
 
             <form onSubmit={handleSubmit} className="modal-form">
-              <h4 style={{marginTop: 0, color: '#1e3a8a'}}>📋 Faculty Information</h4>
+              {/* Photo Preview */}
+              {photoPreview && (
+                <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1.5rem'}}>
+                  <img 
+                    src={photoPreview} 
+                    alt="Faculty"
+                    onError={(e) => {
+                      console.error('Failed to load faculty photo:', photoPreview);
+                      e.target.style.display = 'none';
+                      setPhotoPreview(null);
+                    }}
+                    style={{
+                      width: '120px', 
+                      height: '120px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: '3px solid #003366',
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                </div>
+              )}
+
+              <h4 style={{marginTop: 0, color: '#003366', borderBottom: '2px solid #d4af37', paddingBottom: '0.5rem'}}>📋 Personal Information</h4>
               
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Title</label>
+                  <select
+                    value={form.title}
+                    onChange={(e) => setForm({ ...form, title: e.target.value })}
+                  >
+                    <option value="">Select Title</option>
+                    {titles.map(title => (
+                      <option key={title} value={title}>{title}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label>Age</label>
+                  <input
+                    type="number"
+                    placeholder="Age (optional)"
+                    value={form.age}
+                    onChange={(e) => setForm({ ...form, age: e.target.value })}
+                    min="22"
+                    max="70"
+                  />
+                </div>
+              </div>
+
               <div className="form-row">
                 <div className="form-group">
                   <label>First Name *</label>
@@ -330,16 +408,7 @@ export default function Faculty() {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label>Employee ID</label>
-                  <input
-                    type="text"
-                    placeholder="Employee ID (optional)"
-                    value={form.employee_id}
-                    onChange={(e) => setForm({ ...form, employee_id: e.target.value })}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Email Address *</label>
+                  <label>Email *</label>
                   <input
                     type="email"
                     placeholder="email@example.com"
@@ -348,7 +417,18 @@ export default function Faculty() {
                     required
                   />
                 </div>
+                <div className="form-group">
+                  <label>Phone</label>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  />
+                </div>
               </div>
+
+              <h4 style={{marginTop: '1.5rem', color: '#003366', borderBottom: '2px solid #d4af37', paddingBottom: '0.5rem'}}>💼 Employment Details</h4>
 
               <div className="form-row">
                 <div className="form-group">
@@ -365,42 +445,74 @@ export default function Faculty() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Position *</label>
+                  <label>Faculty Rank</label>
                   <select
-                    value={form.position}
-                    onChange={(e) => setForm({ ...form, position: e.target.value })}
-                    required
+                    value={form.faculty_rank}
+                    onChange={(e) => setForm({ ...form, faculty_rank: e.target.value })}
                   >
-                    <option value="">Select Position</option>
-                    {positions.map(pos => (
-                      <option key={pos} value={pos}>{pos}</option>
+                    <option value="">Select Rank</option>
+                    {facultyRanks.map(rank => (
+                      <option key={rank} value={rank}>{rank}</option>
                     ))}
                   </select>
                 </div>
               </div>
 
+              <div className="form-group">
+                <label>Employment Type *</label>
+                <div style={{display: 'flex', gap: '1.5rem', marginTop: '0.5rem'}}>
+                  {employmentTypes.map(type => (
+                    <label key={type} style={{display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer'}}>
+                      <input
+                        type="radio"
+                        name="employment_type"
+                        value={type}
+                        checked={form.employment_type === type}
+                        onChange={(e) => setForm({ ...form, employment_type: e.target.value })}
+                        style={{cursor: 'pointer'}}
+                      />
+                      <span>{type}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
               <div className="form-row">
                 <div className="form-group">
-                  <label>Employment Type</label>
-                  <select
-                    value={form.employment_type}
-                    onChange={(e) => setForm({ ...form, employment_type: e.target.value })}
-                  >
-                    <option value="">Select Type</option>
-                    {employmentTypes.map(type => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label>Office Phone</label>
+                  <label>Position</label>
                   <input
-                    type="tel"
-                    placeholder="Office Phone Number"
-                    value={form.office_phone}
-                    onChange={(e) => setForm({ ...form, office_phone: e.target.value })}
+                    type="text"
+                    placeholder="Position (e.g., Dean, Coordinator)"
+                    value={form.position}
+                    onChange={(e) => setForm({ ...form, position: e.target.value })}
                   />
                 </div>
+                <div className="form-group">
+                  <label>Date Hired</label>
+                  <input
+                    type="date"
+                    value={form.date_hired}
+                    onChange={(e) => setForm({ ...form, date_hired: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Profile Photo</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePhotoChange}
+                  style={{
+                    padding: '0.75rem',
+                    border: '2px dashed #d0d7de',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }}
+                />
+                <small style={{display: 'block', marginTop: '0.5rem', color: '#78909c'}}>
+                  Recommended: Square image, at least 200x200px
+                </small>
               </div>
 
               <div className="modal-actions" style={{marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #ddd', display: 'flex', justifyContent: 'space-between'}}>
@@ -484,27 +596,16 @@ export default function Faculty() {
                         onClick={() => openForm(f)}
                         className="btn-icon btn-edit"
                         title="Edit"
-                        disabled={f.status === "Archived"}
                       >
                         <Edit2 size={16} />
                       </button>
-                      {f.status !== "Archived" ? (
-                        <button
-                          onClick={() => handleArchive(f.id)}
-                          className="btn-icon btn-archive"
-                          title="Archive"
-                        >
-                          <Archive size={16} />
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => handleRestore(f.id)}
-                          className="btn-icon btn-restore"
-                          title="Unarchive"
-                        >
-                          <ArchiveRestore size={16} />
-                        </button>
-                      )}
+                      <button
+                        onClick={() => handleArchive(f.id)}
+                        className="btn-icon btn-archive"
+                        title="Archive"
+                      >
+                        <Archive size={16} />
+                      </button>
                     </div>
                   </td>
                 </tr>

@@ -1,9 +1,14 @@
 // resources/sass/faculty.scss
+@import 'variables';
+
+// Note: Faculty component uses .settings-container classes from settings.scss
+// This file provides additional faculty-specific overrides
 
 .faculty-container {
-  padding: 2rem;
-  background: #f5f6fa;
+  padding: 0;
+  background: $body-bg;
   min-height: 100vh;
+  font-family: $font-family-sans-serif;
 
   // Modal Overlay
   .modal-overlay {
@@ -21,10 +26,10 @@
       border-radius: 12px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       width: 100%;
-      max-width: 700px;
+      max-width: 900px;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 2rem;
+      padding: 2.5rem;
 
       .modal-title {
         font-size: 1.5rem;

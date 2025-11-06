@@ -17,37 +17,28 @@ class StudentController extends Controller
         $data = $request->validate([
             'name' => 'nullable|string|max:100',
             'first_name' => 'required|string|max:100',
+            'middle_name' => 'nullable|string|max:100',
             'last_name' => 'required|string|max:100',
             'email' => 'required|email|unique:students,email',
             'date_of_birth' => 'nullable|date',
+            'age' => 'nullable|integer|min:15|max:100',
+            'sex' => 'nullable|in:Male,Female',
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'course' => 'required|string|max:100',
             'department' => 'required|string|max:100',
             'year_level' => 'required|string|max:20',
             'status' => 'nullable|string|max:20',
-            // Home Address
-            'street_address' => 'nullable|string|max:255',
-            'street_address_line2' => 'nullable|string|max:255',
-            'city' => 'nullable|string|max:100',
-            'state_province' => 'nullable|string|max:100',
-            'postal_code' => 'nullable|string|max:20',
-            // Emergency Contact
-            'emergency_contact_first_name' => 'nullable|string|max:100',
-            'emergency_contact_last_name' => 'nullable|string|max:100',
-            'emergency_contact_relationship' => 'nullable|string|max:100',
-            'emergency_contact_email' => 'nullable|email',
-            'emergency_contact_phone' => 'nullable|string|max:20',
-            // Parent/Guardian
-            'parent_guardian_first_name' => 'required|string|max:100',
-            'parent_guardian_last_name' => 'required|string|max:100',
-            'parent_guardian_relationship' => 'nullable|string|max:100',
-            'parent_guardian_phone' => 'nullable|string|max:20',
-            'parent_guardian_email' => 'nullable|email',
-            // Educational Background
-            'previous_school' => 'nullable|string|max:255',
-            'grade_level' => 'nullable|string|max:50',
-            'previous_student_id' => 'nullable|string|max:50',
-            'special_needs' => 'nullable|string',
         ]);
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '_' . $photo->getClientOriginalName();
+            $photo->storeAs('public/student_photos', $photoName);
+            $data['photo'] = 'storage/student_photos/' . $photoName;
+        }
 
         // Auto-generate Student ID
         $year = date('Y');
@@ -64,8 +55,9 @@ class StudentController extends Controller
         
         $data['student_id'] = 'STU-' . $year . '-' . $newNumber;
         
-        // Combine first and last name for the name field
-        $data['name'] = trim($data['first_name'] . ' ' . $data['last_name']);
+        // Combine first, middle and last name for the name field
+        $middleName = !empty($data['middle_name']) ? ' ' . $data['middle_name'] . ' ' : ' ';
+        $data['name'] = trim($data['first_name'] . $middleName . $data['last_name']);
         
         // Set default status if not provided
         if (!isset($data['status'])) {
@@ -86,40 +78,37 @@ class StudentController extends Controller
             'student_id' => 'nullable|string|max:50',
             'name' => 'nullable|string|max:100',
             'first_name' => 'required|string|max:100',
+            'middle_name' => 'nullable|string|max:100',
             'last_name' => 'required|string|max:100',
             'email' => 'required|email|unique:students,email,' . $student->id,
             'date_of_birth' => 'nullable|date',
+            'age' => 'nullable|integer|min:15|max:100',
+            'sex' => 'nullable|in:Male,Female',
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'course' => 'required|string|max:100',
             'department' => 'required|string|max:100',
             'year_level' => 'required|string|max:20',
             'status' => 'nullable|string|max:20',
-            // Home Address
-            'street_address' => 'nullable|string|max:255',
-            'street_address_line2' => 'nullable|string|max:255',
-            'city' => 'nullable|string|max:100',
-            'state_province' => 'nullable|string|max:100',
-            'postal_code' => 'nullable|string|max:20',
-            // Emergency Contact
-            'emergency_contact_first_name' => 'nullable|string|max:100',
-            'emergency_contact_last_name' => 'nullable|string|max:100',
-            'emergency_contact_relationship' => 'nullable|string|max:100',
-            'emergency_contact_email' => 'nullable|email',
-            'emergency_contact_phone' => 'nullable|string|max:20',
-            // Parent/Guardian
-            'parent_guardian_first_name' => 'required|string|max:100',
-            'parent_guardian_last_name' => 'required|string|max:100',
-            'parent_guardian_relationship' => 'nullable|string|max:100',
-            'parent_guardian_phone' => 'nullable|string|max:20',
-            'parent_guardian_email' => 'nullable|email',
-            // Educational Background
-            'previous_school' => 'nullable|string|max:255',
-            'grade_level' => 'nullable|string|max:50',
-            'previous_student_id' => 'nullable|string|max:50',
-            'special_needs' => 'nullable|string',
         ]);
 
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '_' . $photo->getClientOriginalName();
+            $photo->storeAs('public/student_photos', $photoName);
+            $data['photo'] = 'storage/student_photos/' . $photoName;
+            
+            // Delete old photo if exists
+            if ($student->photo && file_exists(public_path($student->photo))) {
+                unlink(public_path($student->photo));
+            }
+        }
+
         // Update combined name field
-        $data['name'] = trim($data['first_name'] . ' ' . $data['last_name']);
+        $middleName = !empty($data['middle_name']) ? ' ' . $data['middle_name'] . ' ' : ' ';
+        $data['name'] = trim($data['first_name'] . $middleName . $data['last_name']);
 
         $student->update($data);
 

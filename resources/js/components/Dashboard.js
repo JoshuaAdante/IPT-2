@@ -13,7 +13,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { GraduationCap, Users } from "lucide-react";
+import { GraduationCap, Users, Building2 } from "lucide-react";
 import "../../sass/dashboard.scss";
 
 // Register Chart.js components
@@ -238,13 +238,28 @@ export default function Dashboard({ user, onLogout }) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <div>
-          <h2>Dashboard Overview</h2>
-          {user && <p className="welcome-text">Welcome, {user.username}!</p>}
+        <div className="header-left">
+          {user && user.profile_photo && (
+            <img 
+              src={user.profile_photo} 
+              alt={user.username}
+              className="user-avatar"
+            />
+          )}
+          {user && !user.profile_photo && (
+            <div className="user-avatar-placeholder">
+              {user.username ? user.username.charAt(0).toUpperCase() : 'U'}
+            </div>
+          )}
+          <div>
+            <h2>Dashboard Overview</h2>
+            {user && <p className="welcome-text">Welcome, {user.username}!</p>}
+          </div>
         </div>
         <button className="signout-btn" onClick={onLogout}>Sign Out</button>
       </div>
 
+      <div className="dashboard-content">
       <div className="cards-grid">
         <div className="info-card">
           <div className="card-content">
@@ -273,6 +288,16 @@ export default function Dashboard({ user, onLogout }) {
           </div>
           <div className="card-icon">
             <Users size={32} strokeWidth={1.5} />
+          </div>
+        </div>
+
+        <div className="info-card">
+          <div className="card-content">
+            <h3>Total Departments</h3>
+            <p className="card-value">{dashboardData.totalDepartments}</p>
+          </div>
+          <div className="card-icon">
+            <Building2 size={32} strokeWidth={1.5} />
           </div>
         </div>
       </div>
@@ -326,6 +351,7 @@ export default function Dashboard({ user, onLogout }) {
           <span className="activity-time">Now</span>
         </div>
         <p className="activity-detail">{dashboardData.totalStudents} students and {dashboardData.totalFaculty} faculty members currently active</p>
+      </div>
       </div>
     </div>
   );

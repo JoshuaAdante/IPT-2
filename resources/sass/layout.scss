@@ -1,3 +1,7 @@
+@import 'variables';
+
+// University Layout Styles
+
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
@@ -9,56 +13,52 @@
   }
 }
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
-  }
-}
-
 .layout {
   display: flex;
   height: 100vh;
-  background: #f8f9fb;
+  background: $body-bg;
   overflow: hidden;
+  font-family: $font-family-sans-serif;
 
   .sidebar {
-    width: 240px;
-    background: white;
-    color: #1f2937;
+    width: $sidebar-width;
+    background: $primary-color;
+    color: white;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
-    border-right: 1px solid #e5e7eb;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
     position: relative;
     z-index: 100;
 
     .logo-section {
-      padding: 1.5rem;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 1.75rem 1.5rem;
+      background: $primary-dark;
+      border-bottom: 2px solid $secondary-color;
 
       .logo-box {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.75rem;
 
         .logo-text {
-          font-size: 1.5rem;
+          font-size: 1.625rem;
           font-weight: 700;
           margin: 0;
-          color: #1f2937;
+          color: white;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          text-align: center;
         }
 
         .logo-icon-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0.75rem;
-          background: #6366f1;
-          border-radius: 12px;
+          padding: 1rem;
+          background: $secondary-color;
+          border-radius: 50%;
+          border: 3px solid rgba(255, 255, 255, 0.2);
 
           .logo-icon {
             color: white;
@@ -66,18 +66,6 @@
             height: 40px;
           }
         }
-      }
-    }
-
-    .toggle-btn {
-      background: none;
-      border: none;
-      color: #6b7280;
-      font-size: 1.2rem;
-      cursor: pointer;
-
-      &:hover {
-        color: #6366f1;
       }
     }
 
@@ -92,34 +80,55 @@
         width: 6px;
       }
 
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
       &::-webkit-scrollbar-thumb {
-        background: rgba(102, 126, 234, 0.5);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
       }
 
       .nav-item {
-        padding: 0.75rem 1rem;
+        padding: 0.875rem 1.5rem;
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 12px;
         font-weight: 500;
-        font-size: 0.875rem;
-        margin: 0.25rem 0.75rem;
-        border-radius: 8px;
-        color: #6b7280;
+        font-size: 0.9375rem;
+        margin: 0.25rem 1rem;
+        border-radius: 6px;
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
 
         &:hover {
-          background: #f3f4f6;
-          color: #1f2937;
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border-left-color: $secondary-color;
         }
 
         &.active {
-          background: #ede9fe;
+          background: $primary-light;
           font-weight: 600;
-          color: #7c3aed;
+          color: white;
+          border-left-color: $secondary-color;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
       }
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
     }
   }
 
@@ -129,25 +138,7 @@
     flex-direction: column;
     overflow-y: auto;
     position: relative;
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .page-content {
-      padding: 0;
-      overflow-y: auto;
-      flex: 1;
-    }
+    background: $body-bg;
   }
 
   &.sidebar-collapsed {
@@ -169,10 +160,7 @@
       .nav-item {
         justify-content: center;
         padding: 1rem;
-
-        &:hover {
-          padding-left: 1rem;
-        }
+        margin: 0.25rem 0.5rem;
       }
     }
   }
@@ -180,23 +168,53 @@
   @media (max-width: 768px) {
     .sidebar {
       position: fixed;
-      left: -260px;
+      left: -280px;
       top: 0;
       bottom: 0;
       z-index: 1000;
+      transition: left 0.3s ease;
 
       &.open {
         left: 0;
       }
     }
+
+    .main-content {
+      width: 100%;
+    }
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
+// University Header Bar (for academic year, semester info)
+.university-header {
+  background: white;
+  border-bottom: 3px solid $secondary-color;
+  padding: 0.875rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow-sm;
+
+  .academic-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.875rem;
+    color: $text-secondary;
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .label {
+        font-weight: 600;
+        color: $text-primary;
+      }
+
+      .value {
+        color: $text-secondary;
+      }
+    }
   }
 }

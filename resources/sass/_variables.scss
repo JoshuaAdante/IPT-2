@@ -1,34 +1,65 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #f5f7fa;
 
-// Typography
-$font-family-sans-serif: 'Inter', 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
+// Typography - Professional Academic Font Stack
+$font-family-sans-serif: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 0.9375rem;
 $line-height-base: 1.6;
 
-// Modern Color Palette
-$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-$secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-$success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-$info-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-$warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+// University Institutional Color Palette
+// Primary: Navy Blue (Traditional Academic)
+$primary-color: #003366;
+$primary-light: #004d99;
+$primary-dark: #002244;
+$primary-gradient: linear-gradient(135deg, #003366 0%, #004d99 100%);
 
-// Colors
-$primary-color: #667eea;
-$secondary-color: #764ba2;
-$accent-color: #4facfe;
-$success-color: #43e97b;
-$danger-color: #f5576c;
-$dark-color: #1a202c;
-$light-color: #f7fafc;
+// Secondary: Gold/Amber (Academic Achievement)
+$secondary-color: #d4af37;
+$secondary-light: #f4d03f;
+$secondary-dark: #b8941f;
 
-// Shadows
-$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+// Accent Colors
+$accent-blue: #1e5a8e;
+$accent-teal: #16697a;
+$accent-burgundy: #8b1e3f;
 
-// Glass Effect
-$glass-background: rgba(255, 255, 255, 0.1);
-$glass-border: rgba(255, 255, 255, 0.2);
-$backdrop-blur: blur(10px);
+// Status Colors (Professional Palette)
+$success-color: #2d7a3e;
+$success-light: #e8f5e9;
+$info-color: #0277bd;
+$info-light: #e1f5fe;
+$warning-color: #f57c00;
+$warning-light: #fff3e0;
+$danger-color: #c62828;
+$danger-light: #ffebee;
+
+// Neutral Colors (Academic Gray Scale)
+$dark-color: #1a1a2e;
+$text-primary: #2c3e50;
+$text-secondary: #546e7a;
+$text-muted: #78909c;
+$light-color: #f8f9fa;
+$border-color: #d0d7de;
+$background-gray: #eceff1;
+
+// University Department Colors
+$dept-science: #4a90e2;
+$dept-arts: #9b59b6;
+$dept-business: #e67e22;
+$dept-engineering: #27ae60;
+$dept-medicine: #e74c3c;
+
+// Shadows (More subtle, professional)
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.16);
+$shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.20);
+
+// Card & Container
+$card-background: #ffffff;
+$card-border: #e0e7ee;
+$card-radius: 8px;
+
+// Header Heights
+$header-height: 70px;
+$sidebar-width: 260px;

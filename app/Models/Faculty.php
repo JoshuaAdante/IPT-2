@@ -24,8 +24,16 @@ class Faculty extends Model
         'department',
         'position',
         'title',
+        'age',
+        'phone',
+        'faculty_rank',
+        'office_location',
+        'username',
+        'password',
+        'photo',
         'employment_type',
         'date_of_joining',
+        'date_hired',
         'status',
         // Contact Details
         'office_address',
@@ -42,5 +50,10 @@ class Faculty extends Model
         'publications',
         'professional_experience',
         'achievements_awards',
+    ];
+
+    // Hide password from JSON responses
+    protected $hidden = [
+        'password',
     ];
 }

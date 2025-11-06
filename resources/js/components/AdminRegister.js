@@ -90,11 +90,11 @@ export default function AdminRegister({ onBackToLogin }) {
   };
 
   return (
-    <div className="admin-register-container">
-      <div className="register-card">
-        <div className="register-header">
-          <div className="logo-section">
-            <div className="logo-icon">
+    <div className="admin-register-page">
+      <div className="admin-register-card">
+        <div className="admin-register-content">
+          <div className="admin-left-section">
+            <div className="admin-logo-icon">
               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Graduation Cap */}
                 <path d="M100 60L160 80L100 100L40 80L100 60Z" fill="#3B82F6"/>
@@ -109,40 +109,42 @@ export default function AdminRegister({ onBackToLogin }) {
                 <ellipse cx="160" cy="130" rx="15" ry="8" fill="#60A5FA"/>
               </svg>
             </div>
-            <h1>AcadMe</h1>
+            <h1 className="admin-title">AcadMe</h1>
+            <p className="admin-subtitle">Management System</p>
           </div>
-          <h2>Admin Registration</h2>
-          <p className="subtitle">Create your administrator account</p>
-        </div>
 
-        <form onSubmit={handleSubmit} className="register-form">
-          {/* Profile Picture Upload */}
-          <div className="profile-picture-upload">
-            <div className="profile-picture-container">
-              <div className="profile-picture-preview">
-                {profilePicturePreview ? (
-                  <img src={profilePicturePreview} alt="Profile Preview" />
-                ) : (
-                  <User size={48} strokeWidth={1.5} />
+          <div className="admin-right-section">
+            <h2 className="form-title">Register</h2>
+
+            {errors.form && <div className="admin-error-message">{errors.form}</div>}
+
+            <form onSubmit={handleSubmit} className="admin-form">
+              {/* Profile Picture Upload */}
+              <div className="profile-picture-upload">
+                <div className="profile-picture-container">
+                  <div className="profile-picture-preview">
+                    {profilePicturePreview ? (
+                      <img src={profilePicturePreview} alt="Profile Preview" />
+                    ) : (
+                      <User size={48} strokeWidth={1.5} />
+                    )}
+                  </div>
+                  <label htmlFor="profile-picture-input" className="upload-button">
+                    <Camera size={20} />
+                    Upload Photo
+                  </label>
+                  <input
+                    id="profile-picture-input"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleProfilePictureChange}
+                    style={{ display: 'none' }}
+                  />
+                </div>
+                {errors.profile_picture && (
+                  <span className="error-text">{Array.isArray(errors.profile_picture) ? errors.profile_picture[0] : errors.profile_picture}</span>
                 )}
               </div>
-              <label htmlFor="profile-picture-input" className="upload-button">
-                <Camera size={20} />
-                Upload Photo
-              </label>
-              <input
-                id="profile-picture-input"
-                type="file"
-                accept="image/*"
-                onChange={handleProfilePictureChange}
-                style={{ display: 'none' }}
-              />
-            </div>
-            {errors.profile_picture && (
-              <span className="error-text">{Array.isArray(errors.profile_picture) ? errors.profile_picture[0] : errors.profile_picture}</span>
-            )}
-            {errors.form && <div className="error-text" style={{ marginTop: 8 }}>{errors.form}</div>}
-          </div>
 
           <div className="form-grid">
             <div className="form-group">
@@ -267,19 +269,21 @@ export default function AdminRegister({ onBackToLogin }) {
             </div>
           </div>
 
-          <button type="submit" className="btn-register" disabled={loading}>
-            {loading ? 'Creating Account...' : 'Register'}
-          </button>
-
-          <div className="login-link">
-            <p>
-              Already have an account?{' '}
-              <button type="button" onClick={onBackToLogin} className="link-button">
-                Login here
+              <button type="submit" className="admin-register-btn" disabled={loading}>
+                {loading ? 'Creating Account...' : 'Register'}
               </button>
-            </p>
+
+              <div className="login-link">
+                <p>
+                  Already have an account?{' '}
+                  <button type="button" onClick={onBackToLogin} className="link-button">
+                    Login here
+                  </button>
+                </p>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

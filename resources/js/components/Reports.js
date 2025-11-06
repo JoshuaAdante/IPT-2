@@ -42,12 +42,28 @@ export default function Reports() {
     alert('Export functionality will be implemented with backend support');
   };
 
+  const totalReports = students.length + faculties.length;
+
   return (
     <div className='settings-container'>
       <div className='settings-header'>
         <div>
           <h2>Reports</h2>
           <p className='subtitle'>Generate and download reports for students and faculty</p>
+        </div>
+        <div className='settings-info'>
+          <div className='info-badge'>
+            <span className='info-label'>Total Students:</span>
+            <span className='info-value'>{students.length}</span>
+          </div>
+          <div className='info-badge'>
+            <span className='info-label'>Total Faculty:</span>
+            <span className='info-value'>{faculties.length}</span>
+          </div>
+          <div className='info-badge'>
+            <span className='info-label'>Total Reports:</span>
+            <span className='info-value'>{totalReports}</span>
+          </div>
         </div>
       </div>
 

@@ -24781,7 +24781,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.9);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes float {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-10px);\n  }\n}\n.admin-login-page {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 2rem;\n  position: relative;\n  overflow: hidden;\n}\n.admin-login-page::before {\n  content: \"\";\n  position: absolute;\n  width: 300px;\n  height: 300px;\n  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);\n  border-radius: 50%;\n  top: -150px;\n  right: -150px;\n  animation: float 6s ease-in-out infinite;\n}\n.admin-login-page::after {\n  content: \"\";\n  position: absolute;\n  width: 400px;\n  height: 400px;\n  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);\n  border-radius: 50%;\n  bottom: -200px;\n  left: -200px;\n  animation: float 8s ease-in-out infinite;\n}\n.admin-login-page .admin-login-card {\n  background: rgba(255, 255, 255, 0.95);\n  backdrop-filter: blur(20px);\n  -webkit-backdrop-filter: blur(20px);\n  border-radius: 24px;\n  padding: 0.5rem;\n  width: 100%;\n  max-width: 700px;\n  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);\n  border: 1px solid rgba(255, 255, 255, 0.3);\n  animation: fadeInScale 0.6s ease-out;\n  position: relative;\n  z-index: 1;\n}\n.admin-login-page .admin-login-card .admin-login-content {\n  background: white;\n  border-radius: 20px;\n  padding: 3.5rem 3rem;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  gap: 4rem;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-logo-icon {\n  width: 140px;\n  height: 140px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 1.5rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  border-radius: 50%;\n  padding: 1.5rem;\n  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);\n  animation: none;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-logo-icon svg {\n  width: 100%;\n  height: 100%;\n  color: white;\n  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-title {\n  font-size: 2.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 0.5rem 0;\n  letter-spacing: -0.02em;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-subtitle {\n  font-size: 1.1rem;\n  color: #4a5568;\n  margin: 0;\n  font-weight: 500;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section {\n  flex: 1;\n  width: 100%;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .form-title {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #1f2937;\n  text-align: left;\n  margin: 0 0 2rem 0;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-error-message {\n  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);\n  border: 2px solid #f87171;\n  color: #991b1b;\n  padding: 1rem 1.25rem;\n  border-radius: 12px;\n  font-size: 0.9rem;\n  margin-bottom: 1.5rem;\n  text-align: center;\n  font-weight: 600;\n  box-shadow: 0 4px 15px rgba(248, 113, 113, 0.2);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group {\n  margin-bottom: 1.25rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input {\n  width: 100%;\n  padding: 1.125rem 1.5rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 1rem;\n  background: #f9fafb;\n  outline: none;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  font-weight: 500;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input:focus {\n  background: white;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  transform: translateY(-2px);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input::-moz-placeholder {\n  color: #9ca3af;\n  font-size: 0.95rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input::placeholder {\n  color: #9ca3af;\n  font-size: 0.95rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn {\n  width: 100%;\n  padding: 1.125rem 1.5rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  border: none;\n  border-radius: 12px;\n  font-size: 1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  margin-top: 1.5rem;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:active:not(:disabled) {\n  transform: translateY(0);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n  transform: none;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link {\n  text-align: center;\n  margin-top: 1.5rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p .link-button {\n  background: none;\n  border: none;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  font-weight: 700;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.3s;\n  padding: 0;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p .link-button:hover {\n  opacity: 0.8;\n  text-decoration: underline;\n}\n@media (max-width: 768px) {\n  .admin-login-page {\n    padding: 1rem;\n  }\n  .admin-login-page .admin-login-card {\n    max-width: 100%;\n    padding: 0.75rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content {\n    flex-direction: column;\n    padding: 2rem 1.5rem;\n    gap: 2rem;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n.admin-login-page {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: linear-gradient(135deg, #003366 0%, #004d99 100%);\n  padding: 2rem;\n  position: relative;\n  overflow: hidden;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.admin-login-page::before {\n  content: \"\";\n  position: absolute;\n  width: 500px;\n  height: 500px;\n  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 10px, transparent 10px, transparent 20px);\n  top: -250px;\n  right: -250px;\n  border-radius: 50%;\n}\n.admin-login-page::after {\n  content: \"\";\n  position: absolute;\n  width: 600px;\n  height: 600px;\n  background-image: repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.05) 0px, rgba(212, 175, 55, 0.05) 15px, transparent 15px, transparent 30px);\n  bottom: -300px;\n  left: -300px;\n  border-radius: 50%;\n}\n.admin-login-page .admin-login-card {\n  background: white;\n  border-radius: 8px;\n  padding: 0;\n  width: 100%;\n  max-width: 750px;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);\n  border: 4px solid #d4af37;\n  border-top: 8px solid #d4af37;\n  animation: fadeInScale 0.5s ease-out;\n  position: relative;\n  z-index: 1;\n}\n.admin-login-page .admin-login-card .admin-login-content {\n  background: white;\n  border-radius: 4px;\n  padding: 0;\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  overflow: hidden;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: #003366;\n  padding: 3rem 2.5rem;\n  position: relative;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 6px;\n  background: #d4af37;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-logo-icon {\n  width: 150px;\n  height: 150px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 2rem;\n  background: #d4af37;\n  border-radius: 50%;\n  padding: 2rem;\n  border: 5px solid rgba(255, 255, 255, 0.2);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-logo-icon svg {\n  width: 100%;\n  height: 100%;\n  color: white;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-title {\n  font-size: 2.75rem;\n  font-weight: 700;\n  color: white;\n  margin: 0 0 0.75rem 0;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  text-align: center;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-subtitle {\n  font-size: 1.125rem;\n  color: rgba(255, 255, 255, 0.9);\n  margin: 0;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  text-align: center;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section {\n  flex: 1;\n  padding: 3rem 3rem;\n  background: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .form-title {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #003366;\n  text-align: left;\n  margin: 0 0 2rem 0;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  border-bottom: 3px solid #d4af37;\n  padding-bottom: 1rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-error-message {\n  background: #ffebee;\n  border: 2px solid #c62828;\n  color: #c62828;\n  padding: 1rem 1.25rem;\n  border-radius: 6px;\n  font-size: 0.875rem;\n  margin-bottom: 1.5rem;\n  text-align: center;\n  font-weight: 600;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group {\n  margin-bottom: 1.5rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input {\n  width: 100%;\n  padding: 1rem 1.25rem;\n  border: 2px solid #d0d7de;\n  border-radius: 6px;\n  font-size: 1rem;\n  background: white;\n  outline: none;\n  transition: all 0.2s ease;\n  font-weight: 500;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input:focus {\n  background: white;\n  border-color: #003366;\n  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input::-moz-placeholder {\n  color: #78909c;\n  font-size: 0.9375rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-form-group .admin-input::placeholder {\n  color: #78909c;\n  font-size: 0.9375rem;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn {\n  width: 100%;\n  padding: 1rem 1.5rem;\n  background: #003366;\n  color: white;\n  border: 2px solid #003366;\n  border-radius: 6px;\n  font-size: 1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  margin-top: 1.5rem;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:hover:not(:disabled) {\n  background: #004d99;\n  border-color: #004d99;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:active:not(:disabled) {\n  background: #002244;\n  border-color: #002244;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .admin-login-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link {\n  text-align: center;\n  margin-top: 1.75rem;\n  padding-top: 1.5rem;\n  border-top: 2px solid #eceff1;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p .link-button {\n  background: none;\n  border: none;\n  color: #d4af37;\n  font-weight: 700;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s;\n  padding: 0;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.admin-login-page .admin-login-card .admin-login-content .admin-right-section .admin-form .register-link p .link-button:hover {\n  color: rgb(177.7777777778, 144.8888888889, 38.2222222222);\n  text-decoration: underline;\n}\n@media (max-width: 768px) {\n  .admin-login-page {\n    padding: 1rem;\n  }\n  .admin-login-page .admin-login-card {\n    max-width: 100%;\n    border: 3px solid #d4af37;\n  }\n  .admin-login-page .admin-login-card .admin-login-content {\n    flex-direction: column;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-left-section {\n    padding: 2rem 1.5rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-logo-icon {\n    width: 120px;\n    height: 120px;\n    padding: 1.5rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-title {\n    font-size: 2rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-left-section .admin-subtitle {\n    font-size: 0.9375rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-right-section {\n    padding: 2rem 1.5rem;\n  }\n  .admin-login-page .admin-login-card .admin-login-content .admin-right-section .form-title {\n    font-size: 1.5rem;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24805,7 +24805,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".admin-register-container {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 2rem;\n}\n.admin-register-container .register-card {\n  background: white;\n  border-radius: 16px;\n  padding: 2.5rem;\n  max-width: 800px;\n  width: 100%;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);\n}\n.admin-register-container .register-card .register-header {\n  text-align: center;\n  margin-bottom: 2rem;\n}\n.admin-register-container .register-card .register-header .logo-section {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 1rem;\n  margin-bottom: 1.5rem;\n}\n.admin-register-container .register-card .register-header .logo-section .logo-icon {\n  width: 80px;\n  height: 80px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.admin-register-container .register-card .register-header .logo-section .logo-icon svg {\n  width: 100%;\n  height: 100%;\n  filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.2));\n}\n.admin-register-container .register-card .register-header .logo-section h1 {\n  font-size: 2rem;\n  font-weight: 700;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0;\n}\n.admin-register-container .register-card .register-header h2 {\n  font-size: 1.75rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 0.5rem 0;\n}\n.admin-register-container .register-card .register-header .subtitle {\n  font-size: 0.9375rem;\n  color: #6b7280;\n  margin: 0;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-bottom: 2rem;\n  padding: 1.5rem;\n  background: #f9fafb;\n  border-radius: 12px;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .profile-picture-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .profile-picture-container .profile-picture-preview {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  background: white;\n  border: 3px solid #e5e7eb;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  color: #9ca3af;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .profile-picture-container .profile-picture-preview img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .profile-picture-container .upload-button {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 0.625rem 1.25rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  border: none;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .profile-picture-container .upload-button:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);\n}\n.admin-register-container .register-card .register-form .profile-picture-upload .error-text {\n  color: #ef4444;\n  font-size: 0.75rem;\n  margin-top: 0.5rem;\n}\n.admin-register-container .register-card .register-form .form-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 1.5rem;\n}\n@media (max-width: 640px) {\n  .admin-register-container .register-card .register-form .form-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.admin-register-container .register-card .register-form .form-grid .form-group {\n  display: flex;\n  flex-direction: column;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group.form-full-width {\n  grid-column: 1/-1;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group label {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group label svg {\n  color: #6b7280;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group input {\n  padding: 0.75rem 1rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.9375rem;\n  transition: all 0.2s;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.admin-register-container .register-card .register-form .form-grid .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group input::placeholder {\n  color: #9ca3af;\n}\n.admin-register-container .register-card .register-form .form-grid .form-group .error-text {\n  color: #ef4444;\n  font-size: 0.75rem;\n  margin-top: 0.25rem;\n}\n.admin-register-container .register-card .register-form .btn-register {\n  width: 100%;\n  padding: 0.875rem 1.5rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  border: none;\n  border-radius: 8px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n  margin-bottom: 1.5rem;\n}\n.admin-register-container .register-card .register-form .btn-register:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);\n}\n.admin-register-container .register-card .register-form .btn-register:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.admin-register-container .register-card .register-form .login-link {\n  text-align: center;\n}\n.admin-register-container .register-card .register-form .login-link p {\n  font-size: 0.9375rem;\n  color: #6b7280;\n  margin: 0;\n}\n.admin-register-container .register-card .register-form .login-link p .link-button {\n  background: none;\n  border: none;\n  color: #667eea;\n  font-weight: 600;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s;\n}\n.admin-register-container .register-card .register-form .login-link p .link-button:hover {\n  color: #764ba2;\n  text-decoration: underline;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeInScale {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n.admin-register-page {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: linear-gradient(135deg, #003366 0%, #004d99 100%);\n  padding: 2rem;\n  position: relative;\n  overflow: hidden;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.admin-register-page::before {\n  content: \"\";\n  position: absolute;\n  width: 500px;\n  height: 500px;\n  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 10px, transparent 10px, transparent 20px);\n  top: -250px;\n  right: -250px;\n  border-radius: 50%;\n}\n.admin-register-page::after {\n  content: \"\";\n  position: absolute;\n  width: 600px;\n  height: 600px;\n  background-image: repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.05) 0px, rgba(212, 175, 55, 0.05) 15px, transparent 15px, transparent 30px);\n  bottom: -300px;\n  left: -300px;\n  border-radius: 50%;\n}\n.admin-register-page .admin-register-card {\n  background: white;\n  border-radius: 8px;\n  padding: 0;\n  width: 100%;\n  max-width: 900px;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);\n  border: 4px solid #d4af37;\n  border-top: 8px solid #d4af37;\n  animation: fadeInScale 0.5s ease-out;\n  position: relative;\n  z-index: 1;\n}\n.admin-register-page .admin-register-card .admin-register-content {\n  background: white;\n  border-radius: 4px;\n  padding: 0;\n  display: flex;\n  flex-direction: row;\n  align-items: stretch;\n  overflow: hidden;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section {\n  flex: 0 0 320px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: #003366;\n  padding: 3rem 2rem;\n  position: relative;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 6px;\n  background: #d4af37;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-logo-icon {\n  width: 150px;\n  height: 150px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 2rem;\n  background: #d4af37;\n  border-radius: 50%;\n  padding: 2rem;\n  border: 5px solid rgba(255, 255, 255, 0.2);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-logo-icon svg {\n  width: 100%;\n  height: 100%;\n  color: white;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-title {\n  font-size: 2.75rem;\n  font-weight: 700;\n  color: white;\n  margin: 0 0 0.75rem 0;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  text-align: center;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-subtitle {\n  font-size: 1.125rem;\n  color: rgba(255, 255, 255, 0.9);\n  margin: 0;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  text-align: center;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section {\n  flex: 1;\n  padding: 2rem 2.5rem;\n  background: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  overflow-y: auto;\n  max-height: 90vh;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .form-title {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #003366;\n  text-align: left;\n  margin: 0 0 1.5rem 0;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  border-bottom: 3px solid #d4af37;\n  padding-bottom: 1rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-error-message {\n  background: #ffebee;\n  border: 2px solid #c62828;\n  color: #c62828;\n  padding: 0.875rem 1rem;\n  border-radius: 6px;\n  font-size: 0.875rem;\n  margin-bottom: 1.25rem;\n  text-align: center;\n  font-weight: 600;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-bottom: 1.5rem;\n  padding: 1rem;\n  background: #f9fafb;\n  border-radius: 8px;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .profile-picture-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .profile-picture-container .profile-picture-preview {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  background: white;\n  border: 3px solid #e5e7eb;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  color: #9ca3af;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .profile-picture-container .profile-picture-preview img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .profile-picture-container .upload-button {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 0.625rem 1.25rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  border: none;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .profile-picture-container .upload-button:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .profile-picture-upload .error-text {\n  color: #ef4444;\n  font-size: 0.75rem;\n  margin-top: 0.5rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 1.5rem;\n}\n@media (max-width: 640px) {\n  .admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group {\n  display: flex;\n  flex-direction: column;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group.form-full-width {\n  grid-column: 1/-1;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group label {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group label svg {\n  color: #6b7280;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group input {\n  padding: 0.75rem 1rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.9375rem;\n  transition: all 0.2s;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group input::placeholder {\n  color: #9ca3af;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .form-grid .form-group .error-text {\n  color: #ef4444;\n  font-size: 0.75rem;\n  margin-top: 0.25rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .admin-register-btn {\n  width: 100%;\n  padding: 0.875rem 1.5rem;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  border: none;\n  border-radius: 8px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n  margin-bottom: 1.5rem;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .admin-register-btn:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .admin-register-btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .login-link {\n  text-align: center;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .login-link p {\n  font-size: 0.9375rem;\n  color: #6b7280;\n  margin: 0;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .login-link p .link-button {\n  background: none;\n  border: none;\n  color: #667eea;\n  font-weight: 600;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s;\n}\n.admin-register-page .admin-register-card .admin-register-content .admin-right-section .admin-form .login-link p .link-button:hover {\n  color: #764ba2;\n  text-decoration: underline;\n}\n@media (max-width: 768px) {\n  .admin-register-page {\n    padding: 1rem;\n  }\n  .admin-register-page .admin-register-card {\n    max-width: 100%;\n    border: 3px solid #d4af37;\n  }\n  .admin-register-page .admin-register-card .admin-register-content {\n    flex-direction: column;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-left-section {\n    flex: 1;\n    padding: 2rem 1.5rem;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-logo-icon {\n    width: 120px;\n    height: 120px;\n    padding: 1.5rem;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-title {\n    font-size: 2rem;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-left-section .admin-subtitle {\n    font-size: 0.9375rem;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-right-section {\n    padding: 2rem 1.5rem;\n    max-height: none;\n  }\n  .admin-register-page .admin-register-card .admin-register-content .admin-right-section .form-title {\n    font-size: 1.5rem;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24829,7 +24829,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes pulse {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n}\n@keyframes shimmer {\n  0% {\n    background-position: -1000px 0;\n  }\n  100% {\n    background-position: 1000px 0;\n  }\n}\n.dashboard-container {\n  padding: 2rem;\n  background: #f8f9fb;\n  min-height: 100vh;\n  color: #2d2d2d;\n}\n.dashboard-container .dashboard-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 2rem;\n}\n.dashboard-container .dashboard-header h2 {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #1a202c;\n  margin: 0;\n}\n.dashboard-container .dashboard-header .welcome-text {\n  font-size: 0.95rem;\n  color: #4a5568;\n  margin-top: 0.5rem;\n  font-weight: 500;\n}\n.dashboard-container .dashboard-header .signout-btn {\n  background: #6366f1;\n  color: white;\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  border: none;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n}\n.dashboard-container .dashboard-header .signout-btn:hover {\n  background: #4f46e5;\n}\n.dashboard-container .dashboard-header .signout-btn:active {\n  background: #4338ca;\n}\n.dashboard-container .cards-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 2rem;\n  margin-bottom: 2.5rem;\n}\n.dashboard-container .cards-grid .info-card {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n  position: relative;\n  overflow: hidden;\n}\n.dashboard-container .cards-grid .info-card:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .cards-grid .info-card:nth-child(1) .card-icon {\n  background: #ede9fe;\n  color: #7c3aed;\n  padding: 0.75rem;\n  border-radius: 10px;\n}\n.dashboard-container .cards-grid .info-card:nth-child(2) .card-icon {\n  background: #fed7aa;\n  color: #ea580c;\n  padding: 0.75rem;\n  border-radius: 10px;\n}\n.dashboard-container .cards-grid .info-card:nth-child(3) .card-icon {\n  background: #dbeafe;\n  color: #2563eb;\n  padding: 0.75rem;\n  border-radius: 10px;\n}\n.dashboard-container .cards-grid .info-card .card-content h3 {\n  font-size: 0.875rem;\n  font-weight: 500;\n  margin-bottom: 0.5rem;\n  color: #6b7280;\n}\n.dashboard-container .cards-grid .info-card .card-content .card-value {\n  font-size: 2rem;\n  font-weight: 700;\n  margin: 0;\n  line-height: 1;\n  color: #1f2937;\n}\n.dashboard-container .cards-grid .info-card .card-icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.dashboard-container .chart-section {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 2rem;\n  margin-bottom: 2.5rem;\n}\n@media (max-width: 1024px) {\n  .dashboard-container .chart-section {\n    grid-template-columns: 1fr;\n  }\n}\n.dashboard-container .chart-section .chart-box {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n  display: flex;\n  flex-direction: column;\n}\n.dashboard-container .chart-section .chart-box:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .chart-section .chart-box .chart-header {\n  margin-bottom: 1.5rem;\n}\n.dashboard-container .chart-section .chart-box .chart-header h3 {\n  font-size: 1.125rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 0.25rem;\n}\n.dashboard-container .chart-section .chart-box .chart-header .chart-subtitle {\n  font-size: 0.85rem;\n  color: #6b7280;\n  margin: 0;\n  font-weight: 500;\n}\n.dashboard-container .chart-section .chart-box .chart-canvas {\n  flex: 1;\n  min-height: 280px;\n  position: relative;\n}\n.dashboard-container .activity-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.dashboard-container .activity-section:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .activity-section h3 {\n  font-size: 1.125rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 1rem;\n}\n.dashboard-container .activity-section .activity-item {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 0.75rem;\n  padding: 0.75rem;\n  background: #f9fafb;\n  border-radius: 8px;\n}\n.dashboard-container .activity-section .activity-item:hover {\n  background: #f3f4f6;\n}\n.dashboard-container .activity-section .activity-item p {\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0;\n}\n.dashboard-container .activity-section .activity-item .activity-time {\n  color: #6b7280;\n  font-size: 0.875rem;\n  font-weight: 500;\n}\n.dashboard-container .activity-section .activity-detail {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin-top: 0.75rem;\n  font-weight: 400;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.dashboard-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  color: #2c3e50;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.dashboard-container .dashboard-header {\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 1.25rem 2rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 0;\n}\n.dashboard-container .dashboard-header .header-left {\n  display: flex;\n  align-items: center;\n  gap: 1.25rem;\n}\n.dashboard-container .dashboard-header .user-avatar {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border: 3px solid #d4af37;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .dashboard-header .user-avatar-placeholder {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  background: linear-gradient(135deg, #003366, #002244);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 1.5rem;\n  font-weight: 700;\n  color: white;\n  border: 3px solid #d4af37;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .dashboard-header h2 {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #003366;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  margin: 0;\n}\n.dashboard-container .dashboard-header .welcome-text {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin-top: 0.375rem;\n  font-weight: 500;\n}\n.dashboard-container .dashboard-header .signout-btn {\n  background: #003366;\n  color: white;\n  padding: 0.75rem 1.75rem;\n  border-radius: 6px;\n  border: 2px solid #003366;\n  font-weight: 600;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.dashboard-container .dashboard-header .signout-btn:hover {\n  background: white;\n  color: #003366;\n  border-color: #003366;\n}\n.dashboard-container .dashboard-header .signout-btn:active {\n  background: #002244;\n  border-color: #002244;\n  color: white;\n}\n.dashboard-container .academic-bar {\n  background: #e1f5fe;\n  border-bottom: 1px solid #d0d7de;\n  padding: 0.75rem 2rem;\n  display: flex;\n  gap: 2rem;\n  font-size: 0.875rem;\n  color: #546e7a;\n}\n.dashboard-container .academic-bar .academic-item {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.dashboard-container .academic-bar .academic-item .label {\n  font-weight: 600;\n  color: #003366;\n}\n.dashboard-container .academic-bar .academic-item .value {\n  color: #2c3e50;\n}\n.dashboard-container .dashboard-content {\n  padding: 2rem;\n}\n.dashboard-container .cards-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 1.5rem;\n  margin-bottom: 2rem;\n}\n@media (max-width: 1200px) {\n  .dashboard-container .cards-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media (max-width: 640px) {\n  .dashboard-container .cards-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.dashboard-container .cards-grid .info-card {\n  background: white;\n  border-radius: 8px;\n  padding: 1.75rem;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);\n  border: 1px solid #e0e7ee;\n  border-left: 4px solid #003366;\n  position: relative;\n  overflow: hidden;\n  transition: all 0.3s ease;\n}\n.dashboard-container .cards-grid .info-card::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 100px;\n  height: 100px;\n  background: linear-gradient(135deg, transparent 50%, rgba(0, 51, 102, 0.03) 50%);\n  border-radius: 0 0 0 100%;\n}\n.dashboard-container .cards-grid .info-card:hover {\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);\n  transform: translateY(-2px);\n}\n.dashboard-container .cards-grid .info-card:nth-child(1) {\n  border-left-color: #003366;\n}\n.dashboard-container .cards-grid .info-card:nth-child(1) .card-icon {\n  background: linear-gradient(135deg, #003366, #004d99);\n  color: white;\n  padding: 1rem;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);\n}\n.dashboard-container .cards-grid .info-card:nth-child(2) {\n  border-left-color: #d4af37;\n}\n.dashboard-container .cards-grid .info-card:nth-child(2) .card-icon {\n  background: linear-gradient(135deg, #d4af37, #f4d03f);\n  color: white;\n  padding: 1rem;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);\n}\n.dashboard-container .cards-grid .info-card:nth-child(3) {\n  border-left-color: #1e5a8e;\n}\n.dashboard-container .cards-grid .info-card:nth-child(3) .card-icon {\n  background: linear-gradient(135deg, #1e5a8e, #2196f3);\n  color: white;\n  padding: 1rem;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(30, 90, 142, 0.3);\n}\n.dashboard-container .cards-grid .info-card:nth-child(4) {\n  border-left-color: #16697a;\n}\n.dashboard-container .cards-grid .info-card:nth-child(4) .card-icon {\n  background: linear-gradient(135deg, #16697a, #14b8a6);\n  color: white;\n  padding: 1rem;\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(22, 105, 122, 0.3);\n}\n.dashboard-container .cards-grid .info-card .card-content {\n  flex: 1;\n  z-index: 1;\n}\n.dashboard-container .cards-grid .info-card .card-content h3 {\n  font-size: 0.8125rem;\n  font-weight: 600;\n  margin-bottom: 0.625rem;\n  color: #546e7a;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.dashboard-container .cards-grid .info-card .card-content .card-value {\n  font-size: 2.25rem;\n  font-weight: 700;\n  margin: 0;\n  line-height: 1;\n  color: #003366;\n}\n.dashboard-container .cards-grid .info-card .card-content .card-subtitle {\n  font-size: 0.75rem;\n  color: #78909c;\n  margin-top: 0.5rem;\n}\n.dashboard-container .cards-grid .info-card .card-icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1;\n}\n.dashboard-container .chart-section {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.5rem;\n  margin-bottom: 2rem;\n}\n@media (max-width: 1024px) {\n  .dashboard-container .chart-section {\n    grid-template-columns: 1fr;\n  }\n}\n.dashboard-container .chart-section .chart-box {\n  background: white;\n  border-radius: 8px;\n  padding: 1.75rem;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);\n  border: 1px solid #e0e7ee;\n  border-top: 4px solid #003366;\n  display: flex;\n  flex-direction: column;\n  transition: all 0.3s ease;\n}\n.dashboard-container .chart-section .chart-box:hover {\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);\n  transform: translateY(-2px);\n}\n.dashboard-container .chart-section .chart-box:nth-child(2n) {\n  border-top-color: #d4af37;\n}\n.dashboard-container .chart-section .chart-box:nth-child(3n) {\n  border-top-color: #1e5a8e;\n}\n.dashboard-container .chart-section .chart-box:nth-child(4n) {\n  border-top-color: #16697a;\n}\n.dashboard-container .chart-section .chart-box .chart-header {\n  margin-bottom: 1.5rem;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #eceff1;\n}\n.dashboard-container .chart-section .chart-box .chart-header h3 {\n  font-size: 1.125rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.dashboard-container .chart-section .chart-box .chart-header .chart-subtitle {\n  font-size: 0.8125rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.dashboard-container .chart-section .chart-box .chart-canvas {\n  flex: 1;\n  min-height: 300px;\n  position: relative;\n}\n.dashboard-container .activity-section {\n  background: white;\n  border-radius: 8px;\n  padding: 1.75rem;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);\n  border: 1px solid #e0e7ee;\n  border-top: 4px solid #16697a;\n  transition: all 0.3s ease;\n}\n.dashboard-container .activity-section:hover {\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);\n  transform: translateY(-2px);\n}\n.dashboard-container .activity-section h3 {\n  font-size: 1.125rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 1.25rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  padding-bottom: 0.75rem;\n  border-bottom: 2px solid #eceff1;\n}\n.dashboard-container .activity-section .activity-item {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 0.875rem;\n  padding: 1rem;\n  background: #eceff1;\n  border-radius: 6px;\n  border-left: 3px solid #003366;\n  transition: all 0.2s ease;\n}\n.dashboard-container .activity-section .activity-item:hover {\n  background: #e1f5fe;\n  border-left-color: #1e5a8e;\n  transform: translateX(4px);\n}\n.dashboard-container .activity-section .activity-item p {\n  font-weight: 600;\n  color: #2c3e50;\n  margin: 0;\n  font-size: 0.9375rem;\n}\n.dashboard-container .activity-section .activity-item .activity-time {\n  color: #546e7a;\n  font-size: 0.8125rem;\n  font-weight: 500;\n  background: white;\n  padding: 0.25rem 0.75rem;\n  border-radius: 4px;\n}\n.dashboard-container .activity-section .activity-detail {\n  color: #546e7a;\n  font-size: 0.875rem;\n  margin-top: 1rem;\n  padding: 1rem;\n  background: #e1f5fe;\n  border-radius: 6px;\n  border-left: 3px solid #0277bd;\n  font-weight: 500;\n}\n.dashboard-container .quick-stats {\n  background: linear-gradient(135deg, #003366, #004d99);\n  color: white;\n  border-radius: 8px;\n  padding: 1.75rem;\n  margin-bottom: 2rem;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);\n}\n.dashboard-container .quick-stats h3 {\n  font-size: 1.25rem;\n  font-weight: 700;\n  margin-bottom: 1rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.dashboard-container .quick-stats .stats-row {\n  display: flex;\n  gap: 2rem;\n  flex-wrap: wrap;\n}\n.dashboard-container .quick-stats .stats-row .stat-item {\n  flex: 1;\n  min-width: 150px;\n}\n.dashboard-container .quick-stats .stats-row .stat-item .stat-label {\n  font-size: 0.8125rem;\n  opacity: 0.9;\n  margin-bottom: 0.375rem;\n}\n.dashboard-container .quick-stats .stats-row .stat-item .stat-value {\n  font-size: 1.75rem;\n  font-weight: 700;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24853,7 +24853,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".faculty-container {\n  padding: 2rem;\n  background: #f5f6fa;\n  min-height: 100vh;\n}\n.faculty-container .modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-left: 10%;\n  z-index: 1000;\n}\n.faculty-container .modal-overlay .modal-content {\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);\n  width: 100%;\n  max-width: 700px;\n  max-height: 90vh;\n  overflow-y: auto;\n  padding: 2rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 1.5rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n@media (max-width: 640px) {\n  .faculty-container .modal-overlay .modal-content .modal-form .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group {\n  margin-bottom: 1rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select {\n  width: 100%;\n  padding: 0.75rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input:focus,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select:focus {\n  border-color: #3b82f6;\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input::-moz-placeholder, .faculty-container .modal-overlay .modal-content .modal-form .form-group select::-moz-placeholder {\n  color: #9ca3af;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input::placeholder,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select::placeholder {\n  color: #9ca3af;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select {\n  cursor: pointer;\n  background: white;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-submit {\n  background: #3b82f6;\n  color: white;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  background: #2563eb;\n}\n.faculty-container .faculty-header {\n  margin-bottom: 2rem;\n}\n.faculty-container .faculty-header .header-content h2 {\n  font-size: 1.75rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 0.25rem;\n}\n.faculty-container .faculty-header .header-content .subtitle {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.faculty-container .faculty-controls {\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  margin-bottom: 2rem;\n  padding: 1.5rem;\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.faculty-container .faculty-controls .btn-add {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #3b82f6;\n  color: white;\n  padding: 0.625rem 1.25rem;\n  border: none;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.faculty-container .faculty-controls .btn-add:hover {\n  background: #2563eb;\n}\n.faculty-container .faculty-controls .search-box {\n  flex: 1;\n  position: relative;\n  max-width: 300px;\n}\n.faculty-container .faculty-controls .search-box .search-icon {\n  position: absolute;\n  left: 0.75rem;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .search-box input {\n  width: 100%;\n  padding: 0.625rem 0.75rem 0.625rem 2.5rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .faculty-controls .search-box input:focus {\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-controls .search-box input::-moz-placeholder {\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .search-box input::placeholder {\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .department-filter {\n  padding: 0.625rem 1rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n  cursor: pointer;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .faculty-controls .department-filter:focus {\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-table-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.faculty-container .faculty-table-section .table-title {\n  font-size: 1.125rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 1.5rem;\n}\n.faculty-container .faculty-table-section .table-wrapper {\n  overflow-x: auto;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table thead tr {\n  border-bottom: 2px solid #f3f4f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table thead tr th {\n  text-align: left;\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: capitalize;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: background-color 0.2s, opacity 0.2s;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr:hover {\n  background-color: #f9fafb;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row {\n  opacity: 0.4;\n  background: #f9fafb;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row td {\n  color: #9ca3af;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row:hover {\n  background: #f3f4f6;\n  opacity: 0.5;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td {\n  padding: 1rem;\n  font-size: 0.875rem;\n  color: #1f2937;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 500;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.inactive {\n  background: #fee2e2;\n  color: #991b1b;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.archived {\n  background: #e5e7eb;\n  color: #6b7280;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons {\n  display: flex;\n  gap: 0.5rem;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  background: white;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon:hover:not(:disabled) {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-edit {\n  color: #3b82f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-edit:hover:not(:disabled) {\n  background: #eff6ff;\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-archive {\n  color: #ef4444;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-archive:hover {\n  background: #fef2f2;\n  border-color: #ef4444;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-restore {\n  color: #10b981;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-restore:hover {\n  background: #f0fdf4;\n  border-color: #10b981;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".faculty-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.faculty-container .modal-overlay {\n  position: fixed;\n  inset: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-left: 10%;\n  z-index: 1000;\n}\n.faculty-container .modal-overlay .modal-content {\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);\n  width: 100%;\n  max-width: 900px;\n  max-height: 90vh;\n  overflow-y: auto;\n  padding: 2.5rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 1.5rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n@media (max-width: 640px) {\n  .faculty-container .modal-overlay .modal-content .modal-form .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group {\n  margin-bottom: 1rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select {\n  width: 100%;\n  padding: 0.75rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input:focus,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select:focus {\n  border-color: #3b82f6;\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input::-moz-placeholder, .faculty-container .modal-overlay .modal-content .modal-form .form-group select::-moz-placeholder {\n  color: #9ca3af;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group input::placeholder,\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select::placeholder {\n  color: #9ca3af;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .form-group select {\n  cursor: pointer;\n  background: white;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions {\n  display: flex;\n  justify-content: flex-end;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-submit {\n  background: #3b82f6;\n  color: white;\n}\n.faculty-container .modal-overlay .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  background: #2563eb;\n}\n.faculty-container .faculty-header {\n  margin-bottom: 2rem;\n}\n.faculty-container .faculty-header .header-content h2 {\n  font-size: 1.75rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 0.25rem;\n}\n.faculty-container .faculty-header .header-content .subtitle {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.faculty-container .faculty-controls {\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  margin-bottom: 2rem;\n  padding: 1.5rem;\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.faculty-container .faculty-controls .btn-add {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #3b82f6;\n  color: white;\n  padding: 0.625rem 1.25rem;\n  border: none;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.faculty-container .faculty-controls .btn-add:hover {\n  background: #2563eb;\n}\n.faculty-container .faculty-controls .search-box {\n  flex: 1;\n  position: relative;\n  max-width: 300px;\n}\n.faculty-container .faculty-controls .search-box .search-icon {\n  position: absolute;\n  left: 0.75rem;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .search-box input {\n  width: 100%;\n  padding: 0.625rem 0.75rem 0.625rem 2.5rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .faculty-controls .search-box input:focus {\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-controls .search-box input::-moz-placeholder {\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .search-box input::placeholder {\n  color: #9ca3af;\n}\n.faculty-container .faculty-controls .department-filter {\n  padding: 0.625rem 1rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n  cursor: pointer;\n  outline: none;\n  transition: border-color 0.2s;\n}\n.faculty-container .faculty-controls .department-filter:focus {\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-table-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);\n}\n.faculty-container .faculty-table-section .table-title {\n  font-size: 1.125rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin-bottom: 1.5rem;\n}\n.faculty-container .faculty-table-section .table-wrapper {\n  overflow-x: auto;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table thead tr {\n  border-bottom: 2px solid #f3f4f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table thead tr th {\n  text-align: left;\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: capitalize;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: background-color 0.2s, opacity 0.2s;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr:hover {\n  background-color: #f9fafb;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row {\n  opacity: 0.4;\n  background: #f9fafb;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row td {\n  color: #9ca3af;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr.archived-row:hover {\n  background: #f3f4f6;\n  opacity: 0.5;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td {\n  padding: 1rem;\n  font-size: 0.875rem;\n  color: #1f2937;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 500;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.inactive {\n  background: #fee2e2;\n  color: #991b1b;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .status-badge.archived {\n  background: #e5e7eb;\n  color: #6b7280;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons {\n  display: flex;\n  gap: 0.5rem;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 32px;\n  height: 32px;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  background: white;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon:hover:not(:disabled) {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-edit {\n  color: #3b82f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-edit:hover:not(:disabled) {\n  background: #eff6ff;\n  border-color: #3b82f6;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-archive {\n  color: #ef4444;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-archive:hover {\n  background: #fef2f2;\n  border-color: #ef4444;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-restore {\n  color: #10b981;\n}\n.faculty-container .faculty-table-section .table-wrapper .faculty-table tbody tr td .action-buttons .btn-icon.btn-restore:hover {\n  background: #f0fdf4;\n  border-color: #10b981;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24877,7 +24877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideIn {\n  from {\n    transform: translateX(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateX(0);\n    opacity: 1;\n  }\n}\n@keyframes glow {\n  0%, 100% {\n    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);\n  }\n  50% {\n    box-shadow: 0 0 30px rgba(102, 126, 234, 0.8);\n  }\n}\n.layout {\n  display: flex;\n  height: 100vh;\n  background: #f8f9fb;\n  overflow: hidden;\n}\n.layout .sidebar {\n  width: 240px;\n  background: white;\n  color: #1f2937;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);\n  border-right: 1px solid #e5e7eb;\n  position: relative;\n  z-index: 100;\n}\n.layout .sidebar .logo-section {\n  padding: 1.5rem;\n  border-bottom: 1px solid #e5e7eb;\n}\n.layout .sidebar .logo-section .logo-box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n}\n.layout .sidebar .logo-section .logo-box .logo-text {\n  font-size: 1.5rem;\n  font-weight: 700;\n  margin: 0;\n  color: #1f2937;\n}\n.layout .sidebar .logo-section .logo-box .logo-icon-wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0.75rem;\n  background: #6366f1;\n  border-radius: 12px;\n}\n.layout .sidebar .logo-section .logo-box .logo-icon-wrapper .logo-icon {\n  color: white;\n  width: 40px;\n  height: 40px;\n}\n.layout .sidebar .toggle-btn {\n  background: none;\n  border: none;\n  color: #6b7280;\n  font-size: 1.2rem;\n  cursor: pointer;\n}\n.layout .sidebar .toggle-btn:hover {\n  color: #6366f1;\n}\n.layout .sidebar .nav-menu {\n  list-style: none;\n  padding: 1.5rem 0;\n  margin: 0;\n  flex: 1;\n  overflow-y: auto;\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar {\n  width: 6px;\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar-thumb {\n  background: rgba(102, 126, 234, 0.5);\n  border-radius: 10px;\n}\n.layout .sidebar .nav-menu .nav-item {\n  padding: 0.75rem 1rem;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  margin: 0.25rem 0.75rem;\n  border-radius: 8px;\n  color: #6b7280;\n}\n.layout .sidebar .nav-menu .nav-item:hover {\n  background: #f3f4f6;\n  color: #1f2937;\n}\n.layout .sidebar .nav-menu .nav-item.active {\n  background: #ede9fe;\n  font-weight: 600;\n  color: #7c3aed;\n}\n.layout .main-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  position: relative;\n}\n.layout .main-content .topbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: white;\n  padding: 1rem 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border-bottom: 1px solid #e5e7eb;\n  position: sticky;\n  top: 0;\n  z-index: 50;\n}\n.layout .main-content .page-content {\n  padding: 0;\n  overflow-y: auto;\n  flex: 1;\n}\n.layout.sidebar-collapsed .sidebar {\n  width: 80px;\n}\n.layout.sidebar-collapsed .sidebar .logo-text {\n  display: none;\n}\n.layout.sidebar-collapsed .sidebar .nav-label {\n  display: none;\n}\n.layout.sidebar-collapsed .sidebar .logo-icon-wrapper {\n  margin: 0;\n}\n.layout.sidebar-collapsed .sidebar .nav-item {\n  justify-content: center;\n  padding: 1rem;\n}\n.layout.sidebar-collapsed .sidebar .nav-item:hover {\n  padding-left: 1rem;\n}\n@media (max-width: 768px) {\n  .layout .sidebar {\n    position: fixed;\n    left: -260px;\n    top: 0;\n    bottom: 0;\n    z-index: 1000;\n  }\n  .layout .sidebar.open {\n    left: 0;\n  }\n}\n\n@keyframes shimmer {\n  0% {\n    background-position: -200% 0;\n  }\n  100% {\n    background-position: 200% 0;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideIn {\n  from {\n    transform: translateX(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateX(0);\n    opacity: 1;\n  }\n}\n.layout {\n  display: flex;\n  height: 100vh;\n  background: #f5f7fa;\n  overflow: hidden;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.layout .sidebar {\n  width: 260px;\n  background: #003366;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);\n  position: relative;\n  z-index: 100;\n}\n.layout .sidebar .logo-section {\n  padding: 1.75rem 1.5rem;\n  background: #002244;\n  border-bottom: 2px solid #d4af37;\n}\n.layout .sidebar .logo-section .logo-box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.75rem;\n}\n.layout .sidebar .logo-section .logo-box .logo-text {\n  font-size: 1.625rem;\n  font-weight: 700;\n  margin: 0;\n  color: white;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  text-align: center;\n}\n.layout .sidebar .logo-section .logo-box .logo-icon-wrapper {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1rem;\n  background: #d4af37;\n  border-radius: 50%;\n  border: 3px solid rgba(255, 255, 255, 0.2);\n}\n.layout .sidebar .logo-section .logo-box .logo-icon-wrapper .logo-icon {\n  color: white;\n  width: 40px;\n  height: 40px;\n}\n.layout .sidebar .nav-menu {\n  list-style: none;\n  padding: 1.5rem 0;\n  margin: 0;\n  flex: 1;\n  overflow-y: auto;\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar {\n  width: 6px;\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar-track {\n  background: rgba(255, 255, 255, 0.05);\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar-thumb {\n  background: rgba(255, 255, 255, 0.2);\n  border-radius: 3px;\n}\n.layout .sidebar .nav-menu::-webkit-scrollbar-thumb:hover {\n  background: rgba(255, 255, 255, 0.3);\n}\n.layout .sidebar .nav-menu .nav-item {\n  padding: 0.875rem 1.5rem;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  font-weight: 500;\n  font-size: 0.9375rem;\n  margin: 0.25rem 1rem;\n  border-radius: 6px;\n  color: rgba(255, 255, 255, 0.85);\n  transition: all 0.2s ease;\n  border-left: 3px solid transparent;\n}\n.layout .sidebar .nav-menu .nav-item:hover {\n  background: rgba(255, 255, 255, 0.1);\n  color: white;\n  border-left-color: #d4af37;\n}\n.layout .sidebar .nav-menu .nav-item.active {\n  background: #004d99;\n  font-weight: 600;\n  color: white;\n  border-left-color: #d4af37;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n.layout .sidebar .sidebar-footer {\n  padding: 1rem 1.5rem;\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n  font-size: 0.75rem;\n  color: rgba(255, 255, 255, 0.6);\n  text-align: center;\n}\n.layout .main-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  position: relative;\n  background: #f5f7fa;\n}\n.layout.sidebar-collapsed .sidebar {\n  width: 80px;\n}\n.layout.sidebar-collapsed .sidebar .logo-text {\n  display: none;\n}\n.layout.sidebar-collapsed .sidebar .nav-label {\n  display: none;\n}\n.layout.sidebar-collapsed .sidebar .logo-icon-wrapper {\n  margin: 0;\n}\n.layout.sidebar-collapsed .sidebar .nav-item {\n  justify-content: center;\n  padding: 1rem;\n  margin: 0.25rem 0.5rem;\n}\n@media (max-width: 768px) {\n  .layout .sidebar {\n    position: fixed;\n    left: -280px;\n    top: 0;\n    bottom: 0;\n    z-index: 1000;\n    transition: left 0.3s ease;\n  }\n  .layout .sidebar.open {\n    left: 0;\n  }\n  .layout .main-content {\n    width: 100%;\n  }\n}\n\n.university-header {\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 0.875rem 2rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n}\n.university-header .academic-info {\n  display: flex;\n  gap: 1.5rem;\n  align-items: center;\n  font-size: 0.875rem;\n  color: #546e7a;\n}\n.university-header .academic-info .info-item {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.university-header .academic-info .info-item .label {\n  font-weight: 600;\n  color: #2c3e50;\n}\n.university-header .academic-info .info-item .value {\n  color: #546e7a;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24901,7 +24901,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes bounce {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n}\n.profile-container {\n  padding: 2rem;\n  background: #f8f9fb;\n  min-height: 100vh;\n  max-height: 100vh;\n  overflow-y: auto;\n  color: #2d2d2d;\n}\n.profile-container .profile-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 1.5rem;\n}\n.profile-container .profile-header h2 {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #1a202c;\n  margin-bottom: 0.25rem;\n}\n.profile-container .profile-header .subtitle {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.profile-container .profile-header .btn-edit-profile {\n  background: #6366f1;\n  border: none;\n  color: white;\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n}\n.profile-container .profile-header .btn-edit-profile:hover {\n  background: #4f46e5;\n}\n.profile-container .profile-header .btn-edit-profile:active {\n  background: #4338ca;\n}\n.profile-container .profile-content {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n}\n.profile-container .profile-card {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .profile-card:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .profile-card .profile-avatar-section {\n  display: flex;\n  align-items: center;\n  gap: 1.5rem;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  background: #ede9fe;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #7c3aed;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  border: 3px solid #f3f4f6;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar svg {\n  width: 60px;\n  height: 60px;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn {\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  width: 36px;\n  height: 36px;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: white;\n  border: 3px solid white;\n  transition: all 0.2s;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn:hover {\n  transform: scale(1.1);\n  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);\n}\n.profile-container .profile-card .profile-avatar-section .profile-info {\n  flex: 1;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info h3 {\n  font-size: 1.25rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 0.5rem 0;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info .role-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 6px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  background: #dbeafe;\n  color: #1e40af;\n  margin: 0;\n}\n.profile-container .info-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .info-section:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .info-section .section-title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 1rem 0;\n}\n.profile-container .info-section .info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 0.5rem;\n}\n@media (max-width: 768px) {\n  .profile-container .info-section .info-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .info-section .info-grid .info-field:last-child {\n  grid-column: 1/-1;\n}\n.profile-container .info-section .info-grid .info-field label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #6b7280;\n  margin-bottom: 0.5rem;\n}\n.profile-container .info-section .info-grid .info-field p {\n  font-size: 0.9375rem;\n  color: #1f2937;\n  margin: 0;\n  padding: 0.625rem 0;\n}\n.profile-container .info-section .info-grid .info-field input {\n  width: 100%;\n  padding: 0.625rem 0.875rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n}\n.profile-container .info-section .info-grid .info-field input:focus {\n  outline: none;\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.profile-container .info-section .edit-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.profile-container .info-section .edit-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .info-section .edit-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.profile-container .info-section .edit-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.profile-container .info-section .edit-actions button.btn-save {\n  background: #6366f1;\n  color: white;\n}\n.profile-container .info-section .edit-actions button.btn-save:hover {\n  background: #4f46e5;\n}\n.profile-container .action-buttons-section {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 0.75rem;\n}\n@media (max-width: 768px) {\n  .profile-container .action-buttons-section {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .action-buttons-section .action-btn {\n  background: white;\n  border: 1px solid #e5e7eb;\n  padding: 0.75rem 1rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  text-align: center;\n  white-space: nowrap;\n}\n.profile-container .action-buttons-section .action-btn:hover {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.profile-container .action-buttons-section .action-btn svg {\n  color: white;\n  flex-shrink: 0;\n}\n.profile-container .account-info-box {\n  background: white;\n  border: 1px solid #e5e7eb;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box .account-info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.5rem;\n}\n@media (max-width: 640px) {\n  .profile-container .account-info-box .account-info-grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n  }\n}\n.profile-container .account-info-box .account-info-grid .account-info-item label {\n  display: block;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item p {\n  font-size: 0.875rem;\n  color: #1f2937;\n  font-weight: 500;\n  margin: 0;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: capitalize;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.profile-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: fadeIn 0.3s ease-out;\n}\n.profile-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: fadeIn 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.profile-container .modal-content.modal-wide {\n  max-width: 700px;\n}\n.profile-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.profile-container .modal-content .modal-form .form-group {\n  margin-bottom: 1.25rem;\n}\n.profile-container .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.profile-container .modal-content .modal-form .form-group input {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.profile-container .modal-content .modal-form .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.profile-container .modal-content .modal-form .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .form-group input::placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.profile-container .modal-content .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.profile-container .modal-content .activity-list .activity-table {\n  width: 100%;\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n}\n.profile-container .modal-content .activity-list .activity-table thead {\n  background: #f9fafb;\n}\n.profile-container .modal-content .activity-list .activity-table thead tr th {\n  padding: 0.75rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: all 0.3s ease;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr:hover {\n  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);\n  transform: scale(1.01);\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr td {\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes bounce {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n}\n.profile-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  max-height: 100vh;\n  overflow-y: auto;\n  color: #2c3e50;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.profile-container .profile-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 1.25rem 2rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 0;\n}\n.profile-container .profile-header h2 {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .subtitle {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.profile-container .profile-header .btn-edit-profile {\n  background: #003366;\n  border: 2px solid #003366;\n  color: white;\n  padding: 0.75rem 1.75rem;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .btn-edit-profile:hover {\n  background: white;\n  color: #003366;\n}\n.profile-container .profile-header .btn-edit-profile:active {\n  background: #002244;\n  border-color: #002244;\n  color: white;\n}\n.profile-container .profile-content {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n  padding: 2rem;\n}\n.profile-container .profile-card {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .profile-card:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .profile-card .profile-avatar-section {\n  display: flex;\n  align-items: center;\n  gap: 1.5rem;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar {\n  width: 140px;\n  height: 140px;\n  border-radius: 50%;\n  background: linear-gradient(135deg, #003366, #002244);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  border: 4px solid #d4af37;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar svg {\n  width: 60px;\n  height: 60px;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 40px;\n  height: 40px;\n  background: #d4af37;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: white;\n  border: 3px solid white;\n  transition: all 0.2s;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn:hover {\n  transform: scale(1.1);\n  background: #f4d03f;\n  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);\n}\n.profile-container .profile-card .profile-avatar-section .profile-info {\n  flex: 1;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info h3 {\n  font-size: 1.25rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 0.5rem 0;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info .role-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 6px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  background: #dbeafe;\n  color: #1e40af;\n  margin: 0;\n}\n.profile-container .info-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .info-section:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .info-section .section-title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 1rem 0;\n}\n.profile-container .info-section .info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 0.5rem;\n}\n@media (max-width: 768px) {\n  .profile-container .info-section .info-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .info-section .info-grid .info-field:last-child {\n  grid-column: 1/-1;\n}\n.profile-container .info-section .info-grid .info-field label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #6b7280;\n  margin-bottom: 0.5rem;\n}\n.profile-container .info-section .info-grid .info-field p {\n  font-size: 0.9375rem;\n  color: #1f2937;\n  margin: 0;\n  padding: 0.625rem 0;\n}\n.profile-container .info-section .info-grid .info-field input {\n  width: 100%;\n  padding: 0.625rem 0.875rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n}\n.profile-container .info-section .info-grid .info-field input:focus {\n  outline: none;\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.profile-container .info-section .edit-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.profile-container .info-section .edit-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .info-section .edit-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.profile-container .info-section .edit-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.profile-container .info-section .edit-actions button.btn-save {\n  background: #6366f1;\n  color: white;\n}\n.profile-container .info-section .edit-actions button.btn-save:hover {\n  background: #4f46e5;\n}\n.profile-container .action-buttons-section {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 0.75rem;\n}\n@media (max-width: 768px) {\n  .profile-container .action-buttons-section {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .action-buttons-section .action-btn {\n  background: white;\n  border: 1px solid #e5e7eb;\n  padding: 0.75rem 1rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  text-align: center;\n  white-space: nowrap;\n}\n.profile-container .action-buttons-section .action-btn:hover {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.profile-container .action-buttons-section .action-btn svg {\n  color: white;\n  flex-shrink: 0;\n}\n.profile-container .account-info-box {\n  background: white;\n  border: 1px solid #e5e7eb;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box .account-info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.5rem;\n}\n@media (max-width: 640px) {\n  .profile-container .account-info-box .account-info-grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n  }\n}\n.profile-container .account-info-box .account-info-grid .account-info-item label {\n  display: block;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item p {\n  font-size: 0.875rem;\n  color: #1f2937;\n  font-weight: 500;\n  margin: 0;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: capitalize;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.profile-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: fadeIn 0.3s ease-out;\n}\n.profile-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: fadeIn 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.profile-container .modal-content.modal-wide {\n  max-width: 700px;\n}\n.profile-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.profile-container .modal-content .modal-form .form-group {\n  margin-bottom: 1.25rem;\n}\n.profile-container .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.profile-container .modal-content .modal-form .form-group input {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.profile-container .modal-content .modal-form .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.profile-container .modal-content .modal-form .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .form-group input::placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.profile-container .modal-content .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.profile-container .modal-content .activity-list .activity-table {\n  width: 100%;\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n}\n.profile-container .modal-content .activity-list .activity-table thead {\n  background: #f9fafb;\n}\n.profile-container .modal-content .activity-list .activity-table thead tr th {\n  padding: 0.75rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: all 0.3s ease;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr:hover {\n  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);\n  transform: scale(1.01);\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr td {\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24925,7 +24925,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideInSettings {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.settings-container {\n  padding: 2rem;\n  background: #f8f9fb;\n  min-height: 100vh;\n  color: #2d2d2d;\n}\n.settings-container .settings-header {\n  margin-bottom: 2.5rem;\n}\n.settings-container .settings-header h2 {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #1a202c;\n  margin-bottom: 0.25rem;\n}\n.settings-container .settings-header .subtitle {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.settings-container .settings-content {\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n  overflow: hidden;\n}\n.settings-container .settings-content:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.settings-container .settings-tabs {\n  display: flex;\n  border-bottom: 1px solid #e5e7eb;\n  padding: 0 1rem;\n  gap: 0.5rem;\n  background: #fafafa;\n}\n.settings-container .settings-tabs .tab-button {\n  background: transparent;\n  border: none;\n  padding: 1rem 1.5rem;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #6b7280;\n  cursor: pointer;\n  border-bottom: 2px solid transparent;\n  position: relative;\n}\n.settings-container .settings-tabs .tab-button:hover {\n  color: #1f2937;\n}\n.settings-container .settings-tabs .tab-button.active {\n  color: #6366f1;\n  border-bottom-color: #6366f1;\n  font-weight: 600;\n}\n.settings-container .settings-body {\n  padding: 2rem;\n}\n.settings-container .settings-body .table-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 1.5rem;\n}\n.settings-container .settings-body .table-header h3 {\n  font-size: 1.25rem;\n  font-weight: 700;\n  color: #1f2937;\n  margin: 0;\n}\n.settings-container .settings-body .table-header .btn-add-setting {\n  background: #6366f1;\n  border: none;\n  color: white;\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n}\n.settings-container .settings-body .table-header .btn-add-setting:hover {\n  background: #4f46e5;\n}\n.settings-container .settings-body .table-header .search-box {\n  position: relative;\n}\n.settings-container .settings-body .table-header .search-box .search-icon {\n  position: absolute;\n  left: 0.75rem;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #9ca3af;\n  pointer-events: none;\n}\n.settings-container .settings-body .table-header .search-box input {\n  padding: 0.625rem 0.75rem 0.625rem 2.5rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  width: 100%;\n}\n.settings-container .settings-body .table-header .search-box input:focus {\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.settings-container .settings-body .table-header .search-box input::-moz-placeholder {\n  color: #9ca3af;\n}\n.settings-container .settings-body .table-header .search-box input::placeholder {\n  color: #9ca3af;\n}\n.settings-container .settings-body .table-header .department-filter {\n  padding: 0.625rem 1rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n  cursor: pointer;\n  outline: none;\n}\n.settings-container .settings-body .table-header .department-filter:focus {\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.settings-container .settings-table-wrapper {\n  overflow-x: auto;\n  border-radius: 8px;\n  border: 1px solid #e5e7eb;\n}\n.settings-container .settings-table {\n  width: 100%;\n  border-collapse: collapse;\n  background: white;\n}\n.settings-container .settings-table thead {\n  background: #f9fafb;\n}\n.settings-container .settings-table thead tr th {\n  padding: 0.875rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.settings-container .settings-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n}\n.settings-container .settings-table tbody tr:hover {\n  background: #fafafa;\n}\n.settings-container .settings-table tbody tr.archived-row {\n  opacity: 0.4;\n  background: #f9fafb;\n}\n.settings-container .settings-table tbody tr.archived-row td {\n  color: #9ca3af;\n}\n.settings-container .settings-table tbody tr.archived-row:hover {\n  background: #f3f4f6;\n}\n.settings-container .settings-table tbody tr td {\n  padding: 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}\n.settings-container .settings-table tbody tr td .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  text-transform: capitalize;\n}\n.settings-container .settings-table tbody tr td .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.settings-container .settings-table tbody tr td .status-badge.archived {\n  background: #fee2e2;\n  color: #991b1b;\n}\n.settings-container .settings-table tbody tr td .status-badge.inactive {\n  background: #fef3c7;\n  color: #92400e;\n}\n.settings-container .settings-table tbody tr td .action-buttons {\n  display: flex;\n  gap: 0.5rem;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon {\n  background: transparent;\n  border: 1px solid #e5e7eb;\n  padding: 0.5rem;\n  border-radius: 6px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit {\n  color: #6366f1;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit:hover:not(:disabled) {\n  background: #eff6ff;\n  border-color: #6366f1;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive {\n  color: #ef4444;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive:hover {\n  background: #fef2f2;\n  border-color: #ef4444;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore {\n  color: #10b981;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore:hover {\n  background: #f0fdf4;\n  border-color: #10b981;\n}\n.settings-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: slideInSettings 0.3s ease-out;\n}\n.settings-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: slideInSettings 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.settings-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.settings-container .settings-form .form-group {\n  margin-bottom: 1.25rem;\n}\n.settings-container .settings-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.settings-container .settings-form .form-group input,\n.settings-container .settings-form .form-group select {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.settings-container .settings-form .form-group input:focus,\n.settings-container .settings-form .form-group select:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.settings-container .settings-form .form-group input::-moz-placeholder, .settings-container .settings-form .form-group select::-moz-placeholder {\n  color: #9ca3af;\n}\n.settings-container .settings-form .form-group input::placeholder,\n.settings-container .settings-form .form-group select::placeholder {\n  color: #9ca3af;\n}\n.settings-container .settings-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.settings-container .settings-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.settings-container .settings-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n  border-radius: 12px;\n}\n.settings-container .settings-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.settings-container .settings-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  border-radius: 12px;\n}\n.settings-container .settings-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideInSettings {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.settings-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  color: #2c3e50;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.settings-container .settings-header {\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 1.25rem 2rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 0;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n}\n.settings-container .settings-header h2 {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-header .subtitle {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.settings-container .settings-header .settings-info {\n  display: flex;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.settings-container .settings-header .settings-info .info-badge {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0.75rem 1.25rem;\n  background: linear-gradient(135deg, #003366 0%, rgb(0, 25.5, 51) 100%);\n  border-radius: 8px;\n  border: 2px solid #d4af37;\n  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.15);\n  min-width: 140px;\n}\n.settings-container .settings-header .settings-info .info-badge .info-label {\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: rgba(255, 255, 255, 0.85);\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  margin-bottom: 0.25rem;\n}\n.settings-container .settings-header .settings-info .info-badge .info-value {\n  font-size: 1.5rem;\n  font-weight: 700;\n  color: white;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n}\n.settings-container .settings-content {\n  background: white;\n  margin: 2rem;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);\n  border: 1px solid #e0e7ee;\n  overflow: hidden;\n  transition: all 0.3s ease;\n}\n.settings-container .settings-content:hover {\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);\n}\n.settings-container .settings-tabs {\n  display: flex;\n  border-bottom: 2px solid #d0d7de;\n  padding: 0 1.5rem;\n  gap: 0.5rem;\n  background: #eceff1;\n}\n.settings-container .settings-tabs .tab-button {\n  background: transparent;\n  border: none;\n  padding: 1rem 1.75rem;\n  font-size: 0.875rem;\n  font-weight: 600;\n  color: #546e7a;\n  cursor: pointer;\n  border-bottom: 3px solid transparent;\n  position: relative;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-tabs .tab-button:hover {\n  color: #003366;\n  background: rgba(0, 51, 102, 0.05);\n}\n.settings-container .settings-tabs .tab-button.active {\n  color: #003366;\n  border-bottom-color: #d4af37;\n  font-weight: 700;\n  background: white;\n}\n.settings-container .settings-body {\n  padding: 2rem;\n}\n.settings-container .settings-body .table-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 1.5rem;\n}\n.settings-container .settings-body .table-header h3 {\n  font-size: 1.125rem;\n  font-weight: 700;\n  color: #003366;\n  margin: 0;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-body .table-header .btn-add-setting {\n  background: #003366;\n  border: 2px solid #003366;\n  color: white;\n  padding: 0.75rem 1.75rem;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-body .table-header .btn-add-setting:hover {\n  background: white;\n  color: #003366;\n}\n.settings-container .settings-body .table-header .search-box {\n  position: relative;\n}\n.settings-container .settings-body .table-header .search-box .search-icon {\n  position: absolute;\n  left: 0.75rem;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #9ca3af;\n  pointer-events: none;\n}\n.settings-container .settings-body .table-header .search-box input {\n  padding: 0.75rem 0.75rem 0.75rem 2.5rem;\n  border: 2px solid #d0d7de;\n  border-radius: 6px;\n  font-size: 0.875rem;\n  outline: none;\n  width: 100%;\n  transition: all 0.2s ease;\n}\n.settings-container .settings-body .table-header .search-box input:focus {\n  border-color: #003366;\n  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);\n}\n.settings-container .settings-body .table-header .search-box input::-moz-placeholder {\n  color: #78909c;\n}\n.settings-container .settings-body .table-header .search-box input::placeholder {\n  color: #78909c;\n}\n.settings-container .settings-body .table-header .department-filter {\n  padding: 0.75rem 1rem;\n  border: 2px solid #d0d7de;\n  border-radius: 6px;\n  font-size: 0.875rem;\n  background: white;\n  cursor: pointer;\n  outline: none;\n  font-weight: 500;\n  transition: all 0.2s ease;\n}\n.settings-container .settings-body .table-header .department-filter:focus {\n  border-color: #003366;\n  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);\n}\n.settings-container .settings-table-wrapper {\n  overflow-x: auto;\n  border-radius: 6px;\n  border: 1px solid #e0e7ee;\n}\n.settings-container .settings-table {\n  width: 100%;\n  border-collapse: collapse;\n  background: white;\n}\n.settings-container .settings-table thead {\n  background: #003366;\n}\n.settings-container .settings-table thead tr th {\n  padding: 1rem 1.25rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 700;\n  color: white;\n  text-transform: uppercase;\n  letter-spacing: 0.75px;\n  border-bottom: 3px solid #d4af37;\n}\n.settings-container .settings-table tbody tr {\n  border-bottom: 1px solid #d0d7de;\n  transition: all 0.2s ease;\n}\n.settings-container .settings-table tbody tr:hover {\n  background: #e1f5fe;\n}\n.settings-container .settings-table tbody tr.archived-row {\n  opacity: 0.5;\n  background: #eceff1;\n}\n.settings-container .settings-table tbody tr.archived-row td {\n  color: #78909c;\n}\n.settings-container .settings-table tbody tr.archived-row:hover {\n  background: rgb(227.1909090909, 231.5818181818, 234.5090909091);\n}\n.settings-container .settings-table tbody tr td {\n  padding: 1.125rem 1.25rem;\n  font-size: 0.875rem;\n  color: #2c3e50;\n  font-weight: 500;\n}\n.settings-container .settings-table tbody tr td .status-badge {\n  display: inline-block;\n  padding: 0.375rem 1rem;\n  border-radius: 4px;\n  font-size: 0.75rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-table tbody tr td .status-badge.active {\n  background: #e8f5e9;\n  color: #2d7a3e;\n  border: 1px solid #2d7a3e;\n}\n.settings-container .settings-table tbody tr td .status-badge.archived {\n  background: #ffebee;\n  color: #c62828;\n  border: 1px solid #c62828;\n}\n.settings-container .settings-table tbody tr td .status-badge.inactive {\n  background: #fff3e0;\n  color: #f57c00;\n  border: 1px solid #f57c00;\n}\n.settings-container .settings-table tbody tr td .action-buttons {\n  display: flex;\n  gap: 0.5rem;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon {\n  background: transparent;\n  border: 2px solid #d0d7de;\n  padding: 0.5rem;\n  border-radius: 4px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.2s ease;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit {\n  color: #003366;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit:hover:not(:disabled) {\n  background: #003366;\n  border-color: #003366;\n  color: white;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive {\n  color: #c62828;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive:hover {\n  background: #c62828;\n  border-color: #c62828;\n  color: white;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore {\n  color: #2d7a3e;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore:hover {\n  background: #2d7a3e;\n  border-color: #2d7a3e;\n  color: white;\n}\n.settings-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(8px);\n  -webkit-backdrop-filter: blur(8px);\n  animation: slideInSettings 0.3s ease-out;\n}\n.settings-container .modal-content {\n  background: white;\n  border-radius: 8px;\n  padding: 2.5rem 3rem;\n  max-width: 1000px;\n  width: 95%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);\n  animation: slideInSettings 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n  border-top: 6px solid #003366;\n}\n.settings-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 700;\n  color: #003366;\n  margin: 0 0 1.5rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 3px solid #d4af37;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-form .form-group, .settings-container .settings-form .form-row, .settings-container .modal-form .form-group, .settings-container .modal-form .form-row {\n  margin-bottom: 1.25rem;\n}\n.settings-container .settings-form .form-group label, .settings-container .settings-form .form-row label, .settings-container .modal-form .form-group label, .settings-container .modal-form .form-row label {\n  display: block;\n  font-size: 0.8125rem;\n  font-weight: 600;\n  color: #2c3e50;\n  margin-bottom: 0.5rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-form .form-group input,\n.settings-container .settings-form .form-group select, .settings-container .settings-form .form-row input,\n.settings-container .settings-form .form-row select, .settings-container .modal-form .form-group input,\n.settings-container .modal-form .form-group select, .settings-container .modal-form .form-row input,\n.settings-container .modal-form .form-row select {\n  width: 100%;\n  padding: 0.875rem 1rem;\n  border: 2px solid #d0d7de;\n  border-radius: 6px;\n  font-size: 0.9375rem;\n  transition: all 0.2s ease;\n  background: white;\n  font-weight: 500;\n}\n.settings-container .settings-form .form-group input:focus,\n.settings-container .settings-form .form-group select:focus, .settings-container .settings-form .form-row input:focus,\n.settings-container .settings-form .form-row select:focus, .settings-container .modal-form .form-group input:focus,\n.settings-container .modal-form .form-group select:focus, .settings-container .modal-form .form-row input:focus,\n.settings-container .modal-form .form-row select:focus {\n  outline: none;\n  border-color: #003366;\n  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);\n  background: white;\n}\n.settings-container .settings-form .form-group input::-moz-placeholder, .settings-container .settings-form .form-group select::-moz-placeholder, .settings-container .settings-form .form-row input::-moz-placeholder, .settings-container .settings-form .form-row select::-moz-placeholder, .settings-container .modal-form .form-group input::-moz-placeholder, .settings-container .modal-form .form-group select::-moz-placeholder, .settings-container .modal-form .form-row input::-moz-placeholder, .settings-container .modal-form .form-row select::-moz-placeholder {\n  color: #78909c;\n}\n.settings-container .settings-form .form-group input::placeholder,\n.settings-container .settings-form .form-group select::placeholder, .settings-container .settings-form .form-row input::placeholder,\n.settings-container .settings-form .form-row select::placeholder, .settings-container .modal-form .form-group input::placeholder,\n.settings-container .modal-form .form-group select::placeholder, .settings-container .modal-form .form-row input::placeholder,\n.settings-container .modal-form .form-row select::placeholder {\n  color: #78909c;\n}\n.settings-container .settings-form .form-row, .settings-container .modal-form .form-row {\n  display: flex;\n  gap: 1rem;\n}\n.settings-container .settings-form .form-row .form-group, .settings-container .modal-form .form-row .form-group {\n  flex: 1;\n  margin-bottom: 0;\n}\n.settings-container .settings-form .modal-actions, .settings-container .modal-form .modal-actions {\n  display: flex;\n  gap: 1rem;\n  margin-top: 2rem;\n}\n.settings-container .settings-form .modal-actions button, .settings-container .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.875rem 1.75rem;\n  border-radius: 6px;\n  font-weight: 700;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.settings-container .settings-form .modal-actions button.btn-cancel, .settings-container .modal-form .modal-actions button.btn-cancel {\n  background: white;\n  color: #2c3e50;\n  border: 2px solid #d0d7de;\n}\n.settings-container .settings-form .modal-actions button.btn-cancel:hover, .settings-container .modal-form .modal-actions button.btn-cancel:hover {\n  background: #eceff1;\n  border-color: #546e7a;\n}\n.settings-container .settings-form .modal-actions button.btn-submit, .settings-container .modal-form .modal-actions button.btn-submit {\n  background: #003366;\n  color: white;\n  border: 2px solid #003366;\n}\n.settings-container .settings-form .modal-actions button.btn-submit:hover, .settings-container .modal-form .modal-actions button.btn-submit:hover {\n  background: #004d99;\n  border-color: #004d99;\n}\n.settings-container .settings-form .modal-actions button.btn-submit:active, .settings-container .modal-form .modal-actions button.btn-submit:active {\n  background: #002244;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24949,7 +24949,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideInStudents {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.settings-container {\n  padding: 2rem;\n  background: #f8f9fb;\n  min-height: 100vh;\n  color: #2d2d2d;\n}\n.settings-container .settings-header {\n  margin-bottom: 2.5rem;\n}\n.settings-container .settings-header h2 {\n  font-size: 1.875rem;\n  font-weight: 700;\n  color: #1a202c;\n  margin-bottom: 0.25rem;\n}\n.settings-container .settings-header .subtitle {\n  font-size: 0.875rem;\n  color: #6b7280;\n  margin: 0;\n}\n.settings-container .controls-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 1.5rem;\n  gap: 1rem;\n}\n@media (max-width: 768px) {\n  .settings-container .controls-row {\n    flex-direction: column;\n    align-items: stretch;\n  }\n}\n.settings-container .controls-row .left-controls {\n  display: flex;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.settings-container .controls-row .left-controls .search-box {\n  position: relative;\n}\n.settings-container .controls-row .left-controls .search-box .search-icon {\n  position: absolute;\n  left: 0.75rem;\n  top: 50%;\n  transform: translateY(-50%);\n  color: #9ca3af;\n  pointer-events: none;\n}\n.settings-container .controls-row .left-controls .search-box input {\n  padding: 0.625rem 0.75rem 0.625rem 2.5rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  outline: none;\n  width: 250px;\n}\n.settings-container .controls-row .left-controls .search-box input:focus {\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.settings-container .controls-row .left-controls .search-box input::-moz-placeholder {\n  color: #9ca3af;\n}\n.settings-container .controls-row .left-controls .search-box input::placeholder {\n  color: #9ca3af;\n}\n.settings-container .controls-row .left-controls select {\n  padding: 0.625rem 1rem;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n  cursor: pointer;\n  outline: none;\n}\n.settings-container .controls-row .left-controls select:focus {\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.settings-container .controls-row .btn-add {\n  background: #6366f1;\n  border: none;\n  color: white;\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.settings-container .controls-row .btn-add:hover {\n  background: #4f46e5;\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);\n}\n.settings-container .archive-toggle {\n  margin-bottom: 1.5rem;\n}\n.settings-container .archive-toggle label {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  cursor: pointer;\n  font-size: 0.875rem;\n  color: #6b7280;\n}\n.settings-container .archive-toggle label input[type=checkbox] {\n  cursor: pointer;\n}\n.settings-container .settings-table-wrapper {\n  overflow-x: auto;\n  border-radius: 8px;\n  border: 1px solid #e5e7eb;\n  background: white;\n}\n.settings-container .settings-table {\n  width: 100%;\n  border-collapse: collapse;\n  background: white;\n}\n.settings-container .settings-table thead {\n  background: #f9fafb;\n}\n.settings-container .settings-table thead tr th {\n  padding: 0.875rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.settings-container .settings-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n}\n.settings-container .settings-table tbody tr:hover {\n  background: #fafafa;\n}\n.settings-container .settings-table tbody tr.archived-row {\n  opacity: 0.4;\n  background: #f9fafb;\n}\n.settings-container .settings-table tbody tr.archived-row td {\n  color: #9ca3af;\n}\n.settings-container .settings-table tbody tr.archived-row:hover {\n  background: #f3f4f6;\n}\n.settings-container .settings-table tbody tr td {\n  padding: 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}\n.settings-container .settings-table tbody tr td .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  text-transform: capitalize;\n}\n.settings-container .settings-table tbody tr td .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.settings-container .settings-table tbody tr td .status-badge.archived {\n  background: #fee2e2;\n  color: #991b1b;\n}\n.settings-container .settings-table tbody tr td .status-badge.inactive {\n  background: #fef3c7;\n  color: #92400e;\n}\n.settings-container .settings-table tbody tr td .action-buttons {\n  display: flex;\n  gap: 0.5rem;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon {\n  background: transparent;\n  border: 1px solid #e5e7eb;\n  padding: 0.5rem;\n  border-radius: 6px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.2s;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit {\n  color: #6366f1;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-edit:hover:not(:disabled) {\n  background: #eff6ff;\n  border-color: #6366f1;\n  transform: translateY(-2px);\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive {\n  color: #ef4444;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-archive:hover {\n  background: #fef2f2;\n  border-color: #ef4444;\n  transform: translateY(-2px);\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore {\n  color: #10b981;\n}\n.settings-container .settings-table tbody tr td .action-buttons .btn-icon.btn-restore:hover {\n  background: #f0fdf4;\n  border-color: #10b981;\n  transform: translateY(-2px);\n}\n.settings-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: slideInStudents 0.3s ease-out;\n}\n.settings-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 700px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: slideInStudents 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.settings-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.settings-container .modal-form .form-row {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n@media (max-width: 640px) {\n  .settings-container .modal-form .form-row {\n    grid-template-columns: 1fr;\n  }\n}\n.settings-container .modal-form .form-group {\n  margin-bottom: 1rem;\n}\n.settings-container .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.settings-container .modal-form .form-group input,\n.settings-container .modal-form .form-group select {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.settings-container .modal-form .form-group input:focus,\n.settings-container .modal-form .form-group select:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.settings-container .modal-form .form-group input::-moz-placeholder, .settings-container .modal-form .form-group select::-moz-placeholder {\n  color: #9ca3af;\n}\n.settings-container .modal-form .form-group input::placeholder,\n.settings-container .modal-form .form-group select::placeholder {\n  color: #9ca3af;\n}\n.settings-container .modal-form .form-group select {\n  cursor: pointer;\n}\n.settings-container .modal-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.settings-container .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 12px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.settings-container .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.settings-container .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.settings-container .modal-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n}\n.settings-container .modal-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.settings-container .modal-form .modal-actions button.btn-submit:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n  transform: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes slideInStudents {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42503,6 +42503,45 @@ const Archive = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 
 /***/ }),
 
+/***/ "./node_modules/lucide-react/dist/esm/icons/building-2.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/building-2.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Building2)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
+  ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
+  ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
+  ["path", { d: "M10 6h4", key: "1itunk" }],
+  ["path", { d: "M10 10h4", key: "tcdvrf" }],
+  ["path", { d: "M10 14h4", key: "kelpxr" }],
+  ["path", { d: "M10 18h4", key: "1ulq68" }]
+];
+const Building2 = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("building-2", __iconNode);
+
+
+//# sourceMappingURL=building-2.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/lucide-react/dist/esm/icons/camera.js":
 /*!************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/camera.js ***!
@@ -42807,6 +42846,40 @@ const Phone = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("
 
 /***/ }),
 
+/***/ "./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ RotateCcw)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
+  ["path", { d: "M3 3v5h5", key: "1xhq8a" }]
+];
+const RotateCcw = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("rotate-ccw", __iconNode);
+
+
+//# sourceMappingURL=rotate-ccw.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/lucide-react/dist/esm/icons/search.js":
 /*!************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/search.js ***!
@@ -42876,6 +42949,43 @@ const Shield = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
 
 
 //# sourceMappingURL=shield.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/trash-2.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/trash-2.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Trash2)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M10 11v6", key: "nco0om" }],
+  ["path", { d: "M14 11v6", key: "outv1u" }],
+  ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+];
+const Trash2 = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("trash-2", __iconNode);
+
+
+//# sourceMappingURL=trash-2.js.map
 
 
 /***/ }),
@@ -89248,7 +89358,7 @@ function AdminLogin(_ref) {
             children: "AcadMe"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             className: "admin-subtitle",
-            children: "Admin Portal"
+            children: "Management System"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "admin-right-section",
@@ -89487,15 +89597,15 @@ function AdminRegister(_ref) {
     };
   }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-    className: "admin-register-container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-      className: "register-card",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-        className: "register-header",
+    className: "admin-register-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      className: "admin-register-card",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        className: "admin-register-content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "logo-section",
+          className: "admin-left-section",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-            className: "logo-icon",
+            className: "admin-logo-icon",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("svg", {
               viewBox: "0 0 200 200",
               fill: "none",
@@ -89537,235 +89647,580 @@ function AdminRegister(_ref) {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
+            className: "admin-title",
             children: "AcadMe"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h2", {
-          children: "Admin Registration"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
-          className: "subtitle",
-          children: "Create your administrator account"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
-        onSubmit: handleSubmit,
-        className: "register-form",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "profile-picture-upload",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "profile-picture-container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-              className: "profile-picture-preview",
-              children: profilePicturePreview ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("img", {
-                src: profilePicturePreview,
-                alt: "Profile Preview"
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                size: 48,
-                strokeWidth: 1.5
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              htmlFor: "profile-picture-input",
-              className: "upload-button",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                size: 20
-              }), "Upload Photo"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              id: "profile-picture-input",
-              type: "file",
-              accept: "image/*",
-              onChange: handleProfilePictureChange,
-              style: {
-                display: 'none'
-              }
-            })]
-          }), errors.profile_picture && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-            className: "error-text",
-            children: Array.isArray(errors.profile_picture) ? errors.profile_picture[0] : errors.profile_picture
-          }), errors.form && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-            className: "error-text",
-            style: {
-              marginTop: 8
-            },
-            children: errors.form
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
+            className: "admin-subtitle",
+            children: "Management System"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "form-grid",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                size: 18
-              }), "Full Name"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter your full name",
-              value: formData.name,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  name: e.target.value
-                }));
-              },
-              required: true
-            }), errors.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.name[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                size: 18
-              }), "Username"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter your username",
-              value: formData.username,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  username: e.target.value
-                }));
-              },
-              required: true
-            }), errors.username && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.username[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                size: 18
-              }), "Email Address"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "email",
-              placeholder: "Enter your email",
-              value: formData.email,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  email: e.target.value
-                }));
-              },
-              required: true
-            }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.email[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                size: 18
-              }), "Contact Number"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter your contact number",
-              value: formData.phone,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  phone: e.target.value
-                }));
-              },
-              required: true
-            }), errors.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.phone[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                size: 18
-              }), "TIN"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter your TIN",
-              value: formData.tin,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  tin: e.target.value
-                }));
-              }
-            }), errors.tin && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.tin[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group form-full-width",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                size: 18
-              }), "Address"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter your address",
-              value: formData.address,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  address: e.target.value
-                }));
-              },
-              required: true
-            }), errors.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.address[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                size: 18
-              }), "Password"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "password",
-              placeholder: "Enter your password",
-              value: formData.password,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  password: e.target.value
-                }));
-              },
-              required: true
-            }), errors.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: errors.password[0]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                size: 18
-              }), "Confirm Password"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
-              type: "password",
-              placeholder: "Confirm your password",
-              value: formData.password_confirmation,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  password_confirmation: e.target.value
-                }));
-              },
-              required: true
-            }), errors.password_confirmation && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: "error-text",
-              children: Array.isArray(errors.password_confirmation) ? errors.password_confirmation[0] : errors.password_confirmation
+          className: "admin-right-section",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h2", {
+            className: "form-title",
+            children: "Register"
+          }), errors.form && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+            className: "admin-error-message",
+            children: errors.form
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
+            onSubmit: handleSubmit,
+            className: "admin-form",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+              className: "profile-picture-upload",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "profile-picture-container",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                  className: "profile-picture-preview",
+                  children: profilePicturePreview ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("img", {
+                    src: profilePicturePreview,
+                    alt: "Profile Preview"
+                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                    size: 48,
+                    strokeWidth: 1.5
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  htmlFor: "profile-picture-input",
+                  className: "upload-button",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                    size: 20
+                  }), "Upload Photo"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  id: "profile-picture-input",
+                  type: "file",
+                  accept: "image/*",
+                  onChange: handleProfilePictureChange,
+                  style: {
+                    display: 'none'
+                  }
+                })]
+              }), errors.profile_picture && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                className: "error-text",
+                children: Array.isArray(errors.profile_picture) ? errors.profile_picture[0] : errors.profile_picture
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+              className: "form-grid",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                    size: 18
+                  }), "Full Name"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Enter your full name",
+                  value: formData.name,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      name: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.name[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                    size: 18
+                  }), "Username"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Enter your username",
+                  value: formData.username,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      username: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.username && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.username[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                    size: 18
+                  }), "Email Address"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "email",
+                  placeholder: "Enter your email",
+                  value: formData.email,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      email: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.email[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                    size: 18
+                  }), "Contact Number"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Enter your contact number",
+                  value: formData.phone,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      phone: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.phone[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    size: 18
+                  }), "TIN"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Enter your TIN",
+                  value: formData.tin,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      tin: e.target.value
+                    }));
+                  }
+                }), errors.tin && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.tin[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group form-full-width",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                    size: 18
+                  }), "Address"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Enter your address",
+                  value: formData.address,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      address: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.address[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                    size: 18
+                  }), "Password"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "password",
+                  placeholder: "Enter your password",
+                  value: formData.password,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      password: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: errors.password[0]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                    size: 18
+                  }), "Confirm Password"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("input", {
+                  type: "password",
+                  placeholder: "Confirm your password",
+                  value: formData.password_confirmation,
+                  onChange: function onChange(e) {
+                    return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                      password_confirmation: e.target.value
+                    }));
+                  },
+                  required: true
+                }), errors.password_confirmation && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
+                  className: "error-text",
+                  children: Array.isArray(errors.password_confirmation) ? errors.password_confirmation[0] : errors.password_confirmation
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
+              type: "submit",
+              className: "admin-register-btn",
+              disabled: loading,
+              children: loading ? 'Creating Account...' : 'Register'
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+              className: "login-link",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("p", {
+                children: ["Already have an account?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
+                  type: "button",
+                  onClick: onBackToLogin,
+                  className: "link-button",
+                  children: "Login here"
+                })]
+              })
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
-          type: "submit",
-          className: "btn-register",
-          disabled: loading,
-          children: loading ? 'Creating Account...' : 'Register'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-          className: "login-link",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("p", {
-            children: ["Already have an account?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
-              type: "button",
-              onClick: onBackToLogin,
-              className: "link-button",
-              children: "Login here"
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Archive.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Archive.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Archive)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/rotate-ccw.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/trash-2.js");
+/* harmony import */ var _Context_CountContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Context/CountContext */ "./resources/js/Context/CountContext.js");
+/* harmony import */ var _sass_faculty_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../sass/faculty.scss */ "./resources/sass/faculty.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+ // Reuse Faculty UI styling
+
+function Archive() {
+  var _useCounts = (0,_Context_CountContext__WEBPACK_IMPORTED_MODULE_5__.useCounts)(),
+    refreshCounts = _useCounts.refreshCounts;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    archives = _useState2[0],
+    setArchives = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    searchQuery = _useState4[0],
+    setSearchQuery = _useState4[1];
+
+  // Fetch all archived data (students + faculty)
+  var fetchArchives = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var _yield$Promise$all, _yield$Promise$all2, studentsRes, facultiesRes, archivedStudents, archivedFaculties, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            _context.n = 1;
+            return Promise.all([axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/students"), axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/faculties")]);
+          case 1:
+            _yield$Promise$all = _context.v;
+            _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 2);
+            studentsRes = _yield$Promise$all2[0];
+            facultiesRes = _yield$Promise$all2[1];
+            archivedStudents = studentsRes.data.filter(function (s) {
+              return s.status === "Archived";
+            }).map(function (s) {
+              return _objectSpread(_objectSpread({}, s), {}, {
+                type: "Student",
+                id_value: s.student_id,
+                archived_date: s.updated_at
+              });
+            });
+            archivedFaculties = facultiesRes.data.filter(function (f) {
+              return f.status === "Archived";
+            }).map(function (f) {
+              return _objectSpread(_objectSpread({}, f), {}, {
+                type: "Faculty",
+                id_value: f.faculty_id,
+                archived_date: f.updated_at
+              });
+            });
+            setArchives([].concat(_toConsumableArray(archivedStudents), _toConsumableArray(archivedFaculties)));
+            _context.n = 3;
+            break;
+          case 2:
+            _context.p = 2;
+            _t = _context.v;
+            console.error("Failed to fetch archives:", _t);
+          case 3:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 2]]);
+    }));
+    return function fetchArchives() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchArchives();
+  }, []);
+
+  // Filter archives by search input (ID or name)
+  var filteredArchives = archives.filter(function (item) {
+    var _item$name, _item$email, _item$id_value, _item$department;
+    var query = searchQuery.toLowerCase();
+    return ((_item$name = item.name) === null || _item$name === void 0 ? void 0 : _item$name.toLowerCase().includes(query)) || ((_item$email = item.email) === null || _item$email === void 0 ? void 0 : _item$email.toLowerCase().includes(query)) || ((_item$id_value = item.id_value) === null || _item$id_value === void 0 ? void 0 : _item$id_value.toLowerCase().includes(query)) || ((_item$department = item.department) === null || _item$department === void 0 ? void 0 : _item$department.toLowerCase().includes(query));
+  });
+
+  // Restore record
+  var handleRestore = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(item) {
+      var endpoint, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            if (confirm("Restore ".concat(item.name, "?"))) {
+              _context2.n = 1;
+              break;
+            }
+            return _context2.a(2);
+          case 1:
+            _context2.p = 1;
+            endpoint = item.type === "Student" ? "students" : "faculties";
+            _context2.n = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().patch("/api/".concat(endpoint, "/").concat(item.id, "/restore"));
+          case 2:
+            _context2.n = 3;
+            return fetchArchives();
+          case 3:
+            _context2.n = 4;
+            return refreshCounts();
+          case 4:
+            window.dispatchEvent(new CustomEvent("dataUpdated", {
+              detail: {
+                type: endpoint,
+                timestamp: Date.now()
+              }
+            }));
+            alert("✅ Restored successfully!");
+            _context2.n = 6;
+            break;
+          case 5:
+            _context2.p = 5;
+            _t2 = _context2.v;
+            console.error("Restore error:", _t2);
+            alert("❌ Failed to restore record.");
+          case 6:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 5]]);
+    }));
+    return function handleRestore(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  // Permanently delete record
+  var handleDelete = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(item) {
+      var endpoint, _t3;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.p = _context3.n) {
+          case 0:
+            if (confirm("\u26A0\uFE0F PERMANENT DELETE: This will completely remove ".concat(item.name, " from the database. This action cannot be undone. Continue?"))) {
+              _context3.n = 1;
+              break;
+            }
+            return _context3.a(2);
+          case 1:
+            _context3.p = 1;
+            endpoint = item.type === "Student" ? "students" : "faculties";
+            _context3.n = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("/api/".concat(endpoint, "/").concat(item.id));
+          case 2:
+            _context3.n = 3;
+            return fetchArchives();
+          case 3:
+            _context3.n = 4;
+            return refreshCounts();
+          case 4:
+            alert("🗑️ Record permanently deleted!");
+            _context3.n = 6;
+            break;
+          case 5:
+            _context3.p = 5;
+            _t3 = _context3.v;
+            console.error("Delete error:", _t3);
+            alert("❌ Failed to delete record.");
+          case 6:
+            return _context3.a(2);
+        }
+      }, _callee3, null, [[1, 5]]);
+    }));
+    return function handleDelete(_x2) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "settings-container",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "settings-header",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+          children: "Archive Management"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          className: "subtitle",
+          children: "Search and manage archived records"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "settings-content",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "settings-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "table-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            style: {
+              display: "flex",
+              gap: "1rem",
+              alignItems: "center",
+              flex: 1
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
+              children: "Archived Records"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "search-box",
+              style: {
+                maxWidth: "300px"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                size: 18,
+                className: "search-icon"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                type: "text",
+                placeholder: "Search by ID, name, or department",
+                value: searchQuery,
+                onChange: function onChange(e) {
+                  return setSearchQuery(e.target.value);
+                }
+              })]
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "settings-table-wrapper",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
+            className: "settings-table",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Type"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "ID"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Name"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Email"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Department"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Details"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Status"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                  children: "Actions"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
+              children: filteredArchives.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tr", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                  colSpan: "8",
+                  style: {
+                    textAlign: "center",
+                    padding: "3rem",
+                    color: "#9ca3af"
+                  },
+                  children: "No archived records found"
+                })
+              }) : filteredArchives.map(function (item) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.type
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.id_value
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.name
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.email
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.department
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: item.type === "Student" ? "".concat(item.course || "N/A", " (").concat(item.year_level || "N/A", ")") : "".concat(item.position || "Instructor", " (").concat(item.faculty_rank || "N/A", ")")
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                      className: "status-badge archived",
+                      children: "Archived"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      className: "action-buttons",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return handleRestore(item);
+                        },
+                        className: "btn-icon btn-edit",
+                        title: "Restore",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                          size: 16
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return handleDelete(item);
+                        },
+                        className: "btn-icon btn-delete",
+                        title: "Delete Permanently",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                          size: 16
+                        })
+                      })]
+                    })
+                  })]
+                }, "".concat(item.type, "-").concat(item.id));
+              })
             })]
           })
         })]
-      })]
-    })
+      })
+    })]
   });
 }
 
@@ -89789,10 +90244,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Context_CountContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Context/CountContext */ "./resources/js/Context/CountContext.js");
 /* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/dist/index.js");
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/chart.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/graduation-cap.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/users.js");
-/* harmony import */ var _sass_dashboard_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sass/dashboard.scss */ "./resources/sass/dashboard.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/building-2.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/graduation-cap.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/users.js");
+/* harmony import */ var _sass_dashboard_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../sass/dashboard.scss */ "./resources/sass/dashboard.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -90058,162 +90514,192 @@ function Dashboard(_ref) {
       }
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "dashboard-container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "dashboard-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
-          children: "Dashboard Overview"
-        }), user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
-          className: "welcome-text",
-          children: ["Welcome, ", user.username, "!"]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "header-left",
+        children: [user && user.profile_photo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+          src: user.profile_photo,
+          alt: user.username,
+          className: "user-avatar"
+        }), user && !user.profile_photo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "user-avatar-placeholder",
+          children: user.username ? user.username.charAt(0).toUpperCase() : 'U'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+            children: "Dashboard Overview"
+          }), user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+            className: "welcome-text",
+            children: ["Welcome, ", user.username, "!"]
+          })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
         className: "signout-btn",
         onClick: onLogout,
         children: "Sign Out"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "cards-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "info-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "card-content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Total Students"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "card-value",
-            children: dashboardData.totalStudents
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "dashboard-content",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "cards-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "info-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "card-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Total Students"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "card-value",
+              children: dashboardData.totalStudents
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "card-icon",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              size: 32,
+              strokeWidth: 1.5
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "card-icon",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            size: 32,
-            strokeWidth: 1.5
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "info-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "card-content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Total Courses"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "card-value",
-            children: dashboardData.totalCourses
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "info-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "card-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Total Courses"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "card-value",
+              children: dashboardData.totalCourses
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "card-icon",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              size: 32,
+              strokeWidth: 1.5
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "card-icon",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            size: 32,
-            strokeWidth: 1.5
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "info-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "card-content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Total Faculty"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "card-value",
-            children: dashboardData.totalFaculty
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "info-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "card-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Total Faculty"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "card-value",
+              children: dashboardData.totalFaculty
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "card-icon",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              size: 32,
+              strokeWidth: 1.5
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "card-icon",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            size: 32,
-            strokeWidth: 1.5
-          })
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "chart-section",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "chart-box",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "chart-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Students per Course"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
-            className: "chart-subtitle",
-            children: ["Distribution of ", dashboardData.totalStudents, " active students across programs"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "info-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "card-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Total Departments"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "card-value",
+              children: dashboardData.totalDepartments
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "card-icon",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              size: 32,
+              strokeWidth: 1.5
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "chart-canvas",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
-            data: studentsPerCourseData,
-            options: chartOptions
-          }, "course-chart-".concat(chartKey))
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "chart-box",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "chart-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Faculty per Department"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "chart-subtitle",
-            children: "Distribution of faculty across various departments"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "chart-section",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "chart-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "chart-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Students per Course"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+              className: "chart-subtitle",
+              children: ["Distribution of ", dashboardData.totalStudents, " active students across programs"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "chart-canvas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
+              data: studentsPerCourseData,
+              options: chartOptions
+            }, "course-chart-".concat(chartKey))
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "chart-canvas",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Doughnut, {
-            data: facultyPerDeptData,
-            options: doughnutOptions
-          }, "faculty-chart-".concat(chartKey))
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "chart-box",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "chart-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Students per Department"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "chart-subtitle",
-            children: "Student enrollment across academic departments"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "chart-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "chart-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Faculty per Department"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "chart-subtitle",
+              children: "Distribution of faculty across various departments"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "chart-canvas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Doughnut, {
+              data: facultyPerDeptData,
+              options: doughnutOptions
+            }, "faculty-chart-".concat(chartKey))
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "chart-canvas",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
-            data: studentsPerDeptData,
-            options: chartOptions
-          }, "dept-chart-".concat(chartKey))
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "chart-box",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "chart-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-            children: "Students by Year Level"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "chart-subtitle",
-            children: "Student distribution across year levels"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "chart-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "chart-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Students per Department"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "chart-subtitle",
+              children: "Student enrollment across academic departments"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "chart-canvas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
+              data: studentsPerDeptData,
+              options: chartOptions
+            }, "dept-chart-".concat(chartKey))
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          className: "chart-canvas",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
-            data: enrollmentData,
-            options: chartOptions
-          }, "year-chart-".concat(chartKey))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "chart-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "chart-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+              children: "Students by Year Level"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              className: "chart-subtitle",
+              children: "Student distribution across year levels"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "chart-canvas",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_chartjs_2__WEBPACK_IMPORTED_MODULE_3__.Bar, {
+              data: enrollmentData,
+              options: chartOptions
+            }, "year-chart-".concat(chartKey))
+          })]
         })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-      className: "activity-section",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-        children: "Recent Activity"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "activity-item",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-          children: "System updated successfully"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-          className: "activity-time",
-          children: "Now"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "activity-section",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
+          children: "Recent Activity"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "activity-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+            children: "System updated successfully"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+            className: "activity-time",
+            children: "Now"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+          className: "activity-detail",
+          children: [dashboardData.totalStudents, " students and ", dashboardData.totalFaculty, " faculty members currently active"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
-        className: "activity-detail",
-        children: [dashboardData.totalStudents, " students and ", dashboardData.totalFaculty, " faculty members currently active"]
       })]
     })]
   });
@@ -90238,21 +90724,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Context_CountContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Context/CountContext */ "./resources/js/Context/CountContext.js");
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/pen.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive-restore.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
-/* harmony import */ var _sass_faculty_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sass/faculty.scss */ "./resources/sass/faculty.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
+/* harmony import */ var _sass_faculty_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../sass/faculty.scss */ "./resources/sass/faculty.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -90282,39 +90767,45 @@ function Faculty() {
     setEditingId = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState6 = _slicedToArray(_useState5, 2),
-    showArchive = _useState6[0],
-    setShowArchive = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    showForm = _useState6[0],
+    setShowForm = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState8 = _slicedToArray(_useState7, 2),
-    showForm = _useState8[0],
-    setShowForm = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    searchQuery = _useState8[0],
+    setSearchQuery = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("All"),
     _useState0 = _slicedToArray(_useState9, 2),
-    searchQuery = _useState0[0],
-    setSearchQuery = _useState0[1];
-  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("All"),
+    departmentFilter = _useState0[0],
+    setDepartmentFilter = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState10 = _slicedToArray(_useState1, 2),
-    departmentFilter = _useState10[0],
-    setDepartmentFilter = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-    _useState12 = _slicedToArray(_useState11, 2),
-    departmentsList = _useState12[0],
-    setDepartmentsList = _useState12[1];
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    departmentsList = _useState10[0],
+    setDepartmentsList = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       faculty_id: "",
       employee_id: "",
+      title: "",
       first_name: "",
       last_name: "",
+      age: "",
       email: "",
+      phone: "",
       department: "",
+      faculty_rank: "",
       position: "",
-      employment_type: "",
+      employment_type: "Full-Time",
+      date_hired: "",
       office_phone: "",
+      photo: null,
       status: "Active"
     }),
+    _useState12 = _slicedToArray(_useState11, 2),
+    form = _useState12[0],
+    setForm = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState14 = _slicedToArray(_useState13, 2),
-    form = _useState14[0],
-    setForm = _useState14[1];
+    photoPreview = _useState14[0],
+    setPhotoPreview = _useState14[1];
 
   // Fetch data
   var fetchFaculties = /*#__PURE__*/function () {
@@ -90397,10 +90888,25 @@ function Faculty() {
     };
   }, []);
 
-  // Position and Type options
+  // Form options
+  var titles = ['Mr.', 'Ms.', 'Dr.', 'Prof.'];
+  var facultyRanks = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant'];
   var positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Dean', 'Department Head', 'Coordinator'];
-  var employmentTypes = ['Full-time', 'Part-time', 'Adjunct', 'Visiting'];
+  var employmentTypes = ['Full-Time', 'Part-Time', 'Adjunct'];
   var degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
+  var handlePhotoChange = function handlePhotoChange(e) {
+    var file = e.target.files[0];
+    if (file) {
+      setForm(_objectSpread(_objectSpread({}, form), {}, {
+        photo: file
+      }));
+      var reader = new FileReader();
+      reader.onloadend = function () {
+        setPhotoPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   var handleSubmit = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(e) {
       var response, _response, _error$response, _error$response2, errorMessage, errors, _t3;
@@ -90410,11 +90916,11 @@ function Faculty() {
             e.preventDefault();
 
             // Validate required fields
-            if (!(!form.first_name || !form.last_name || !form.email || !form.department || !form.position)) {
+            if (!(!form.first_name || !form.last_name || !form.email || !form.department || !form.employment_type)) {
               _context3.n = 1;
               break;
             }
-            alert('⚠️ Please fill in all required fields.');
+            alert('⚠️ Please fill in all required fields (First Name, Last Name, Email, Department, Employment Type).');
             return _context3.a(2);
           case 1:
             console.log('Submitting faculty form:', form);
@@ -90483,6 +90989,7 @@ function Faculty() {
   var openForm = /*#__PURE__*/function () {
     var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
       var faculty,
+        photoPath,
         _args4 = arguments;
       return _regenerator().w(function (_context4) {
         while (1) switch (_context4.n) {
@@ -90496,29 +91003,50 @@ function Faculty() {
               setForm({
                 faculty_id: faculty.faculty_id || "",
                 employee_id: faculty.employee_id || "",
+                title: faculty.title || "",
                 first_name: faculty.first_name || "",
                 last_name: faculty.last_name || "",
+                age: faculty.age || "",
                 email: faculty.email || "",
+                phone: faculty.phone || "",
                 department: faculty.department || "",
+                faculty_rank: faculty.faculty_rank || "",
                 position: faculty.position || "",
-                employment_type: faculty.employment_type || "",
+                employment_type: faculty.employment_type || "Full-Time",
+                date_hired: faculty.date_hired || "",
                 office_phone: faculty.office_phone || "",
+                photo: null,
                 status: faculty.status || "Active"
               });
+
+              // Set photo preview with proper path handling
+              if (faculty.photo) {
+                photoPath = faculty.photo.startsWith('http') ? faculty.photo : faculty.photo.startsWith('storage/') || faculty.photo.startsWith('/storage/') ? faculty.photo.startsWith('/') ? faculty.photo : "/".concat(faculty.photo) : "/".concat(faculty.photo);
+                setPhotoPreview(photoPath);
+              } else {
+                setPhotoPreview(null);
+              }
             } else {
               setEditingId(null);
               setForm({
                 faculty_id: "",
                 employee_id: "",
+                title: "",
                 first_name: "",
                 last_name: "",
+                age: "",
                 email: "",
+                phone: "",
                 department: "",
+                faculty_rank: "",
                 position: "",
-                employment_type: "",
+                employment_type: "Full-Time",
+                date_hired: "",
                 office_phone: "",
+                photo: null,
                 status: "Active"
               });
+              setPhotoPreview(null);
             }
             setShowForm(true);
           case 2:
@@ -90673,64 +91201,49 @@ function Faculty() {
     return f.department;
   }))));
 
-  // Filter faculties based on search, department, and archive view
+  // Filter faculties based on search and department (only show active)
   var filteredFaculties = faculties.filter(function (f) {
     var matchesSearch = (f.name || '').toLowerCase().includes(searchQuery.toLowerCase()) || (f.faculty_id || '').toLowerCase().includes(searchQuery.toLowerCase()) || (f.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     var matchesDepartment = departmentFilter === "All" || f.department === departmentFilter;
-    var matchesArchive = showArchive ? f.status === 'Archived' : f.status !== 'Archived';
-    return matchesSearch && matchesDepartment && matchesArchive;
+    var isActive = f.status !== 'Archived';
+    return matchesSearch && matchesDepartment && isActive;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "settings-container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "settings-header",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
           children: "Faculty Management"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
           className: "subtitle",
           children: "Manage faculty members and their information"
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "settings-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "settings-tabs",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button ".concat(!showArchive ? 'active' : ''),
-          onClick: function onClick() {
-            return setShowArchive(false);
-          },
-          children: "Faculty Members"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button ".concat(showArchive ? 'active' : ''),
-          onClick: function onClick() {
-            return setShowArchive(true);
-          },
-          children: "\uD83D\uDCE6 Archived"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "settings-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "table-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             style: {
               display: 'flex',
               gap: '1rem',
               alignItems: 'center',
               flex: 1
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: showArchive ? 'Archived Faculty' : 'Faculty Members'
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
+              children: "Faculty Members"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "search-box",
               style: {
                 maxWidth: '250px'
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 size: 18,
                 className: "search-icon"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                 type: "text",
                 placeholder: "Search Faculty",
                 value: searchQuery,
@@ -90738,53 +91251,118 @@ function Faculty() {
                   return setSearchQuery(e.target.value);
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("select", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("select", {
               className: "department-filter",
               value: departmentFilter,
               onChange: function onChange(e) {
                 return setDepartmentFilter(e.target.value);
               },
               children: departments.map(function (dept) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                   value: dept,
                   children: dept === "All" ? "Departments" : dept
                 }, dept);
               })
             })]
-          }), !showArchive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
             className: "btn-add-setting",
             onClick: function onClick() {
               return openForm();
             },
             children: "+ Add Faculty"
           })]
-        }), showForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), showForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "modal-overlay",
           onClick: closeForm,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "modal-content",
             onClick: function onClick(e) {
               return e.stopPropagation();
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
               className: "modal-title",
               children: editingId ? "Edit Faculty" : "Add New Faculty"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
               onSubmit: handleSubmit,
               className: "modal-form",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+              children: [photoPreview && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                style: {
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginBottom: '1.5rem'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: photoPreview,
+                  alt: "Faculty",
+                  onError: function onError(e) {
+                    console.error('Failed to load faculty photo:', photoPreview);
+                    e.target.style.display = 'none';
+                    setPhotoPreview(null);
+                  },
+                  style: {
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: '3px solid #003366',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                  }
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
                 style: {
                   marginTop: 0,
-                  color: '#1e3a8a'
+                  color: '#003366',
+                  borderBottom: '2px solid #d4af37',
+                  paddingBottom: '0.5rem'
                 },
-                children: "\uD83D\uDCCB Faculty Information"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: "\uD83D\uDCCB Personal Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Title"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
+                    value: form.title,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        title: e.target.value
+                      }));
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "",
+                      children: "Select Title"
+                    }), titles.map(function (title) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                        value: title,
+                        children: title
+                      }, title);
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Age"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "number",
+                    placeholder: "Age (optional)",
+                    value: form.age,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        age: e.target.value
+                      }));
+                    },
+                    min: "22",
+                    max: "70"
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "First Name *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "text",
                     placeholder: "First Name",
                     value: form.first_name,
@@ -90795,11 +91373,11 @@ function Faculty() {
                     },
                     required: true
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Last Name *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "text",
                     placeholder: "Last Name",
                     value: form.last_name,
@@ -90811,27 +91389,13 @@ function Faculty() {
                     required: true
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Employee ID"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                    type: "text",
-                    placeholder: "Employee ID (optional)",
-                    value: form.employee_id,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        employee_id: e.target.value
-                      }));
-                    }
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Email Address *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Email *"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "email",
                     placeholder: "email@example.com",
                     value: form.email,
@@ -90842,14 +91406,36 @@ function Faculty() {
                     },
                     required: true
                   })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Phone"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "tel",
+                    placeholder: "Phone Number",
+                    value: form.phone,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        phone: e.target.value
+                      }));
+                    }
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                style: {
+                  marginTop: '1.5rem',
+                  color: '#003366',
+                  borderBottom: '2px solid #d4af37',
+                  paddingBottom: '0.5rem'
+                },
+                children: "\uD83D\uDCBC Employment Details"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Department *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
                     value: form.department,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -90857,78 +91443,128 @@ function Faculty() {
                       }));
                     },
                     required: true,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                       value: "",
                       children: "Select Department"
                     }), departmentsList.map(function (dept) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                         value: dept.name,
                         children: dept.name
                       }, dept.id);
                     })]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Position *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Faculty Rank"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
+                    value: form.faculty_rank,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        faculty_rank: e.target.value
+                      }));
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "",
+                      children: "Select Rank"
+                    }), facultyRanks.map(function (rank) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                        value: rank,
+                        children: rank
+                      }, rank);
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Employment Type *"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '1.5rem',
+                    marginTop: '0.5rem'
+                  },
+                  children: employmentTypes.map(function (type) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
+                      style: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        cursor: 'pointer'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                        type: "radio",
+                        name: "employment_type",
+                        value: type,
+                        checked: form.employment_type === type,
+                        onChange: function onChange(e) {
+                          return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                            employment_type: e.target.value
+                          }));
+                        },
+                        style: {
+                          cursor: 'pointer'
+                        }
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                        children: type
+                      })]
+                    }, type);
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Position"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "text",
+                    placeholder: "Position (e.g., Dean, Coordinator)",
                     value: form.position,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
                         position: e.target.value
                       }));
-                    },
-                    required: true,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "",
-                      children: "Select Position"
-                    }), positions.map(function (pos) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                        value: pos,
-                        children: pos
-                      }, pos);
-                    })]
+                    }
                   })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Employment Type"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
-                    value: form.employment_type,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Date Hired"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "date",
+                    value: form.date_hired,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        employment_type: e.target.value
-                      }));
-                    },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                      value: "",
-                      children: "Select Type"
-                    }), employmentTypes.map(function (type) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-                        value: type,
-                        children: type
-                      }, type);
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Office Phone"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                    type: "tel",
-                    placeholder: "Office Phone Number",
-                    value: form.office_phone,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        office_phone: e.target.value
+                        date_hired: e.target.value
                       }));
                     }
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Profile Photo"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                  type: "file",
+                  accept: "image/*",
+                  onChange: handlePhotoChange,
+                  style: {
+                    padding: '0.75rem',
+                    border: '2px dashed #d0d7de',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("small", {
+                  style: {
+                    display: 'block',
+                    marginTop: '0.5rem',
+                    color: '#78909c'
+                  },
+                  children: "Recommended: Square image, at least 200x200px"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "modal-actions",
                 style: {
                   marginTop: '1.5rem',
@@ -90937,13 +91573,13 @@ function Faculty() {
                   display: 'flex',
                   justifyContent: 'space-between'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   style: {
                     display: 'flex',
                     gap: '0.5rem'
                   },
-                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       type: "button",
                       onClick: function onClick() {
                         return handleArchive(editingId);
@@ -90959,7 +91595,7 @@ function Faculty() {
                       },
                       title: "Archive Faculty",
                       children: "\uD83D\uDCE6 Archive"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       type: "button",
                       onClick: function onClick() {
                         return handleDelete(editingId);
@@ -90977,17 +91613,17 @@ function Faculty() {
                       children: "\uD83D\uDDD1\uFE0F Delete"
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   style: {
                     display: 'flex',
                     gap: '0.5rem'
                   },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                     type: "button",
                     onClick: closeForm,
                     className: "btn-cancel",
                     children: "Cancel"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                     type: "submit",
                     className: "btn-submit",
                     children: editingId ? "Update Faculty" : "Add Faculty"
@@ -90996,77 +91632,67 @@ function Faculty() {
               })]
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "settings-table-wrapper",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("table", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
             className: "settings-table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Faculty ID"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Name"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Email"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Department"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Position"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Status"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Actions"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
               children: filteredFaculties.map(function (f) {
                 var fullName = f.name || 'N/A';
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                   className: f.status === "Archived" ? "archived-row" : "",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: f.faculty_id
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: fullName
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: f.email
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: f.department
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: f.position
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                       className: "status-badge ".concat(f.status.toLowerCase()),
                       children: f.status
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                       className: "action-buttons",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         onClick: function onClick() {
                           return openForm(f);
                         },
                         className: "btn-icon btn-edit",
                         title: "Edit",
-                        disabled: f.status === "Archived",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
                           size: 16
                         })
-                      }), f.status !== "Archived" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         onClick: function onClick() {
                           return handleArchive(f.id);
                         },
                         className: "btn-icon btn-archive",
                         title: "Archive",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                          size: 16
-                        })
-                      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                        onClick: function onClick() {
-                          return handleRestore(f.id);
-                        },
-                        className: "btn-icon btn-restore",
-                        title: "Unarchive",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
                           size: 16
                         })
                       })]
@@ -91077,7 +91703,7 @@ function Faculty() {
             })]
           })
         })]
-      })]
+      })
     })]
   });
 }
@@ -91104,10 +91730,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Students__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Students */ "./resources/js/components/Students.js");
 /* harmony import */ var _Reports__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Reports */ "./resources/js/components/Reports.js");
 /* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Settings */ "./resources/js/components/Settings.js");
-/* harmony import */ var _Profile__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Profile */ "./resources/js/components/Profile.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/graduation-cap.js");
-/* harmony import */ var _sass_layout_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../sass/layout.scss */ "./resources/sass/layout.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Archive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Archive */ "./resources/js/components/Archive.js");
+/* harmony import */ var _Profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Profile */ "./resources/js/components/Profile.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/graduation-cap.js");
+/* harmony import */ var _sass_layout_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../sass/layout.scss */ "./resources/sass/layout.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -91115,6 +91742,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // resources/js/components/Layout.js
+
 
 
 
@@ -91156,7 +91784,7 @@ function Layout() {
 
       // If logged in, return the path (or default to dashboard)
       if (loggedIn && savedUser) {
-        var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+        var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'archive', 'profile'];
         return validPages.includes(path) ? path : 'dashboard';
       }
       return null; // Not logged in, will show login page
@@ -91172,6 +91800,22 @@ function Layout() {
     _useState8 = _slicedToArray(_useState7, 2),
     user = _useState8[0],
     setUser = _useState8[1];
+
+  // Listen for profile updates
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleProfileUpdate = function handleProfileUpdate() {
+      var savedUser = localStorage.getItem('user');
+      if (savedUser) {
+        var updatedUser = JSON.parse(savedUser);
+        setUser(updatedUser);
+        console.log('Layout: User data refreshed from localStorage');
+      }
+    };
+    window.addEventListener('profileUpdated', handleProfileUpdate);
+    return function () {
+      window.removeEventListener('profileUpdated', handleProfileUpdate);
+    };
+  }, []);
   var handleLogin = function handleLogin(userData) {
     setUser(userData);
     setIsLoggedIn(true);
@@ -91210,7 +91854,7 @@ function Layout() {
           setPage('dashboard');
         } else {
           // Set page based on URL
-          var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'profile'];
+          var validPages = ['dashboard', 'faculty', 'students', 'reports', 'settings', 'archive', 'profile'];
           if (validPages.includes(path)) {
             setPage(path);
           } else {
@@ -91232,13 +91876,13 @@ function Layout() {
   // If not logged in, show AdminLogin or AdminRegister
   if (!isLoggedIn) {
     if (showRegister) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_AdminRegister__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_AdminRegister__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onBackToLogin: function onBackToLogin() {
           return setShowRegister(false);
         }
       });
     }
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_AdminLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_AdminLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {
       onLogin: handleLogin,
       onRegister: function onRegister() {
         return setShowRegister(true);
@@ -91261,33 +91905,36 @@ function Layout() {
     key: "settings",
     label: "Settings"
   }, {
+    key: "archive",
+    label: "Archive"
+  }, {
     key: "profile",
     label: "Profile"
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "layout",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("aside", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("aside", {
       className: "sidebar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
         className: "logo-section",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
           className: "logo-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h1", {
             className: "logo-text",
             children: "AcadMe"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
             className: "logo-icon-wrapper",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"], {
               size: 40,
               strokeWidth: 1.5,
               className: "logo-icon"
             })
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("ul", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("ul", {
         className: "nav-menu",
         children: menuItems.map(function (item) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("li", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("li", {
             className: "nav-item ".concat(page === item.key ? "active" : ""),
             onClick: function onClick(e) {
               e.preventDefault();
@@ -91298,12 +91945,12 @@ function Layout() {
           }, item.key);
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("main", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("main", {
       className: "main-content",
-      children: [page === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [page === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {
         user: user,
         onLogout: handleLogout
-      }), page === "faculty" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_4__["default"], {}), page === "students" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Students__WEBPACK_IMPORTED_MODULE_5__["default"], {}), page === "reports" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Reports__WEBPACK_IMPORTED_MODULE_6__["default"], {}), page === "settings" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Settings__WEBPACK_IMPORTED_MODULE_7__["default"], {}), page === "profile" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Profile__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      }), page === "faculty" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_4__["default"], {}), page === "students" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Students__WEBPACK_IMPORTED_MODULE_5__["default"], {}), page === "reports" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Reports__WEBPACK_IMPORTED_MODULE_6__["default"], {}), page === "settings" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Settings__WEBPACK_IMPORTED_MODULE_7__["default"], {}), page === "archive" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Archive__WEBPACK_IMPORTED_MODULE_8__["default"], {}), page === "profile" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Profile__WEBPACK_IMPORTED_MODULE_9__["default"], {
         user: user,
         onLogout: handleLogout
       })]
@@ -91370,7 +92017,8 @@ function Profile(_ref) {
       last_login: 'System Information',
       user_id: (user === null || user === void 0 ? void 0 : user.username) || 'Admin',
       account_status: 'Active',
-      two_fa_enabled: (user === null || user === void 0 ? void 0 : user.two_fa_enabled) || false
+      two_fa_enabled: (user === null || user === void 0 ? void 0 : user.two_fa_enabled) || false,
+      profile_picture: (user === null || user === void 0 ? void 0 : user.profile_picture) || null
     }),
     _useState2 = _slicedToArray(_useState, 2),
     profileData = _useState2[0],
@@ -91428,10 +92076,19 @@ function Profile(_ref) {
     activities = _useState18[0],
     setActivities = _useState18[1];
 
-  // Update profile data when user prop changes
+  // 🧠 Helper function to normalize image paths
+  var resolveImagePath = function resolveImagePath(path) {
+    if (!path) return null;
+    if (path.startsWith('http')) return path;
+    if (path.startsWith('/storage/')) return path;
+    if (path.startsWith('storage/')) return "/".concat(path);
+    return "/storage/".concat(path);
+  };
+
+  // ✅ Update profile data and picture preview when user changes
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (user) {
-      var userData = {
+      var newProfile = _objectSpread(_objectSpread({}, profileData), {}, {
         name: user.name || 'Admin User',
         username: user.username || '',
         role: user.role || 'Admin',
@@ -91440,19 +92097,17 @@ function Profile(_ref) {
         address: user.address || '',
         email: user.email || '',
         account_created: user.created_at || 'Recently',
-        last_login: 'System Information',
         user_id: user.username || 'Admin',
-        account_status: 'Active',
         two_fa_enabled: user.two_fa_enabled || false,
-        profile_picture: user.profile_picture || null
-      };
-      setProfileData(userData);
-      setFormData(userData);
-      if (user.profile_picture) {
-        setProfilePicturePreview("/storage/".concat(user.profile_picture));
-      }
+        profile_picture: user.profile_picture || profileData.profile_picture
+      });
+      setProfileData(newProfile);
+      setFormData(newProfile);
+      setProfilePicturePreview(resolveImagePath(user.profile_picture));
     }
   }, [user]);
+
+  // ✅ Handle photo change (live preview)
   var handleProfilePictureChange = function handleProfilePictureChange(e) {
     var file = e.target.files[0];
     if (file) {
@@ -91464,77 +92119,98 @@ function Profile(_ref) {
       reader.readAsDataURL(file);
     }
   };
+
+  // ✅ Save profile changes
   var handleSave = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-      var formDataToSend, response, updatedUser, _t;
+      var formDataToSend, response, updatedUser, newPhoto, newProfileData, _t;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.p = _context.n) {
           case 0:
-            _context.p = 0;
+            if (!(!user || !user.id)) {
+              _context.n = 1;
+              break;
+            }
+            alert('❌ Error: User not found. Please log in again.');
+            return _context.a(2);
+          case 1:
+            _context.p = 1;
             formDataToSend = new FormData();
             formDataToSend.append('user_id', user.id);
-            formDataToSend.append('name', formData.name);
-            formDataToSend.append('email', formData.email);
-            formDataToSend.append('phone', formData.personal_info);
-            formDataToSend.append('address', formData.address);
-            formDataToSend.append('tin', formData.tin);
-            if (profilePicture) {
+            formDataToSend.append('name', formData.name || '');
+            formDataToSend.append('email', formData.email || '');
+            formDataToSend.append('phone', formData.personal_info || '');
+            formDataToSend.append('address', formData.address || '');
+            formDataToSend.append('tin', formData.tin || '');
+
+            // 🟢 Only attach new photo if uploaded
+            if (profilePicture instanceof File) {
               formDataToSend.append('profile_picture', profilePicture);
             }
-            _context.n = 1;
+            _context.n = 2;
             return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/user/profile/update', formDataToSend, {
               headers: {
                 'Content-Type': 'multipart/form-data'
               }
             });
-          case 1:
+          case 2:
             response = _context.v;
             if (response.data.success) {
-              updatedUser = response.data.user;
-              setProfileData(_objectSpread(_objectSpread({}, formData), {}, {
-                profile_picture: updatedUser.profile_picture
-              }));
+              updatedUser = response.data.user; // ✅ Preserve photo if none uploaded
+              newPhoto = updatedUser.profile_picture || profileData.profile_picture;
+              newProfileData = _objectSpread(_objectSpread({}, formData), {}, {
+                profile_picture: newPhoto
+              });
+              setProfileData(newProfileData);
+              setFormData(newProfileData);
               setIsEditing(false);
               setProfilePicture(null);
 
-              // Update localStorage with new user data
+              // ✅ Update preview
+              setProfilePicturePreview(resolveImagePath(newPhoto));
+
+              // ✅ Save to localStorage
               localStorage.setItem('user', JSON.stringify(updatedUser));
 
-              // Update profile picture preview
-              if (updatedUser.profile_picture) {
-                setProfilePicturePreview("/storage/".concat(updatedUser.profile_picture));
-              }
+              // ✅ Notify layout of updated user
+              window.dispatchEvent(new CustomEvent('profileUpdated', {
+                detail: {
+                  user: updatedUser
+                }
+              }));
               alert('✅ Profile updated successfully!');
+            } else {
+              alert('❌ Failed to update profile.');
             }
-            _context.n = 3;
+            _context.n = 4;
             break;
-          case 2:
-            _context.p = 2;
-            _t = _context.v;
-            console.error('Failed to update profile:', _t);
-            alert('❌ Failed to update profile.');
           case 3:
+            _context.p = 3;
+            _t = _context.v;
+            console.error('Save error:', _t);
+            alert('❌ Failed to update profile.');
+          case 4:
             return _context.a(2);
         }
-      }, _callee, null, [[0, 2]]);
+      }, _callee, null, [[1, 3]]);
     }));
     return function handleSave() {
       return _ref2.apply(this, arguments);
     };
   }();
+
+  // ✅ Cancel edit
   var handleCancel = function handleCancel() {
     setFormData(_objectSpread({}, profileData));
     setProfilePicture(null);
-    if (profileData.profile_picture) {
-      setProfilePicturePreview("/storage/".concat(profileData.profile_picture));
-    } else {
-      setProfilePicturePreview(null);
-    }
+    setProfilePicturePreview(resolveImagePath(profileData.profile_picture));
     setIsEditing(false);
   };
+
+  // ✅ Password change
   var handleChangePassword = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
-      var response, _t2;
+      var res, _t2;
       return _regenerator().w(function (_context2) {
         while (1) switch (_context2.p = _context2.n) {
           case 0:
@@ -91554,8 +92230,8 @@ function Profile(_ref) {
               new_password_confirmation: passwordForm.confirm_password
             });
           case 2:
-            response = _context2.v;
-            if (response.data.success) {
+            res = _context2.v;
+            if (res.data.success) {
               alert('✅ Password changed successfully!');
               setShowChangePassword(false);
               setPasswordForm({
@@ -91569,12 +92245,7 @@ function Profile(_ref) {
           case 3:
             _context2.p = 3;
             _t2 = _context2.v;
-            console.error('Failed to change password:', _t2);
-            if (_t2.response && _t2.response.data.message) {
-              alert('❌ ' + _t2.response.data.message);
-            } else {
-              alert('❌ Failed to change password.');
-            }
+            alert('❌ Failed to change password.');
           case 4:
             return _context2.a(2);
         }
@@ -91584,55 +92255,21 @@ function Profile(_ref) {
       return _ref3.apply(this, arguments);
     };
   }();
-  var handleEnable2FA = /*#__PURE__*/function () {
-    var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
-      return _regenerator().w(function (_context3) {
-        while (1) switch (_context3.n) {
-          case 0:
-            try {
-              // await axios.post('/api/profile/enable-2fa');
-              setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
-                two_fa_enabled: true
-              }));
-              alert('✅ 2FA enabled successfully!');
-              setShowEnable2FA(false);
-            } catch (err) {
-              console.error('Failed to enable 2FA:', err);
-              alert('❌ Failed to enable 2FA.');
-            }
-          case 1:
-            return _context3.a(2);
-        }
-      }, _callee3);
+
+  // ✅ Toggle 2FA (Mock)
+  var handleEnable2FA = function handleEnable2FA() {
+    setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
+      two_fa_enabled: true
     }));
-    return function handleEnable2FA() {
-      return _ref4.apply(this, arguments);
-    };
-  }();
-  var handleDisable2FA = /*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
-      return _regenerator().w(function (_context4) {
-        while (1) switch (_context4.n) {
-          case 0:
-            try {
-              // await axios.post('/api/profile/disable-2fa');
-              setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
-                two_fa_enabled: false
-              }));
-              alert('✅ 2FA disabled successfully!');
-            } catch (err) {
-              console.error('Failed to disable 2FA:', err);
-              alert('❌ Failed to disable 2FA.');
-            }
-          case 1:
-            return _context4.a(2);
-        }
-      }, _callee4);
+    alert('✅ 2FA enabled successfully!');
+    setShowEnable2FA(false);
+  };
+  var handleDisable2FA = function handleDisable2FA() {
+    setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
+      two_fa_enabled: false
     }));
-    return function handleDisable2FA() {
-      return _ref5.apply(this, arguments);
-    };
-  }();
+    alert('✅ 2FA disabled successfully!');
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "profile-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -91661,7 +92298,12 @@ function Profile(_ref) {
             className: "profile-avatar",
             children: [profilePicturePreview ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
               src: profilePicturePreview,
-              alt: "Profile"
+              alt: "Profile",
+              onError: function onError(e) {
+                console.error('Image failed:', profilePicturePreview);
+                e.target.style.display = 'none';
+                setProfilePicturePreview(null);
+              }
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
               size: 48,
               strokeWidth: 1.5
@@ -91695,84 +92337,27 @@ function Profile(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
           className: "section-title",
           children: "Personal Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "info-grid",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "info-field",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Full Name"
-            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "text",
-              value: formData.name,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  name: e.target.value
-                }));
-              }
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.name
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "info-field",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Email Address"
-            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "email",
-              value: formData.email,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  email: e.target.value
-                }));
-              }
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.email
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "info-field",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Contact Number"
-            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "text",
-              value: formData.personal_info,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  personal_info: e.target.value
-                }));
-              }
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.personal_info || 'Not set'
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "info-field",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "TIN"
-            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "text",
-              value: formData.tin,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  tin: e.target.value
-                }));
-              }
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.tin || 'Not set'
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "info-field",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Address"
-            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "text",
-              value: formData.address,
-              onChange: function onChange(e) {
-                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
-                  address: e.target.value
-                }));
-              }
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.address || 'Not set'
-            })]
-          })]
+          children: [['Full Name', 'name'], ['Email Address', 'email'], ['Contact Number', 'personal_info'], ['TIN', 'tin'], ['Address', 'address']].map(function (_ref4) {
+            var _ref5 = _slicedToArray(_ref4, 2),
+              label = _ref5[0],
+              key = _ref5[1];
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "info-field",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                children: label
+              }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                type: "text",
+                value: formData[key] || '',
+                onChange: function onChange(e) {
+                  return setFormData(_objectSpread(_objectSpread({}, formData), {}, _defineProperty({}, key, e.target.value)));
+                }
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+                children: profileData[key] || 'Not set'
+              })]
+            }, key);
+          })
         }), isEditing && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "edit-actions",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -91812,41 +92397,6 @@ function Profile(_ref) {
             size: 20
           }), "View Activity"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "account-info-box",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "account-info-grid",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "account-info-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Account Created"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.account_created
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "account-info-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Last Login"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.last_login
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "account-info-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "User ID"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              children: profileData.user_id
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "account-info-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Account Status"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "status-badge active",
-              children: profileData.account_status
-            })]
-          })]
-        })
       })]
     }), showChangePassword && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "modal-overlay",
@@ -91863,48 +92413,22 @@ function Profile(_ref) {
           children: "Change Password"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "modal-form",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Current Password"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "password",
-              placeholder: "Enter current password",
-              value: passwordForm.current_password,
-              onChange: function onChange(e) {
-                return setPasswordForm(_objectSpread(_objectSpread({}, passwordForm), {}, {
-                  current_password: e.target.value
-                }));
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "New Password"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "password",
-              placeholder: "Enter new password",
-              value: passwordForm.new_password,
-              onChange: function onChange(e) {
-                return setPasswordForm(_objectSpread(_objectSpread({}, passwordForm), {}, {
-                  new_password: e.target.value
-                }));
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Confirm New Password"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "password",
-              placeholder: "Confirm new password",
-              value: passwordForm.confirm_password,
-              onChange: function onChange(e) {
-                return setPasswordForm(_objectSpread(_objectSpread({}, passwordForm), {}, {
-                  confirm_password: e.target.value
-                }));
-              }
-            })]
+          children: [['current_password', 'new_password', 'confirm_password'].map(function (field, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "form-group",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                children: field.replace('_', ' ').replace(/\b\w/g, function (l) {
+                  return l.toUpperCase();
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                type: "password",
+                placeholder: "Enter ".concat(field.replace('_', ' ')),
+                value: passwordForm[field],
+                onChange: function onChange(e) {
+                  return setPasswordForm(_objectSpread(_objectSpread({}, passwordForm), {}, _defineProperty({}, field, e.target.value)));
+                }
+              })]
+            }, i);
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "modal-actions",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -91917,87 +92441,6 @@ function Profile(_ref) {
               className: "btn-submit",
               onClick: handleChangePassword,
               children: "Change Password"
-            })]
-          })]
-        })]
-      })
-    }), showEnable2FA && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "modal-overlay",
-      onClick: function onClick() {
-        return setShowEnable2FA(false);
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        className: "modal-content",
-        onClick: function onClick(e) {
-          return e.stopPropagation();
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
-          className: "modal-title",
-          children: "Enable Two-Factor Authentication"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "modal-form",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-            style: {
-              marginBottom: '1.5rem',
-              color: '#6b7280'
-            },
-            children: "Two-factor authentication adds an extra layer of security to your account. You'll need to enter a code from your authenticator app in addition to your password."
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "qr-code-section",
-            style: {
-              textAlign: 'center',
-              padding: '2rem',
-              background: '#f9fafb',
-              borderRadius: '8px',
-              marginBottom: '1.5rem'
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              style: {
-                width: '200px',
-                height: '200px',
-                background: 'white',
-                margin: '0 auto',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '2px solid #e5e7eb'
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-                style: {
-                  color: '#9ca3af',
-                  margin: 0
-                },
-                children: "QR Code Here"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-              style: {
-                marginTop: '1rem',
-                fontSize: '0.875rem',
-                color: '#6b7280'
-              },
-              children: "Scan this QR code with your authenticator app"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              children: "Enter verification code from your app"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter 6-digit code",
-              maxLength: "6"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "modal-actions",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              className: "btn-cancel",
-              onClick: function onClick() {
-                return setShowEnable2FA(false);
-              },
-              children: "Cancel"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              className: "btn-submit",
-              onClick: handleEnable2FA,
-              children: "Enable 2FA"
             })]
           })]
         })]
@@ -92015,34 +92458,31 @@ function Profile(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
           className: "modal-title",
           children: "Account Activity"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "activity-list",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
-            className: "activity-table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
-                  children: "Action"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
-                  children: "Timestamp"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
-                  children: "IP Address"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
+          className: "activity-table",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                children: "Action"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                children: "Timestamp"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
+                children: "IP Address"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
+            children: activities.map(function (a, i) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                  children: a.action
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                  children: a.timestamp
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                  children: a.ip
                 })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
-              children: activities.map(function (activity, index) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                    children: activity.action
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                    children: activity.timestamp
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                    children: activity.ip
-                  })]
-                }, index);
-              })
-            })]
-          })
+              }, i);
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "modal-actions",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -92158,18 +92598,49 @@ function Reports() {
   var handleExport = function handleExport() {
     alert('Export functionality will be implemented with backend support');
   };
+  var totalReports = students.length + faculties.length;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "settings-container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "settings-header",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
           children: "Reports"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           className: "subtitle",
           children: "Generate and download reports for students and faculty"
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "settings-info",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-label",
+            children: "Total Students:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-value",
+            children: students.length
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-label",
+            children: "Total Faculty:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-value",
+            children: faculties.length
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-label",
+            children: "Total Reports:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "info-value",
+            children: totalReports
+          })]
+        })]
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "settings-content",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -92378,6 +92849,18 @@ function Settings() {
     _useState12 = _slicedToArray(_useState11, 2),
     formData = _useState12[0],
     setFormData = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState14 = _slicedToArray(_useState13, 2),
+    currentAcademicYear = _useState14[0],
+    setCurrentAcademicYear = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState16 = _slicedToArray(_useState15, 2),
+    activeDepartmentsCount = _useState16[0],
+    setActiveDepartmentsCount = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState18 = _slicedToArray(_useState17, 2),
+    activeCoursesCount = _useState18[0],
+    setActiveCoursesCount = _useState18[1];
 
   // Fetch data based on active tab
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -92385,55 +92868,48 @@ function Settings() {
   }, [activeTab]);
   var fetchData = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-      var res, _res, _res2, _t;
+      var _yield$Promise$all, _yield$Promise$all2, deptRes, courseRes, yearRes, activeDepts, activeCourses, activeYear, _t;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.p = _context.n) {
           case 0:
             _context.p = 0;
-            if (!(activeTab === 'departments')) {
-              _context.n = 2;
-              break;
-            }
             _context.n = 1;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/departments');
+            return Promise.all([axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/departments'), axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/courses'), axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/academic-years')]);
           case 1:
-            res = _context.v;
-            setDepartments(res.data);
-            _context.n = 6;
+            _yield$Promise$all = _context.v;
+            _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 3);
+            deptRes = _yield$Promise$all2[0];
+            courseRes = _yield$Promise$all2[1];
+            yearRes = _yield$Promise$all2[2];
+            setDepartments(deptRes.data);
+            setCourses(courseRes.data);
+            setAcademicYears(yearRes.data);
+
+            // Calculate active counts
+            activeDepts = deptRes.data.filter(function (d) {
+              return d.status === 'Active';
+            }).length;
+            activeCourses = courseRes.data.filter(function (c) {
+              return c.status === 'Active';
+            }).length;
+            setActiveDepartmentsCount(activeDepts);
+            setActiveCoursesCount(activeCourses);
+
+            // Find current academic year (the one with status 'Active')
+            activeYear = yearRes.data.find(function (y) {
+              return y.status === 'Active';
+            });
+            setCurrentAcademicYear(activeYear ? activeYear.year : 'N/A');
+            _context.n = 3;
             break;
           case 2:
-            if (!(activeTab === 'courses')) {
-              _context.n = 4;
-              break;
-            }
-            _context.n = 3;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/courses');
-          case 3:
-            _res = _context.v;
-            setCourses(_res.data);
-            _context.n = 6;
-            break;
-          case 4:
-            if (!(activeTab === 'academic-years')) {
-              _context.n = 6;
-              break;
-            }
-            _context.n = 5;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/academic-years');
-          case 5:
-            _res2 = _context.v;
-            setAcademicYears(_res2.data);
-          case 6:
-            _context.n = 8;
-            break;
-          case 7:
-            _context.p = 7;
+            _context.p = 2;
             _t = _context.v;
             console.error('Failed to fetch data:', _t);
-          case 8:
+          case 3:
             return _context.a(2);
         }
-      }, _callee, null, [[0, 7]]);
+      }, _callee, null, [[0, 2]]);
     }));
     return function fetchData() {
       return _ref.apply(this, arguments);
@@ -93075,16 +93551,46 @@ function Settings() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "settings-container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "settings-header",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
           children: "Settings"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
           className: "subtitle",
           children: "Manage courses, departments, and academic years"
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "settings-info",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-label",
+            children: "Academic Year:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-value",
+            children: currentAcademicYear
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-label",
+            children: "Active Departments:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-value",
+            children: activeDepartmentsCount
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "info-badge",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-label",
+            children: "Active Courses:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "info-value",
+            children: activeCoursesCount
+          })]
+        })]
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "settings-content",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -93159,21 +93665,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Context_CountContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Context/CountContext */ "./resources/js/Context/CountContext.js");
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/pen.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive-restore.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
-/* harmony import */ var _sass_students_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sass/students.scss */ "./resources/sass/students.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
+/* harmony import */ var _sass_students_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../sass/students.scss */ "./resources/sass/students.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -93203,44 +93708,48 @@ function Students() {
     setEditingId = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState6 = _slicedToArray(_useState5, 2),
-    showArchive = _useState6[0],
-    setShowArchive = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    showForm = _useState6[0],
+    setShowForm = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState8 = _slicedToArray(_useState7, 2),
-    showForm = _useState8[0],
-    setShowForm = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    searchQuery = _useState8[0],
+    setSearchQuery = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All'),
     _useState0 = _slicedToArray(_useState9, 2),
-    searchQuery = _useState0[0],
-    setSearchQuery = _useState0[1];
-  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('All'),
+    courseFilter = _useState0[0],
+    setCourseFilter = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState10 = _slicedToArray(_useState1, 2),
-    courseFilter = _useState10[0],
-    setCourseFilter = _useState10[1];
+    departments = _useState10[0],
+    setDepartments = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState12 = _slicedToArray(_useState11, 2),
-    departments = _useState12[0],
-    setDepartments = _useState12[1];
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-    _useState14 = _slicedToArray(_useState13, 2),
-    courses = _useState14[0],
-    setCourses = _useState14[1];
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    courses = _useState12[0],
+    setCourses = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       student_id: '',
       first_name: '',
+      middle_name: '',
       last_name: '',
       email: '',
       date_of_birth: '',
+      age: '',
+      sex: '',
+      phone: '',
+      address: '',
+      photo: null,
       department: '',
       course: '',
       year_level: '',
-      phone: '',
-      address: '',
       status: 'Active'
     }),
+    _useState14 = _slicedToArray(_useState13, 2),
+    form = _useState14[0],
+    setForm = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState16 = _slicedToArray(_useState15, 2),
-    form = _useState16[0],
-    setForm = _useState16[1];
+    photoPreview = _useState16[0],
+    setPhotoPreview = _useState16[1];
   var fetchStudents = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
       var res, _t;
@@ -93329,9 +93838,22 @@ function Students() {
       window.removeEventListener('dataUpdated', handleDataUpdate);
     };
   }, []);
+  var handlePhotoChange = function handlePhotoChange(e) {
+    var file = e.target.files[0];
+    if (file) {
+      setForm(_objectSpread(_objectSpread({}, form), {}, {
+        photo: file
+      }));
+      var reader = new FileReader();
+      reader.onloadend = function () {
+        setPhotoPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   var handleSubmit = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(e) {
-      var response, _response, _error$response, _error$response2, errorMessage, errors, _t3;
+      var formData, response, _response, _error$response, _error$response2, errorMessage, errors, _t3;
       return _regenerator().w(function (_context3) {
         while (1) switch (_context3.p = _context3.n) {
           case 0:
@@ -93347,12 +93869,25 @@ function Students() {
           case 1:
             console.log('Submitting student form:', form);
             _context3.p = 2;
+            formData = new FormData();
+            Object.keys(form).forEach(function (key) {
+              if (form[key] !== null && form[key] !== '') {
+                formData.append(key, form[key]);
+              }
+            });
             if (!editingId) {
               _context3.n = 4;
               break;
             }
             _context3.n = 3;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().put("/api/students/".concat(editingId), form);
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/students/".concat(editingId), formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              },
+              params: {
+                _method: 'PUT'
+              }
+            });
           case 3:
             response = _context3.v;
             console.log('Update response:', response.data);
@@ -93361,7 +93896,11 @@ function Students() {
             break;
           case 4:
             _context3.n = 5;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/students', form);
+            return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/students', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            });
           case 5:
             _response = _context3.v;
             console.log('Create response:', _response.data);
@@ -93411,6 +93950,7 @@ function Students() {
   var openForm = /*#__PURE__*/function () {
     var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
       var student,
+        photoPath,
         _args4 = arguments;
       return _regenerator().w(function (_context4) {
         while (1) switch (_context4.n) {
@@ -93424,31 +93964,48 @@ function Students() {
               setForm({
                 student_id: student.student_id || '',
                 first_name: student.first_name || '',
+                middle_name: student.middle_name || '',
                 last_name: student.last_name || '',
                 email: student.email || '',
                 date_of_birth: student.date_of_birth || '',
+                age: student.age || '',
+                sex: student.sex || '',
+                phone: student.phone || '',
+                address: student.address || '',
+                photo: null,
                 department: student.department || '',
                 course: student.course || '',
                 year_level: student.year_level || '',
-                phone: student.phone || '',
-                address: student.address || '',
                 status: student.status || 'Active'
               });
+
+              // Set photo preview with proper path handling
+              if (student.photo) {
+                photoPath = student.photo.startsWith('http') ? student.photo : student.photo.startsWith('storage/') || student.photo.startsWith('/storage/') ? student.photo.startsWith('/') ? student.photo : "/".concat(student.photo) : "/".concat(student.photo);
+                setPhotoPreview(photoPath);
+              } else {
+                setPhotoPreview(null);
+              }
             } else {
               setEditingId(null);
               setForm({
                 student_id: '',
                 first_name: '',
+                middle_name: '',
                 last_name: '',
                 email: '',
                 date_of_birth: '',
+                age: '',
+                sex: '',
+                phone: '',
+                address: '',
+                photo: null,
                 department: '',
                 course: '',
                 year_level: '',
-                phone: '',
-                address: '',
                 status: 'Active'
               });
+              setPhotoPreview(null);
             }
             setShowForm(true);
           case 2:
@@ -93493,6 +94050,7 @@ function Students() {
                 timestamp: Date.now()
               }
             }));
+            closeForm();
             alert('📦 Student archived successfully!');
             _context5.n = 6;
             break;
@@ -93510,66 +94068,26 @@ function Students() {
       return _ref5.apply(this, arguments);
     };
   }();
-  var handleRestore = /*#__PURE__*/function () {
+  var handleDelete = /*#__PURE__*/function () {
     var _ref6 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(id) {
       var _t5;
       return _regenerator().w(function (_context6) {
         while (1) switch (_context6.p = _context6.n) {
           case 0:
-            _context6.p = 0;
-            _context6.n = 1;
-            return axios__WEBPACK_IMPORTED_MODULE_1___default().patch("/api/students/".concat(id, "/restore"));
-          case 1:
-            _context6.n = 2;
-            return fetchStudents();
-          case 2:
-            _context6.n = 3;
-            return refreshCounts();
-          case 3:
-            // Broadcast update event for dashboard to refresh
-            window.dispatchEvent(new CustomEvent('dataUpdated', {
-              detail: {
-                type: 'students',
-                timestamp: Date.now()
-              }
-            }));
-            alert('✅ Student restored successfully!');
-            _context6.n = 5;
-            break;
-          case 4:
-            _context6.p = 4;
-            _t5 = _context6.v;
-            console.error('Restore Student Error:', _t5);
-            alert('❌ Failed to restore student.');
-          case 5:
-            return _context6.a(2);
-        }
-      }, _callee6, null, [[0, 4]]);
-    }));
-    return function handleRestore(_x3) {
-      return _ref6.apply(this, arguments);
-    };
-  }();
-  var handleDelete = /*#__PURE__*/function () {
-    var _ref7 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee7(id) {
-      var _t6;
-      return _regenerator().w(function (_context7) {
-        while (1) switch (_context7.p = _context7.n) {
-          case 0:
             if (confirm('⚠️ PERMANENT DELETE: This will completely remove the student from the database. This action cannot be undone. Are you sure?')) {
-              _context7.n = 1;
+              _context6.n = 1;
               break;
             }
-            return _context7.a(2);
+            return _context6.a(2);
           case 1:
-            _context7.p = 1;
-            _context7.n = 2;
+            _context6.p = 1;
+            _context6.n = 2;
             return axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("/api/students/".concat(id));
           case 2:
-            _context7.n = 3;
+            _context6.n = 3;
             return fetchStudents();
           case 3:
-            _context7.n = 4;
+            _context6.n = 4;
             return refreshCounts();
           case 4:
             // Broadcast update event for dashboard to refresh
@@ -93581,84 +94099,69 @@ function Students() {
             }));
             closeForm();
             alert('🗑️ Student permanently deleted from database!');
-            _context7.n = 6;
+            _context6.n = 6;
             break;
           case 5:
-            _context7.p = 5;
-            _t6 = _context7.v;
-            console.error('Delete Student Error:', _t6);
+            _context6.p = 5;
+            _t5 = _context6.v;
+            console.error('Delete Student Error:', _t5);
             alert('❌ Failed to delete student.');
           case 6:
-            return _context7.a(2);
+            return _context6.a(2);
         }
-      }, _callee7, null, [[1, 5]]);
+      }, _callee6, null, [[1, 5]]);
     }));
-    return function handleDelete(_x4) {
-      return _ref7.apply(this, arguments);
+    return function handleDelete(_x3) {
+      return _ref6.apply(this, arguments);
     };
   }();
   var courseOptions = ['All'].concat(_toConsumableArray(new Set(students.map(function (s) {
     return s.course;
   }))));
 
-  // Filter students based on search, course, and archive view
+  // Filter students based on search and course (only show active students)
   var filteredStudents = students.filter(function (s) {
     var matchesSearch = (s.name || '').toLowerCase().includes(searchQuery.toLowerCase()) || (s.student_id || '').toLowerCase().includes(searchQuery.toLowerCase()) || (s.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     var matchesCourse = courseFilter === 'All' || s.course === courseFilter;
-    var matchesArchive = showArchive ? s.status === 'Archived' : s.status !== 'Archived';
-    return matchesSearch && matchesCourse && matchesArchive;
+    var isActive = s.status !== 'Archived';
+    return matchesSearch && matchesCourse && isActive;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "settings-container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "settings-header",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
           children: "Student Management"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
           className: "subtitle",
           children: "Manage students and their information"
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "settings-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "settings-tabs",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button ".concat(!showArchive ? 'active' : ''),
-          onClick: function onClick() {
-            return setShowArchive(false);
-          },
-          children: "Students"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-          className: "tab-button ".concat(showArchive ? 'active' : ''),
-          onClick: function onClick() {
-            return setShowArchive(true);
-          },
-          children: "\uD83D\uDCE6 Archived"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "settings-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "table-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             style: {
               display: 'flex',
               gap: '1rem',
               alignItems: 'center',
               flex: 1
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-              children: showArchive ? 'Archived Students' : 'Students'
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
+              children: "Students"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "search-box",
               style: {
                 maxWidth: '250px'
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 size: 18,
                 className: "search-icon"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                 type: "text",
                 placeholder: "Search Students",
                 value: searchQuery,
@@ -93666,53 +94169,76 @@ function Students() {
                   return setSearchQuery(e.target.value);
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("select", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("select", {
               className: "department-filter",
               value: courseFilter,
               onChange: function onChange(e) {
                 return setCourseFilter(e.target.value);
               },
               children: courseOptions.map(function (course) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                   value: course,
                   children: course === 'All' ? 'All Courses' : course
                 }, course);
               })
             })]
-          }), !showArchive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
             className: "btn-add-setting",
             onClick: function onClick() {
               return openForm();
             },
             children: "+ Add Student"
           })]
-        }), showForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), showForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "modal-overlay",
           onClick: closeForm,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "modal-content",
             onClick: function onClick(e) {
               return e.stopPropagation();
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
               className: "modal-title",
               children: editingId ? 'Edit Student' : 'Add New Student'
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
               onSubmit: handleSubmit,
               className: "modal-form",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+              children: [photoPreview && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                style: {
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginBottom: '1.5rem'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: photoPreview,
+                  alt: "Student",
+                  onError: function onError(e) {
+                    console.error('Failed to load student photo:', photoPreview);
+                    e.target.style.display = 'none';
+                    setPhotoPreview(null);
+                  },
+                  style: {
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: '3px solid #1e3a8a',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                  }
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
                 style: {
                   marginTop: 0,
                   color: '#1e3a8a'
                 },
-                children: "Student Information"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: "Personal Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "First Name *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "text",
                     placeholder: "Enter First Name",
                     value: form.first_name,
@@ -93723,11 +94249,25 @@ function Students() {
                     },
                     required: true
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Middle Name"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "text",
+                    placeholder: "Enter Middle Name",
+                    value: form.middle_name,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        middle_name: e.target.value
+                      }));
+                    }
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Last Name *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "text",
                     placeholder: "Enter Last Name",
                     value: form.last_name,
@@ -93739,13 +94279,73 @@ function Students() {
                     required: true
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Date of Birth"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "date",
+                    value: form.date_of_birth,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        date_of_birth: e.target.value
+                      }));
+                    }
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Age"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "number",
+                    placeholder: "Age",
+                    value: form.age,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        age: e.target.value
+                      }));
+                    },
+                    min: "15",
+                    max: "100"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Sex"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
+                    value: form.sex,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        sex: e.target.value
+                      }));
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "",
+                      children: "Select Sex"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "Male",
+                      children: "Male"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "Female",
+                      children: "Female"
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                style: {
+                  marginTop: '1.5rem',
+                  color: '#1e3a8a'
+                },
+                children: "Contact Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Email *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "email",
                     placeholder: "example@example.com",
                     value: form.email,
@@ -93756,27 +94356,11 @@ function Students() {
                     },
                     required: true
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Date of Birth"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                    type: "date",
-                    value: form.date_of_birth,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        date_of_birth: e.target.value
-                      }));
-                    }
-                  })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Phone"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Phone Number"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "tel",
                     placeholder: "Phone Number",
                     value: form.phone,
@@ -93786,34 +94370,56 @@ function Students() {
                       }));
                     }
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                    children: "Address"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                    type: "text",
-                    placeholder: "Home Address",
-                    value: form.address,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        address: e.target.value
-                      }));
-                    }
-                  })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Address"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Complete Address",
+                  value: form.address,
+                  onChange: function onChange(e) {
+                    return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                      address: e.target.value
+                    }));
+                  }
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Photo"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                  type: "file",
+                  accept: "image/*",
+                  onChange: handlePhotoChange,
+                  style: {
+                    padding: '0.75rem',
+                    border: '2px dashed #d0d7de',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("small", {
+                  style: {
+                    display: 'block',
+                    marginTop: '0.5rem',
+                    color: '#78909c'
+                  },
+                  children: "Recommended: Square image, at least 200x200px"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
                 style: {
                   marginTop: '1.5rem',
                   color: '#1e3a8a'
                 },
                 children: "Academic Information *"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Department *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
                     value: form.department,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -93821,21 +94427,21 @@ function Students() {
                       }));
                     },
                     required: true,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                       value: "",
                       children: "Select Department"
                     }), departments.map(function (dept) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                         value: dept.name,
                         children: dept.name
                       }, dept.id);
                     })]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Course *"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
                     value: form.course,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -93843,25 +94449,25 @@ function Students() {
                       }));
                     },
                     required: true,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                       value: "",
                       children: "Select Course"
                     }), courses.map(function (course) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                         value: course.name,
                         children: course.name
                       }, course.id);
                     })]
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-group",
                 style: {
                   maxWidth: '48%'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                   children: "Year Level *"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
                   value: form.year_level,
                   onChange: function onChange(e) {
                     return setForm(_objectSpread(_objectSpread({}, form), {}, {
@@ -93869,24 +94475,24 @@ function Students() {
                     }));
                   },
                   required: true,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     value: "",
                     children: "Select Year Level"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     value: "1st Year",
                     children: "1st Year"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     value: "2nd Year",
                     children: "2nd Year"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     value: "3rd Year",
                     children: "3rd Year"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     value: "4th Year",
                     children: "4th Year"
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "modal-actions",
                 style: {
                   marginTop: '1.5rem',
@@ -93895,13 +94501,13 @@ function Students() {
                   display: 'flex',
                   justifyContent: 'space-between'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   style: {
                     display: 'flex',
                     gap: '0.5rem'
                   },
-                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  children: editingId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       type: "button",
                       onClick: function onClick() {
                         return handleArchive(editingId);
@@ -93917,7 +94523,7 @@ function Students() {
                       },
                       title: "Archive Student",
                       children: "\uD83D\uDCE6 Archive"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       type: "button",
                       onClick: function onClick() {
                         return handleDelete(editingId);
@@ -93935,17 +94541,17 @@ function Students() {
                       children: "\uD83D\uDDD1\uFE0F Delete"
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   style: {
                     display: 'flex',
                     gap: '0.5rem'
                   },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                     type: "button",
                     onClick: closeForm,
                     className: "btn-cancel",
                     children: "Cancel"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                     type: "submit",
                     className: "btn-submit",
                     children: editingId ? 'Update Student' : 'Add Student'
@@ -93954,81 +94560,71 @@ function Students() {
               })]
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "settings-table-wrapper",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("table", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
             className: "settings-table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Student ID"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Name"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Email"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Department"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Course"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Year Level"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Status"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Actions"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
               children: filteredStudents.map(function (s) {
                 var fullName = s.name || 'N/A';
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                   className: s.status === 'Archived' ? 'archived-row' : '',
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: s.student_id
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: fullName
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: s.email
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: s.department
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: s.course
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: s.year_level
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                       className: "status-badge ".concat(s.status.toLowerCase()),
                       children: s.status
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                       className: "action-buttons",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         onClick: function onClick() {
                           return openForm(s);
                         },
                         className: "btn-icon btn-edit",
                         title: "Edit",
-                        disabled: s.status === 'Archived',
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
                           size: 16
                         })
-                      }), s.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         onClick: function onClick() {
                           return handleArchive(s.id);
                         },
                         className: "btn-icon btn-archive",
                         title: "Archive",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                          size: 16
-                        })
-                      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                        onClick: function onClick() {
-                          return handleRestore(s.id);
-                        },
-                        className: "btn-icon btn-restore",
-                        title: "Unarchive",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
                           size: 16
                         })
                       })]
@@ -94039,7 +94635,7 @@ function Students() {
             })]
           })
         })]
-      })]
+      })
     })]
   });
 }
