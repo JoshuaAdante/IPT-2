@@ -297,44 +297,79 @@ export default function Profile({ user, onLogout }) {
           )}
         </div>
 
-        {/* Action Buttons */}
+        {/* Security Section - Change Password */}
+        <div className="info-section">
+          <div className="section-header">
+            <h3 className="section-title">
+              <Shield size={20} style={{verticalAlign: 'middle', marginRight: '8px'}} />
+              Security Settings
+            </h3>
+          </div>
+          
+          {!showChangePassword ? (
+            <button 
+              className="btn-primary" 
+              onClick={() => setShowChangePassword(true)}
+              style={{marginTop: '1rem'}}
+            >
+              <Shield size={18} />
+              Change Password
+            </button>
+          ) : (
+            <div className="password-form-section">
+              <div className="form-grid">
+                <div className="form-field">
+                  <label>Current Password *</label>
+                  <input
+                    type="password"
+                    placeholder="Enter current password"
+                    value={passwordForm.current_password}
+                    onChange={(e) => setPasswordForm({ ...passwordForm, current_password: e.target.value })}
+                  />
+                </div>
+                <div className="form-field">
+                  <label>New Password *</label>
+                  <input
+                    type="password"
+                    placeholder="Enter new password"
+                    value={passwordForm.new_password}
+                    onChange={(e) => setPasswordForm({ ...passwordForm, new_password: e.target.value })}
+                  />
+                </div>
+                <div className="form-field">
+                  <label>Confirm New Password *</label>
+                  <input
+                    type="password"
+                    placeholder="Confirm new password"
+                    value={passwordForm.confirm_password}
+                    onChange={(e) => setPasswordForm({ ...passwordForm, confirm_password: e.target.value })}
+                  />
+                </div>
+              </div>
+              
+              <div className="edit-actions" style={{marginTop: '1.5rem'}}>
+                <button className="btn-cancel" onClick={() => {
+                  setShowChangePassword(false);
+                  setPasswordForm({ current_password: '', new_password: '', confirm_password: '' });
+                }}>
+                  Cancel
+                </button>
+                <button className="btn-save" onClick={handleChangePassword}>
+                  Update Password
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Activity Button */}
         <div className="action-buttons-section">
-          <button className="action-btn" onClick={() => setShowChangePassword(true)}>
-            <Shield size={20} />
-            Change Password
-          </button>
           <button className="action-btn" onClick={() => setShowActivity(true)}>
             <Activity size={20} />
-            View Activity
+            View Activity Log
           </button>
         </div>
       </div>
-
-      {/* Change Password Modal */}
-      {showChangePassword && (
-        <div className="modal-overlay" onClick={() => setShowChangePassword(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3 className="modal-title">Change Password</h3>
-            <div className="modal-form">
-              {['current_password', 'new_password', 'confirm_password'].map((field, i) => (
-                <div className="form-group" key={i}>
-                  <label>{field.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</label>
-                  <input
-                    type="password"
-                    placeholder={`Enter ${field.replace('_', ' ')}`}
-                    value={passwordForm[field]}
-                    onChange={(e) => setPasswordForm({ ...passwordForm, [field]: e.target.value })}
-                  />
-                </div>
-              ))}
-              <div className="modal-actions">
-                <button className="btn-cancel" onClick={() => setShowChangePassword(false)}>Cancel</button>
-                <button className="btn-submit" onClick={handleChangePassword}>Change Password</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Activity Modal */}
       {showActivity && (
