@@ -105,9 +105,16 @@ export default function Students() {
       // append only form fields (photo removed)
       Object.keys(form).forEach(key => {
         const val = form[key];
-        if (val !== null && val !== '') {
-          formData.append(key, val);
+        if (val === null || val === '') return;
+        // ensure age is sent as a number string (or remove if empty)
+        if (key === 'age') {
+          const num = parseInt(val, 10);
+          if (!Number.isNaN(num)) {
+            formData.append('age', String(num));
+          }
+          return;
         }
+        formData.append(key, val);
       });
 
       if (editingId) {
@@ -163,7 +170,7 @@ export default function Students() {
         last_name: student.last_name || '',
         email: student.email || '',
         date_of_birth: student.date_of_birth || '',
-        age: student.age || '',
+        age: student.age != null ? String(student.age) : '',
         sex: student.sex || '',
         phone: student.phone || '',
         address: student.address || '',
@@ -343,7 +350,22 @@ export default function Students() {
                   <input
                     type='date'
                     value={form.date_of_birth}
-                    onChange={(e) => setForm({ ...form, date_of_birth: e.target.value })}
+                    onChange={(e) => {
+                      const dob = e.target.value;
+                      if (!dob) {
+                        // cleared DOB -> clear age as well
+                        setForm(prev => ({ ...prev, date_of_birth: '', age: '' }));
+                        return;
+                      }
+                      const birthDate = new Date(dob);
+                      const today = new Date();
+                      let ageCalc = today.getFullYear() - birthDate.getFullYear();
+                      const monthDiff = today.getMonth() - birthDate.getMonth();
+                      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                        ageCalc--;
+                      }
+                      setForm(prev => ({ ...prev, date_of_birth: dob, age: String(ageCalc) }));
+                    }}
                   />
                 </div>
                 <div className='form-group'>
@@ -352,9 +374,14 @@ export default function Students() {
                     type='number'
                     placeholder='Age'
                     value={form.age}
-                    onChange={(e) => setForm({ ...form, age: e.target.value })}
-                    min='15'
-                    max='100'
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      // allow empty or digits only
+                      if (val === '' || /^[0-9]+$/.test(val)) {
+                        // typing age should clear date_of_birth to avoid conflict
+                        setForm(prev => ({ ...prev, age: val, date_of_birth: '' }));
+                      }
+                    }}
                   />
                 </div>
                 <div className='form-group'>

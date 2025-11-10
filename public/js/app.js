@@ -90979,22 +90979,22 @@ function Faculty() {
           case 1:
             console.log('Submitting faculty form:', form);
             _context3.p = 2;
-            // build payload explicitly so we don't send fields not present in DB (like removed 'age')
+            // convert age to number if present
             payload = {
               faculty_id: form.faculty_id,
               employee_id: form.employee_id,
               first_name: form.first_name,
               middle_name: form.middle_name,
               last_name: form.last_name,
-              date_of_birth: form.date_of_birth,
-              age: form.age,
+              date_of_birth: form.date_of_birth || null,
+              age: form.age !== "" && form.age != null ? parseInt(form.age, 10) : null,
               sex: form.sex,
               email: form.email,
               phone: form.phone,
               department: form.department,
               position: form.position,
               employment_type: form.employment_type,
-              date_hired: form.date_hired,
+              date_hired: form.date_hired || null,
               office_phone: form.office_phone,
               address: form.address,
               status: form.status
@@ -91080,7 +91080,7 @@ function Faculty() {
                 middle_name: faculty.middle_name || "",
                 last_name: faculty.last_name || "",
                 date_of_birth: faculty.date_of_birth || "",
-                age: faculty.age || "",
+                age: faculty.age != null ? String(faculty.age) : "",
                 sex: faculty.sex || "",
                 email: faculty.email || "",
                 phone: faculty.phone || "",
@@ -91417,25 +91417,29 @@ function Faculty() {
                     value: form.date_of_birth,
                     onChange: function onChange(e) {
                       var dob = e.target.value;
-                      setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        date_of_birth: dob
-                      }));
-                      // Auto-calculate age
-                      if (dob) {
-                        var birthDate = new Date(dob);
-                        var today = new Date();
-                        var age = today.getFullYear() - birthDate.getFullYear();
-                        var monthDiff = today.getMonth() - birthDate.getMonth();
-                        if (monthDiff < 0 || monthDiff === 0 && today.getDate() < birthDate.getDate()) {
-                          age--;
-                        }
+                      if (!dob) {
+                        // if cleared, also clear age
                         setForm(function (prev) {
                           return _objectSpread(_objectSpread({}, prev), {}, {
-                            date_of_birth: dob,
-                            age: age.toString()
+                            date_of_birth: "",
+                            age: ""
                           });
                         });
+                        return;
                       }
+                      var birthDate = new Date(dob);
+                      var today = new Date();
+                      var ageCalc = today.getFullYear() - birthDate.getFullYear();
+                      var monthDiff = today.getMonth() - birthDate.getMonth();
+                      if (monthDiff < 0 || monthDiff === 0 && today.getDate() < birthDate.getDate()) {
+                        ageCalc--;
+                      }
+                      setForm(function (prev) {
+                        return _objectSpread(_objectSpread({}, prev), {}, {
+                          date_of_birth: dob,
+                          age: String(ageCalc)
+                        });
+                      });
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -91447,11 +91451,18 @@ function Faculty() {
                     placeholder: "Age",
                     value: form.age,
                     onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        age: e.target.value
-                      }));
-                    },
-                    readOnly: true
+                      var val = e.target.value;
+                      // allow empty or digits only
+                      if (val === "" || /^[0-9]+$/.test(val)) {
+                        // when user types age manually, clear date_of_birth to avoid conflict
+                        setForm(function (prev) {
+                          return _objectSpread(_objectSpread({}, prev), {}, {
+                            age: val,
+                            date_of_birth: ""
+                          });
+                        });
+                      }
+                    }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
@@ -91725,7 +91736,12 @@ function Faculty() {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
               children: filteredFaculties.map(function (f) {
-                var fullName = f.name || 'N/A';
+                // Prefer explicit name parts (first/middle/last). Fall back to f.name or 'N/A'.
+                var nameParts = [];
+                if (f.first_name) nameParts.push(f.first_name.trim());
+                if (f.middle_name) nameParts.push(f.middle_name.trim());
+                if (f.last_name) nameParts.push(f.last_name.trim());
+                var fullName = nameParts.length ? nameParts.join(' ') : f.name || 'N/A';
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                   className: f.status === "Archived" ? "archived-row" : "",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
@@ -94086,9 +94102,16 @@ function Students() {
             formData = new FormData(); // append only form fields (photo removed)
             Object.keys(form).forEach(function (key) {
               var val = form[key];
-              if (val !== null && val !== '') {
-                formData.append(key, val);
+              if (val === null || val === '') return;
+              // ensure age is sent as a number string (or remove if empty)
+              if (key === 'age') {
+                var num = parseInt(val, 10);
+                if (!Number.isNaN(num)) {
+                  formData.append('age', String(num));
+                }
+                return;
               }
+              formData.append(key, val);
             });
             if (!editingId) {
               _context3.n = 4;
@@ -94182,7 +94205,7 @@ function Students() {
                 last_name: student.last_name || '',
                 email: student.email || '',
                 date_of_birth: student.date_of_birth || '',
-                age: student.age || '',
+                age: student.age != null ? String(student.age) : '',
                 sex: student.sex || '',
                 phone: student.phone || '',
                 address: student.address || '',
@@ -94472,9 +94495,30 @@ function Students() {
                     type: "date",
                     value: form.date_of_birth,
                     onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        date_of_birth: e.target.value
-                      }));
+                      var dob = e.target.value;
+                      if (!dob) {
+                        // cleared DOB -> clear age as well
+                        setForm(function (prev) {
+                          return _objectSpread(_objectSpread({}, prev), {}, {
+                            date_of_birth: '',
+                            age: ''
+                          });
+                        });
+                        return;
+                      }
+                      var birthDate = new Date(dob);
+                      var today = new Date();
+                      var ageCalc = today.getFullYear() - birthDate.getFullYear();
+                      var monthDiff = today.getMonth() - birthDate.getMonth();
+                      if (monthDiff < 0 || monthDiff === 0 && today.getDate() < birthDate.getDate()) {
+                        ageCalc--;
+                      }
+                      setForm(function (prev) {
+                        return _objectSpread(_objectSpread({}, prev), {}, {
+                          date_of_birth: dob,
+                          age: String(ageCalc)
+                        });
+                      });
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -94486,12 +94530,18 @@ function Students() {
                     placeholder: "Age",
                     value: form.age,
                     onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        age: e.target.value
-                      }));
-                    },
-                    min: "15",
-                    max: "100"
+                      var val = e.target.value;
+                      // allow empty or digits only
+                      if (val === '' || /^[0-9]+$/.test(val)) {
+                        // typing age should clear date_of_birth to avoid conflict
+                        setForm(function (prev) {
+                          return _objectSpread(_objectSpread({}, prev), {}, {
+                            age: val,
+                            date_of_birth: ''
+                          });
+                        });
+                      }
+                    }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",

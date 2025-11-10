@@ -97,22 +97,22 @@ export default function Faculty() {
     console.log('Submitting faculty form:', form);
     
     try {
-      // build payload explicitly so we don't send fields not present in DB (like removed 'age')
+      // convert age to number if present
       const payload = {
         faculty_id: form.faculty_id,
         employee_id: form.employee_id,
         first_name: form.first_name,
         middle_name: form.middle_name,
         last_name: form.last_name,
-        date_of_birth: form.date_of_birth,
-        age: form.age,
+        date_of_birth: form.date_of_birth || null,
+        age: form.age !== "" && form.age != null ? parseInt(form.age, 10) : null,
         sex: form.sex,
         email: form.email,
         phone: form.phone,
         department: form.department,
         position: form.position,
         employment_type: form.employment_type,
-        date_hired: form.date_hired,
+        date_hired: form.date_hired || null,
         office_phone: form.office_phone,
         address: form.address,
         status: form.status,
@@ -167,7 +167,7 @@ export default function Faculty() {
         middle_name: faculty.middle_name || "",
         last_name: faculty.last_name || "",
         date_of_birth: faculty.date_of_birth || "",
-        age: faculty.age || "",
+        age: faculty.age != null ? String(faculty.age) : "",
         sex: faculty.sex || "",
         email: faculty.email || "",
         phone: faculty.phone || "",
@@ -369,18 +369,19 @@ export default function Faculty() {
                     value={form.date_of_birth}
                     onChange={(e) => {
                       const dob = e.target.value;
-                      setForm({ ...form, date_of_birth: dob });
-                      // Auto-calculate age
-                      if (dob) {
-                        const birthDate = new Date(dob);
-                        const today = new Date();
-                        let age = today.getFullYear() - birthDate.getFullYear();
-                        const monthDiff = today.getMonth() - birthDate.getMonth();
-                        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                          age--;
-                        }
-                        setForm(prev => ({ ...prev, date_of_birth: dob, age: age.toString() }));
+                      if (!dob) {
+                        // if cleared, also clear age
+                        setForm(prev => ({ ...prev, date_of_birth: "", age: "" }));
+                        return;
                       }
+                      const birthDate = new Date(dob);
+                      const today = new Date();
+                      let ageCalc = today.getFullYear() - birthDate.getFullYear();
+                      const monthDiff = today.getMonth() - birthDate.getMonth();
+                      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                        ageCalc--;
+                      }
+                      setForm(prev => ({ ...prev, date_of_birth: dob, age: String(ageCalc) }));
                     }}
                   />
                 </div>
@@ -390,13 +391,19 @@ export default function Faculty() {
                     type="number"
                     placeholder="Age"
                     value={form.age}
-                    onChange={(e) => setForm({ ...form, age: e.target.value })}
-                    readOnly
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      // allow empty or digits only
+                      if (val === "" || /^[0-9]+$/.test(val)) {
+                        // when user types age manually, clear date_of_birth to avoid conflict
+                        setForm(prev => ({ ...prev, age: val, date_of_birth: "" }));
+                      }
+                    }}
                   />
                 </div>
                 <div className="form-group">
                   <label>Sex</label>
-                  <select
+                  <select 
                     value={form.sex}
                     onChange={(e) => setForm({ ...form, sex: e.target.value })}
                   >
@@ -561,7 +568,12 @@ export default function Faculty() {
             </thead>
             <tbody>
               {filteredFaculties.map((f) => {
-                const fullName = f.name || 'N/A';
+                // Prefer explicit name parts (first/middle/last). Fall back to f.name or 'N/A'.
+                const nameParts = [];
+                if (f.first_name) nameParts.push(f.first_name.trim());
+                if (f.middle_name) nameParts.push(f.middle_name.trim());
+                if (f.last_name) nameParts.push(f.last_name.trim());
+                const fullName = nameParts.length ? nameParts.join(' ') : (f.name || 'N/A');
                 
                 return (
                 <tr key={f.id} className={f.status === "Archived" ? "archived-row" : ""}>
