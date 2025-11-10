@@ -2161,34 +2161,44 @@
   color: #1f2937;
   margin: 0 0 1rem 0;
 }
-.profile-container .info-section .info-grid {
+.profile-container .info-section .info-grid,
+.profile-container .info-section .info-grid-two-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-bottom: 0.5rem;
 }
 @media (max-width: 768px) {
-  .profile-container .info-section .info-grid {
+  .profile-container .info-section .info-grid,
+  .profile-container .info-section .info-grid-two-column {
     grid-template-columns: 1fr;
   }
 }
-.profile-container .info-section .info-grid .info-field:last-child {
+.profile-container .info-section .info-grid .info-field.info-field-full,
+.profile-container .info-section .info-grid-two-column .info-field.info-field-full {
   grid-column: 1/-1;
 }
-.profile-container .info-section .info-grid .info-field label {
+.profile-container .info-section .info-grid .info-field:last-child,
+.profile-container .info-section .info-grid-two-column .info-field:last-child {
+  grid-column: 1/-1;
+}
+.profile-container .info-section .info-grid .info-field label,
+.profile-container .info-section .info-grid-two-column .info-field label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
   color: #6b7280;
   margin-bottom: 0.5rem;
 }
-.profile-container .info-section .info-grid .info-field p {
+.profile-container .info-section .info-grid .info-field p,
+.profile-container .info-section .info-grid-two-column .info-field p {
   font-size: 0.9375rem;
   color: #1f2937;
   margin: 0;
   padding: 0.625rem 0;
 }
-.profile-container .info-section .info-grid .info-field input {
+.profile-container .info-section .info-grid .info-field input,
+.profile-container .info-section .info-grid-two-column .info-field input {
   width: 100%;
   padding: 0.625rem 0.875rem;
   border: 1px solid #d1d5db;
@@ -2196,7 +2206,8 @@
   font-size: 0.875rem;
   background: white;
 }
-.profile-container .info-section .info-grid .info-field input:focus {
+.profile-container .info-section .info-grid .info-field input:focus,
+.profile-container .info-section .info-grid-two-column .info-field input:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
@@ -2233,7 +2244,7 @@
 }
 .profile-container .action-buttons-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 }
 @media (max-width: 768px) {
@@ -2262,7 +2273,7 @@
   border-color: #d1d5db;
 }
 .profile-container .action-buttons-section .action-btn svg {
-  color: white;
+  color: #003366;
   flex-shrink: 0;
 }
 .profile-container .account-info-box {

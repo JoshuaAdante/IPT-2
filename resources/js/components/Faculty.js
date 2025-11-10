@@ -16,17 +16,20 @@ export default function Faculty() {
   const [form, setForm] = useState({
     faculty_id: "",
     employee_id: "",
-    title: "",
     first_name: "",
+    middle_name: "",
     last_name: "",
+    date_of_birth: "",
+    age: "",
+    sex: "",
     email: "",
     phone: "",
     department: "",
-    faculty_rank: "",
     position: "",
     employment_type: "Full-Time",
     date_hired: "",
     office_phone: "",
+    address: "",
     status: "Active",
   });
 
@@ -78,11 +81,9 @@ export default function Faculty() {
   }, []);
 
   // Form options
-  const titles = ['Mr.', 'Ms.', 'Dr.', 'Prof.'];
-  const facultyRanks = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant'];
-  const positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Dean', 'Department Head', 'Coordinator'];
+  const positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant', 'Dean', 'Department Head', 'Coordinator'];
   const employmentTypes = ['Full-Time', 'Part-Time', 'Adjunct'];
-  const degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
+  const sexOptions = ['Male', 'Female'];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -100,17 +101,20 @@ export default function Faculty() {
       const payload = {
         faculty_id: form.faculty_id,
         employee_id: form.employee_id,
-        title: form.title,
         first_name: form.first_name,
+        middle_name: form.middle_name,
         last_name: form.last_name,
+        date_of_birth: form.date_of_birth,
+        age: form.age,
+        sex: form.sex,
         email: form.email,
         phone: form.phone,
         department: form.department,
-        faculty_rank: form.faculty_rank,
         position: form.position,
         employment_type: form.employment_type,
         date_hired: form.date_hired,
         office_phone: form.office_phone,
+        address: form.address,
         status: form.status,
       };
 
@@ -159,17 +163,20 @@ export default function Faculty() {
       setForm({
         faculty_id: faculty.faculty_id || "",
         employee_id: faculty.employee_id || "",
-        title: faculty.title || "",
         first_name: faculty.first_name || "",
+        middle_name: faculty.middle_name || "",
         last_name: faculty.last_name || "",
+        date_of_birth: faculty.date_of_birth || "",
+        age: faculty.age || "",
+        sex: faculty.sex || "",
         email: faculty.email || "",
         phone: faculty.phone || "",
         department: faculty.department || "",
-        faculty_rank: faculty.faculty_rank || "",
         position: faculty.position || "",
         employment_type: faculty.employment_type || "Full-Time",
         date_hired: faculty.date_hired || "",
         office_phone: faculty.office_phone || "",
+        address: faculty.address || "",
         status: faculty.status || "Active",
       });
     } else {
@@ -177,17 +184,20 @@ export default function Faculty() {
       setForm({
         faculty_id: "",
         employee_id: "",
-        title: "",
         first_name: "",
+        middle_name: "",
         last_name: "",
+        date_of_birth: "",
+        age: "",
+        sex: "",
         email: "",
         phone: "",
         department: "",
-        faculty_rank: "",
         position: "",
         employment_type: "Full-Time",
         date_hired: "",
         office_phone: "",
+        address: "",
         status: "Active",
       });
     }
@@ -321,21 +331,6 @@ export default function Faculty() {
               
               <div className="form-row">
                 <div className="form-group">
-                  <label>Title</label>
-                  <select
-                    value={form.title}
-                    onChange={(e) => setForm({ ...form, title: e.target.value })}
-                  >
-                    <option value="">Select Title</option>
-                    {titles.map(title => (
-                      <option key={title} value={title}>{title}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
                   <label>First Name *</label>
                   <input
                     type="text"
@@ -343,6 +338,15 @@ export default function Faculty() {
                     value={form.first_name}
                     onChange={(e) => setForm({ ...form, first_name: e.target.value })}
                     required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Middle Name</label>
+                  <input
+                    type="text"
+                    placeholder="Middle Name"
+                    value={form.middle_name}
+                    onChange={(e) => setForm({ ...form, middle_name: e.target.value })}
                   />
                 </div>
                 <div className="form-group">
@@ -359,6 +363,55 @@ export default function Faculty() {
 
               <div className="form-row">
                 <div className="form-group">
+                  <label>Date of Birth</label>
+                  <input
+                    type="date"
+                    value={form.date_of_birth}
+                    onChange={(e) => {
+                      const dob = e.target.value;
+                      setForm({ ...form, date_of_birth: dob });
+                      // Auto-calculate age
+                      if (dob) {
+                        const birthDate = new Date(dob);
+                        const today = new Date();
+                        let age = today.getFullYear() - birthDate.getFullYear();
+                        const monthDiff = today.getMonth() - birthDate.getMonth();
+                        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                          age--;
+                        }
+                        setForm(prev => ({ ...prev, date_of_birth: dob, age: age.toString() }));
+                      }
+                    }}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Age</label>
+                  <input
+                    type="number"
+                    placeholder="Age"
+                    value={form.age}
+                    onChange={(e) => setForm({ ...form, age: e.target.value })}
+                    readOnly
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Sex</label>
+                  <select
+                    value={form.sex}
+                    onChange={(e) => setForm({ ...form, sex: e.target.value })}
+                  >
+                    <option value="">Select Sex</option>
+                    {sexOptions.map(sex => (
+                      <option key={sex} value={sex}>{sex}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <h4 style={{marginTop: '1.5rem', color: '#003366', borderBottom: '2px solid #d4af37', paddingBottom: '0.5rem'}}>📞 Contact Information</h4>
+
+              <div className="form-row">
+                <div className="form-group">
                   <label>Email *</label>
                   <input
                     type="email"
@@ -369,7 +422,7 @@ export default function Faculty() {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Phone</label>
+                  <label>Phone Number</label>
                   <input
                     type="tel"
                     placeholder="Phone Number"
@@ -377,6 +430,16 @@ export default function Faculty() {
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   />
                 </div>
+              </div>
+
+              <div className="form-group">
+                <label>Address</label>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  value={form.address}
+                  onChange={(e) => setForm({ ...form, address: e.target.value })}
+                />
               </div>
 
               <h4 style={{marginTop: '1.5rem', color: '#003366', borderBottom: '2px solid #d4af37', paddingBottom: '0.5rem'}}>💼 Employment Details</h4>
@@ -396,14 +459,14 @@ export default function Faculty() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Faculty Rank</label>
+                  <label>Position</label>
                   <select
-                    value={form.faculty_rank}
-                    onChange={(e) => setForm({ ...form, faculty_rank: e.target.value })}
+                    value={form.position}
+                    onChange={(e) => setForm({ ...form, position: e.target.value })}
                   >
-                    <option value="">Select Rank</option>
-                    {facultyRanks.map(rank => (
-                      <option key={rank} value={rank}>{rank}</option>
+                    <option value="">Select Position</option>
+                    {positions.map(pos => (
+                      <option key={pos} value={pos}>{pos}</option>
                     ))}
                   </select>
                 </div>
@@ -428,24 +491,13 @@ export default function Faculty() {
                 </div>
               </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label>Position</label>
-                  <input
-                    type="text"
-                    placeholder="Position (e.g., Dean, Coordinator)"
-                    value={form.position}
-                    onChange={(e) => setForm({ ...form, position: e.target.value })}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Date Hired</label>
-                  <input
-                    type="date"
-                    value={form.date_hired}
-                    onChange={(e) => setForm({ ...form, date_hired: e.target.value })}
-                  />
-                </div>
+              <div className="form-group">
+                <label>Date Hired</label>
+                <input
+                  type="date"
+                  value={form.date_hired}
+                  onChange={(e) => setForm({ ...form, date_hired: e.target.value })}
+                />
               </div>
 
               <div className="modal-actions" style={{marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #ddd', display: 'flex', justifyContent: 'space-between'}}>

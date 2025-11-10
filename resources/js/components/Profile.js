@@ -16,7 +16,6 @@ export default function Profile({ user, onLogout }) {
     last_login: 'System Information',
     user_id: user?.username || 'Admin',
     account_status: 'Active',
-    two_fa_enabled: user?.two_fa_enabled || false,
     profile_picture: user?.profile_picture || null,
   });
 
@@ -25,7 +24,6 @@ export default function Profile({ user, onLogout }) {
   const [profilePicture, setProfilePicture] = useState(null);
   const [profilePicturePreview, setProfilePicturePreview] = useState(null);
   const [showChangePassword, setShowChangePassword] = useState(false);
-  const [showEnable2FA, setShowEnable2FA] = useState(false);
   const [showActivity, setShowActivity] = useState(false);
   const [passwordForm, setPasswordForm] = useState({
     current_password: '',
@@ -61,7 +59,6 @@ export default function Profile({ user, onLogout }) {
         email: user.email || '',
         account_created: user.created_at || 'Recently',
         user_id: user.username || 'Admin',
-        two_fa_enabled: user.two_fa_enabled || false,
         profile_picture: user.profile_picture || profileData.profile_picture,
       };
       setProfileData(newProfile);
@@ -170,16 +167,6 @@ export default function Profile({ user, onLogout }) {
     }
   };
 
-  // ✅ Toggle 2FA (Mock)
-  const handleEnable2FA = () => {
-    setProfileData({ ...profileData, two_fa_enabled: true });
-    alert('✅ 2FA enabled successfully!');
-    setShowEnable2FA(false);
-  };
-  const handleDisable2FA = () => {
-    setProfileData({ ...profileData, two_fa_enabled: false });
-    alert('✅ 2FA disabled successfully!');
-  };
 
   return (
     <div className="profile-container">
@@ -234,27 +221,72 @@ export default function Profile({ user, onLogout }) {
         {/* Personal Info */}
         <div className="info-section">
           <h3 className="section-title">Personal Information</h3>
-          <div className="info-grid">
-            {[
-              ['Full Name', 'name'],
-              ['Email Address', 'email'],
-              ['Contact Number', 'personal_info'],
-              ['TIN', 'tin'],
-              ['Address', 'address'],
-            ].map(([label, key]) => (
-              <div className="info-field" key={key}>
-                <label>{label}</label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={formData[key] || ''}
-                    onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-                  />
-                ) : (
-                  <p>{profileData[key] || 'Not set'}</p>
-                )}
-              </div>
-            ))}
+          <div className="info-grid-two-column">
+            {/* Row 1: Full Name | Email Address */}
+            <div className="info-field">
+              <label>Full Name</label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={formData.name || ''}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                />
+              ) : (
+                <p>{profileData.name || 'Not set'}</p>
+              )}
+            </div>
+            <div className="info-field">
+              <label>Email Address</label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={formData.email || ''}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
+              ) : (
+                <p>{profileData.email || 'Not set'}</p>
+              )}
+            </div>
+
+            {/* Row 2: Contact Number | TIN */}
+            <div className="info-field">
+              <label>Contact Number</label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={formData.personal_info || ''}
+                  onChange={(e) => setFormData({ ...formData, personal_info: e.target.value })}
+                />
+              ) : (
+                <p>{profileData.personal_info || 'Not set'}</p>
+              )}
+            </div>
+            <div className="info-field">
+              <label>TIN</label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={formData.tin || ''}
+                  onChange={(e) => setFormData({ ...formData, tin: e.target.value })}
+                />
+              ) : (
+                <p>{profileData.tin || 'Not set'}</p>
+              )}
+            </div>
+
+            {/* Row 3: Address (full width) */}
+            <div className="info-field info-field-full">
+              <label>Address</label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={formData.address || ''}
+                  onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                />
+              ) : (
+                <p>{profileData.address || 'Not set'}</p>
+              )}
+            </div>
           </div>
 
           {isEditing && (
@@ -270,10 +302,6 @@ export default function Profile({ user, onLogout }) {
           <button className="action-btn" onClick={() => setShowChangePassword(true)}>
             <Shield size={20} />
             Change Password
-          </button>
-          <button className="action-btn" onClick={() => profileData.two_fa_enabled ? handleDisable2FA() : setShowEnable2FA(true)}>
-            <Shield size={20} />
-            {profileData.two_fa_enabled ? 'Disable 2FA' : 'Enable 2FA'}
           </button>
           <button className="action-btn" onClick={() => setShowActivity(true)}>
             <Activity size={20} />

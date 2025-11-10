@@ -12,48 +12,24 @@ class Faculty extends Model
     // Table name (optional if Laravel pluralizes correctly)
     protected $table = 'faculties';
 
-    // Allow mass assignment for these fields
+    // Allow mass assignment for these fields (only those in fill-up form)
     protected $fillable = [
         'faculty_id',
         'employee_id',
-        'name',
         'first_name',
+        'middle_name',
         'last_name',
+        'date_of_birth',
+        'age',
+        'sex',
         'email',
-        'personal_email',
+        'phone',
+        'address',
         'department',
         'position',
-        'title',
-        'age',
-        'phone',
-        'faculty_rank',
-        'office_location',
-        'username',
-        'password',
-        'photo',
         'employment_type',
-        'date_of_joining',
         'date_hired',
-        'status',
-        // Contact Details
-        'office_address',
         'office_phone',
-        'mobile_phone',
-        // Academic Qualifications
-        'highest_degree',
-        'field_of_study',
-        'awarding_institution',
-        'year_awarded',
-        // Professional Information
-        'teaching_subjects',
-        'research_interests',
-        'publications',
-        'professional_experience',
-        'achievements_awards',
-    ];
-
-    // Hide password from JSON responses
-    protected $hidden = [
-        'password',
+        'status',
     ];
 }

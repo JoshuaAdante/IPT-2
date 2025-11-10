@@ -213,7 +213,8 @@
       margin: 0 0 1rem 0;
     }
 
-    .info-grid {
+    .info-grid,
+    .info-grid-two-column {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
@@ -224,8 +225,12 @@
       }
 
       .info-field {
-        &:last-child {
+        &.info-field-full {
           grid-column: 1 / -1; // Address field spans full width
+        }
+
+        &:last-child {
+          grid-column: 1 / -1; // Last field spans full width
         }
 
         label {
@@ -299,7 +304,7 @@
 
   .action-buttons-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
 
     @media (max-width: 768px) {
@@ -328,7 +333,7 @@
       }
 
       svg {
-        color: white;
+        color: $primary-color;
         flex-shrink: 0;
       }
     }

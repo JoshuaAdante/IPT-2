@@ -24901,7 +24901,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes bounce {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n}\n.profile-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  max-height: 100vh;\n  overflow-y: auto;\n  color: #2c3e50;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.profile-container .profile-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 1.25rem 2rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 0;\n}\n.profile-container .profile-header h2 {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .subtitle {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.profile-container .profile-header .btn-edit-profile {\n  background: #003366;\n  border: 2px solid #003366;\n  color: white;\n  padding: 0.75rem 1.75rem;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .btn-edit-profile:hover {\n  background: white;\n  color: #003366;\n}\n.profile-container .profile-header .btn-edit-profile:active {\n  background: #002244;\n  border-color: #002244;\n  color: white;\n}\n.profile-container .profile-content {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n  padding: 2rem;\n}\n.profile-container .profile-card {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .profile-card:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .profile-card .profile-avatar-section {\n  display: flex;\n  align-items: center;\n  gap: 1.5rem;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar {\n  width: 140px;\n  height: 140px;\n  border-radius: 50%;\n  background: linear-gradient(135deg, #003366, #002244);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  border: 4px solid #d4af37;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar svg {\n  width: 60px;\n  height: 60px;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 40px;\n  height: 40px;\n  background: #d4af37;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: white;\n  border: 3px solid white;\n  transition: all 0.2s;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn:hover {\n  transform: scale(1.1);\n  background: #f4d03f;\n  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);\n}\n.profile-container .profile-card .profile-avatar-section .profile-info {\n  flex: 1;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info h3 {\n  font-size: 1.25rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 0.5rem 0;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info .role-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 6px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  background: #dbeafe;\n  color: #1e40af;\n  margin: 0;\n}\n.profile-container .info-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .info-section:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .info-section .section-title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 1rem 0;\n}\n.profile-container .info-section .info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 0.5rem;\n}\n@media (max-width: 768px) {\n  .profile-container .info-section .info-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .info-section .info-grid .info-field:last-child {\n  grid-column: 1/-1;\n}\n.profile-container .info-section .info-grid .info-field label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #6b7280;\n  margin-bottom: 0.5rem;\n}\n.profile-container .info-section .info-grid .info-field p {\n  font-size: 0.9375rem;\n  color: #1f2937;\n  margin: 0;\n  padding: 0.625rem 0;\n}\n.profile-container .info-section .info-grid .info-field input {\n  width: 100%;\n  padding: 0.625rem 0.875rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n}\n.profile-container .info-section .info-grid .info-field input:focus {\n  outline: none;\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.profile-container .info-section .edit-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.profile-container .info-section .edit-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .info-section .edit-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.profile-container .info-section .edit-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.profile-container .info-section .edit-actions button.btn-save {\n  background: #6366f1;\n  color: white;\n}\n.profile-container .info-section .edit-actions button.btn-save:hover {\n  background: #4f46e5;\n}\n.profile-container .action-buttons-section {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 0.75rem;\n}\n@media (max-width: 768px) {\n  .profile-container .action-buttons-section {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .action-buttons-section .action-btn {\n  background: white;\n  border: 1px solid #e5e7eb;\n  padding: 0.75rem 1rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  text-align: center;\n  white-space: nowrap;\n}\n.profile-container .action-buttons-section .action-btn:hover {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.profile-container .action-buttons-section .action-btn svg {\n  color: white;\n  flex-shrink: 0;\n}\n.profile-container .account-info-box {\n  background: white;\n  border: 1px solid #e5e7eb;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box .account-info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.5rem;\n}\n@media (max-width: 640px) {\n  .profile-container .account-info-box .account-info-grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n  }\n}\n.profile-container .account-info-box .account-info-grid .account-info-item label {\n  display: block;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item p {\n  font-size: 0.875rem;\n  color: #1f2937;\n  font-weight: 500;\n  margin: 0;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: capitalize;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.profile-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: fadeIn 0.3s ease-out;\n}\n.profile-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: fadeIn 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.profile-container .modal-content.modal-wide {\n  max-width: 700px;\n}\n.profile-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.profile-container .modal-content .modal-form .form-group {\n  margin-bottom: 1.25rem;\n}\n.profile-container .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.profile-container .modal-content .modal-form .form-group input {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.profile-container .modal-content .modal-form .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.profile-container .modal-content .modal-form .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .form-group input::placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.profile-container .modal-content .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.profile-container .modal-content .activity-list .activity-table {\n  width: 100%;\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n}\n.profile-container .modal-content .activity-list .activity-table thead {\n  background: #f9fafb;\n}\n.profile-container .modal-content .activity-list .activity-table thead tr th {\n  padding: 0.75rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: all 0.3s ease;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr:hover {\n  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);\n  transform: scale(1.01);\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr td {\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: scale(0.95);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes bounce {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n}\n.profile-container {\n  padding: 0;\n  background: #f5f7fa;\n  min-height: 100vh;\n  max-height: 100vh;\n  overflow-y: auto;\n  color: #2c3e50;\n  font-family: \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif;\n}\n.profile-container .profile-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background: white;\n  border-bottom: 3px solid #d4af37;\n  padding: 1.25rem 2rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);\n  margin-bottom: 0;\n}\n.profile-container .profile-header h2 {\n  font-size: 1.75rem;\n  font-weight: 700;\n  color: #003366;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .subtitle {\n  font-size: 0.875rem;\n  color: #546e7a;\n  margin: 0;\n  font-weight: 500;\n}\n.profile-container .profile-header .btn-edit-profile {\n  background: #003366;\n  border: 2px solid #003366;\n  color: white;\n  padding: 0.75rem 1.75rem;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s ease;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n.profile-container .profile-header .btn-edit-profile:hover {\n  background: white;\n  color: #003366;\n}\n.profile-container .profile-header .btn-edit-profile:active {\n  background: #002244;\n  border-color: #002244;\n  color: white;\n}\n.profile-container .profile-content {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 1.25rem;\n  padding: 2rem;\n}\n.profile-container .profile-card {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .profile-card:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .profile-card .profile-avatar-section {\n  display: flex;\n  align-items: center;\n  gap: 1.5rem;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar {\n  width: 140px;\n  height: 140px;\n  border-radius: 50%;\n  background: linear-gradient(135deg, #003366, #002244);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  flex-shrink: 0;\n  position: relative;\n  overflow: hidden;\n  border: 4px solid #d4af37;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar svg {\n  width: 60px;\n  height: 60px;\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn {\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n  width: 40px;\n  height: 40px;\n  background: #d4af37;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  color: white;\n  border: 3px solid white;\n  transition: all 0.2s;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n.profile-container .profile-card .profile-avatar-section .profile-avatar .avatar-edit-btn:hover {\n  transform: scale(1.1);\n  background: #f4d03f;\n  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);\n}\n.profile-container .profile-card .profile-avatar-section .profile-info {\n  flex: 1;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info h3 {\n  font-size: 1.25rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 0.5rem 0;\n}\n.profile-container .profile-card .profile-avatar-section .profile-info .role-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 6px;\n  font-size: 0.75rem;\n  font-weight: 500;\n  background: #dbeafe;\n  color: #1e40af;\n  margin: 0;\n}\n.profile-container .info-section {\n  background: white;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n  border: 1px solid #e5e7eb;\n}\n.profile-container .info-section:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .info-section .section-title {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #1f2937;\n  margin: 0 0 1rem 0;\n}\n.profile-container .info-section .info-grid,\n.profile-container .info-section .info-grid-two-column {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.25rem;\n  margin-bottom: 0.5rem;\n}\n@media (max-width: 768px) {\n  .profile-container .info-section .info-grid,\n  .profile-container .info-section .info-grid-two-column {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .info-section .info-grid .info-field.info-field-full,\n.profile-container .info-section .info-grid-two-column .info-field.info-field-full {\n  grid-column: 1/-1;\n}\n.profile-container .info-section .info-grid .info-field:last-child,\n.profile-container .info-section .info-grid-two-column .info-field:last-child {\n  grid-column: 1/-1;\n}\n.profile-container .info-section .info-grid .info-field label,\n.profile-container .info-section .info-grid-two-column .info-field label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #6b7280;\n  margin-bottom: 0.5rem;\n}\n.profile-container .info-section .info-grid .info-field p,\n.profile-container .info-section .info-grid-two-column .info-field p {\n  font-size: 0.9375rem;\n  color: #1f2937;\n  margin: 0;\n  padding: 0.625rem 0;\n}\n.profile-container .info-section .info-grid .info-field input,\n.profile-container .info-section .info-grid-two-column .info-field input {\n  width: 100%;\n  padding: 0.625rem 0.875rem;\n  border: 1px solid #d1d5db;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  background: white;\n}\n.profile-container .info-section .info-grid .info-field input:focus,\n.profile-container .info-section .info-grid-two-column .info-field input:focus {\n  outline: none;\n  border-color: #6366f1;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n.profile-container .info-section .edit-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid #e5e7eb;\n}\n.profile-container .info-section .edit-actions button {\n  padding: 0.625rem 1.5rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .info-section .edit-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n}\n.profile-container .info-section .edit-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n}\n.profile-container .info-section .edit-actions button.btn-save {\n  background: #6366f1;\n  color: white;\n}\n.profile-container .info-section .edit-actions button.btn-save:hover {\n  background: #4f46e5;\n}\n.profile-container .action-buttons-section {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 0.75rem;\n}\n@media (max-width: 768px) {\n  .profile-container .action-buttons-section {\n    grid-template-columns: 1fr;\n  }\n}\n.profile-container .action-buttons-section .action-btn {\n  background: white;\n  border: 1px solid #e5e7eb;\n  padding: 0.75rem 1rem;\n  border-radius: 8px;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  text-align: center;\n  white-space: nowrap;\n}\n.profile-container .action-buttons-section .action-btn:hover {\n  background: #f9fafb;\n  border-color: #d1d5db;\n}\n.profile-container .action-buttons-section .action-btn svg {\n  color: #003366;\n  flex-shrink: 0;\n}\n.profile-container .account-info-box {\n  background: white;\n  border: 1px solid #e5e7eb;\n  border-radius: 12px;\n  padding: 1.5rem;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box:hover {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n.profile-container .account-info-box .account-info-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1.5rem;\n}\n@media (max-width: 640px) {\n  .profile-container .account-info-box .account-info-grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n  }\n}\n.profile-container .account-info-box .account-info-grid .account-info-item label {\n  display: block;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin-bottom: 0.375rem;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item p {\n  font-size: 0.875rem;\n  color: #1f2937;\n  font-weight: 500;\n  margin: 0;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge {\n  display: inline-block;\n  padding: 0.25rem 0.75rem;\n  border-radius: 12px;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: capitalize;\n}\n.profile-container .account-info-box .account-info-grid .account-info-item .status-badge.active {\n  background: #d1fae5;\n  color: #065f46;\n}\n.profile-container .modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000;\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n  animation: fadeIn 0.3s ease-out;\n}\n.profile-container .modal-content {\n  background: white;\n  border-radius: 24px;\n  padding: 2.5rem;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);\n  animation: fadeIn 0.4s ease-out;\n  border: 1px solid rgba(255, 255, 255, 0.3);\n}\n.profile-container .modal-content.modal-wide {\n  max-width: 700px;\n}\n.profile-container .modal-content .modal-title {\n  font-size: 1.5rem;\n  font-weight: 800;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-clip: text;\n  margin: 0 0 2rem 0;\n  padding-bottom: 1rem;\n  border-bottom: 2px solid #f0f0f0;\n}\n.profile-container .modal-content .modal-form .form-group {\n  margin-bottom: 1.25rem;\n}\n.profile-container .modal-content .modal-form .form-group label {\n  display: block;\n  font-size: 0.875rem;\n  font-weight: 500;\n  color: #374151;\n  margin-bottom: 0.5rem;\n}\n.profile-container .modal-content .modal-form .form-group input {\n  width: 100%;\n  padding: 0.875rem 1.25rem;\n  border: 2px solid #e5e7eb;\n  border-radius: 12px;\n  font-size: 0.95rem;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  background: #f9fafb;\n}\n.profile-container .modal-content .modal-form .form-group input:focus {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);\n  background: white;\n  transform: translateY(-2px);\n}\n.profile-container .modal-content .modal-form .form-group input::-moz-placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .form-group input::placeholder {\n  color: #9ca3af;\n}\n.profile-container .modal-content .modal-form .modal-actions {\n  display: flex;\n  gap: 0.75rem;\n  margin-top: 2rem;\n}\n.profile-container .modal-content .modal-form .modal-actions button {\n  flex: 1;\n  padding: 0.75rem 1.5rem;\n  border-radius: 8px;\n  font-weight: 500;\n  font-size: 0.875rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  border: none;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel {\n  background: #f3f4f6;\n  color: #374151;\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-cancel:hover {\n  background: #e5e7eb;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  color: white;\n  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);\n  border-radius: 12px;\n}\n.profile-container .modal-content .modal-form .modal-actions button.btn-submit:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);\n}\n.profile-container .modal-content .activity-list .activity-table {\n  width: 100%;\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n}\n.profile-container .modal-content .activity-list .activity-table thead {\n  background: #f9fafb;\n}\n.profile-container .modal-content .activity-list .activity-table thead tr th {\n  padding: 0.75rem 1rem;\n  text-align: left;\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  border-bottom: 1px solid #e5e7eb;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr {\n  border-bottom: 1px solid #f3f4f6;\n  transition: all 0.3s ease;\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr:hover {\n  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);\n  transform: scale(1.01);\n}\n.profile-container .modal-content .activity-list .activity-table tbody tr td {\n  padding: 0.875rem 1rem;\n  font-size: 0.875rem;\n  color: #374151;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -90856,17 +90856,20 @@ function Faculty() {
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       faculty_id: "",
       employee_id: "",
-      title: "",
       first_name: "",
+      middle_name: "",
       last_name: "",
+      date_of_birth: "",
+      age: "",
+      sex: "",
       email: "",
       phone: "",
       department: "",
-      faculty_rank: "",
       position: "",
       employment_type: "Full-Time",
       date_hired: "",
       office_phone: "",
+      address: "",
       status: "Active"
     }),
     _useState12 = _slicedToArray(_useState11, 2),
@@ -90955,11 +90958,9 @@ function Faculty() {
   }, []);
 
   // Form options
-  var titles = ['Mr.', 'Ms.', 'Dr.', 'Prof.'];
-  var facultyRanks = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant'];
-  var positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Dean', 'Department Head', 'Coordinator'];
+  var positions = ['Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer', 'Instructor', 'Senior Lecturer', 'Adjunct Professor', 'Visiting Professor', 'Research Fellow', 'Teaching Assistant', 'Dean', 'Department Head', 'Coordinator'];
   var employmentTypes = ['Full-Time', 'Part-Time', 'Adjunct'];
-  var degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
+  var sexOptions = ['Male', 'Female'];
   var handleSubmit = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(e) {
       var payload, response, _response, _error$response, _error$response2, errorMessage, errors, _t3;
@@ -90982,17 +90983,20 @@ function Faculty() {
             payload = {
               faculty_id: form.faculty_id,
               employee_id: form.employee_id,
-              title: form.title,
               first_name: form.first_name,
+              middle_name: form.middle_name,
               last_name: form.last_name,
+              date_of_birth: form.date_of_birth,
+              age: form.age,
+              sex: form.sex,
               email: form.email,
               phone: form.phone,
               department: form.department,
-              faculty_rank: form.faculty_rank,
               position: form.position,
               employment_type: form.employment_type,
               date_hired: form.date_hired,
               office_phone: form.office_phone,
+              address: form.address,
               status: form.status
             };
             if (!editingId) {
@@ -91072,17 +91076,20 @@ function Faculty() {
               setForm({
                 faculty_id: faculty.faculty_id || "",
                 employee_id: faculty.employee_id || "",
-                title: faculty.title || "",
                 first_name: faculty.first_name || "",
+                middle_name: faculty.middle_name || "",
                 last_name: faculty.last_name || "",
+                date_of_birth: faculty.date_of_birth || "",
+                age: faculty.age || "",
+                sex: faculty.sex || "",
                 email: faculty.email || "",
                 phone: faculty.phone || "",
                 department: faculty.department || "",
-                faculty_rank: faculty.faculty_rank || "",
                 position: faculty.position || "",
                 employment_type: faculty.employment_type || "Full-Time",
                 date_hired: faculty.date_hired || "",
                 office_phone: faculty.office_phone || "",
+                address: faculty.address || "",
                 status: faculty.status || "Active"
               });
             } else {
@@ -91090,17 +91097,20 @@ function Faculty() {
               setForm({
                 faculty_id: "",
                 employee_id: "",
-                title: "",
                 first_name: "",
+                middle_name: "",
                 last_name: "",
+                date_of_birth: "",
+                age: "",
+                sex: "",
                 email: "",
                 phone: "",
                 department: "",
-                faculty_rank: "",
                 position: "",
                 employment_type: "Full-Time",
                 date_hired: "",
                 office_phone: "",
+                address: "",
                 status: "Active"
               });
             }
@@ -91349,30 +91359,6 @@ function Faculty() {
                   paddingBottom: '0.5rem'
                 },
                 children: "\uD83D\uDCCB Personal Information"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                className: "form-row",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    children: "Title"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
-                    value: form.title,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        title: e.target.value
-                      }));
-                    },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                      value: "",
-                      children: "Select Title"
-                    }), titles.map(function (title) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                        value: title,
-                        children: title
-                      }, title);
-                    })]
-                  })]
-                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "form-row",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -91389,6 +91375,20 @@ function Faculty() {
                       }));
                     },
                     required: true
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Middle Name"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "text",
+                    placeholder: "Middle Name",
+                    value: form.middle_name,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        middle_name: e.target.value
+                      }));
+                    }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
@@ -91411,6 +91411,83 @@ function Faculty() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Date of Birth"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "date",
+                    value: form.date_of_birth,
+                    onChange: function onChange(e) {
+                      var dob = e.target.value;
+                      setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        date_of_birth: dob
+                      }));
+                      // Auto-calculate age
+                      if (dob) {
+                        var birthDate = new Date(dob);
+                        var today = new Date();
+                        var age = today.getFullYear() - birthDate.getFullYear();
+                        var monthDiff = today.getMonth() - birthDate.getMonth();
+                        if (monthDiff < 0 || monthDiff === 0 && today.getDate() < birthDate.getDate()) {
+                          age--;
+                        }
+                        setForm(function (prev) {
+                          return _objectSpread(_objectSpread({}, prev), {}, {
+                            date_of_birth: dob,
+                            age: age.toString()
+                          });
+                        });
+                      }
+                    }
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Age"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                    type: "number",
+                    placeholder: "Age",
+                    value: form.age,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        age: e.target.value
+                      }));
+                    },
+                    readOnly: true
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    children: "Sex"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
+                    value: form.sex,
+                    onChange: function onChange(e) {
+                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                        sex: e.target.value
+                      }));
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                      value: "",
+                      children: "Select Sex"
+                    }), sexOptions.map(function (sex) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                        value: sex,
+                        children: sex
+                      }, sex);
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                style: {
+                  marginTop: '1.5rem',
+                  color: '#003366',
+                  borderBottom: '2px solid #d4af37',
+                  paddingBottom: '0.5rem'
+                },
+                children: "\uD83D\uDCDE Contact Information"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "form-group",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
                     children: "Email *"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "email",
@@ -91426,7 +91503,7 @@ function Faculty() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    children: "Phone"
+                    children: "Phone Number"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                     type: "tel",
                     placeholder: "Phone Number",
@@ -91437,6 +91514,20 @@ function Faculty() {
                       }));
                     }
                   })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Address"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                  type: "text",
+                  placeholder: "Address",
+                  value: form.address,
+                  onChange: function onChange(e) {
+                    return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                      address: e.target.value
+                    }));
+                  }
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
                 style: {
@@ -91473,22 +91564,22 @@ function Faculty() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "form-group",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    children: "Faculty Rank"
+                    children: "Position"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
-                    value: form.faculty_rank,
+                    value: form.position,
                     onChange: function onChange(e) {
                       return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        faculty_rank: e.target.value
+                        position: e.target.value
                       }));
                     },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                       value: "",
-                      children: "Select Rank"
-                    }), facultyRanks.map(function (rank) {
+                      children: "Select Position"
+                    }), positions.map(function (pos) {
                       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
-                        value: rank,
-                        children: rank
-                      }, rank);
+                        value: pos,
+                        children: pos
+                      }, pos);
                     })]
                   })]
                 })]
@@ -91530,34 +91621,17 @@ function Faculty() {
                   })
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "form-row",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    children: "Position"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                    type: "text",
-                    placeholder: "Position (e.g., Dean, Coordinator)",
-                    value: form.position,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        position: e.target.value
-                      }));
-                    }
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                  className: "form-group",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    children: "Date Hired"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                    type: "date",
-                    value: form.date_hired,
-                    onChange: function onChange(e) {
-                      return setForm(_objectSpread(_objectSpread({}, form), {}, {
-                        date_hired: e.target.value
-                      }));
-                    }
-                  })]
+                className: "form-group",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  children: "Date Hired"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                  type: "date",
+                  value: form.date_hired,
+                  onChange: function onChange(e) {
+                    return setForm(_objectSpread(_objectSpread({}, form), {}, {
+                      date_hired: e.target.value
+                    }));
+                  }
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "modal-actions",
@@ -92012,7 +92086,6 @@ function Profile(_ref) {
       last_login: 'System Information',
       user_id: (user === null || user === void 0 ? void 0 : user.username) || 'Admin',
       account_status: 'Active',
-      two_fa_enabled: (user === null || user === void 0 ? void 0 : user.two_fa_enabled) || false,
       profile_picture: (user === null || user === void 0 ? void 0 : user.profile_picture) || null
     }),
     _useState2 = _slicedToArray(_useState, 2),
@@ -92040,21 +92113,17 @@ function Profile(_ref) {
     setShowChangePassword = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState12 = _slicedToArray(_useState11, 2),
-    showEnable2FA = _useState12[0],
-    setShowEnable2FA = _useState12[1];
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState14 = _slicedToArray(_useState13, 2),
-    showActivity = _useState14[0],
-    setShowActivity = _useState14[1];
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    showActivity = _useState12[0],
+    setShowActivity = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       current_password: '',
       new_password: '',
       confirm_password: ''
     }),
-    _useState16 = _slicedToArray(_useState15, 2),
-    passwordForm = _useState16[0],
-    setPasswordForm = _useState16[1];
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+    _useState14 = _slicedToArray(_useState13, 2),
+    passwordForm = _useState14[0],
+    setPasswordForm = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
       action: 'Logged in',
       timestamp: '2024-10-20 01:30 AM',
       ip: '127.0.0.1'
@@ -92067,9 +92136,9 @@ function Profile(_ref) {
       timestamp: '2024-10-19 10:20 AM',
       ip: '127.0.0.1'
     }]),
-    _useState18 = _slicedToArray(_useState17, 2),
-    activities = _useState18[0],
-    setActivities = _useState18[1];
+    _useState16 = _slicedToArray(_useState15, 2),
+    activities = _useState16[0],
+    setActivities = _useState16[1];
 
   // 🧠 Helper function to normalize image paths
   var resolveImagePath = function resolveImagePath(path) {
@@ -92093,7 +92162,6 @@ function Profile(_ref) {
         email: user.email || '',
         account_created: user.created_at || 'Recently',
         user_id: user.username || 'Admin',
-        two_fa_enabled: user.two_fa_enabled || false,
         profile_picture: user.profile_picture || profileData.profile_picture
       });
       setProfileData(newProfile);
@@ -92250,21 +92318,6 @@ function Profile(_ref) {
       return _ref3.apply(this, arguments);
     };
   }();
-
-  // ✅ Toggle 2FA (Mock)
-  var handleEnable2FA = function handleEnable2FA() {
-    setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
-      two_fa_enabled: true
-    }));
-    alert('✅ 2FA enabled successfully!');
-    setShowEnable2FA(false);
-  };
-  var handleDisable2FA = function handleDisable2FA() {
-    setProfileData(_objectSpread(_objectSpread({}, profileData), {}, {
-      two_fa_enabled: false
-    }));
-    alert('✅ 2FA disabled successfully!');
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "profile-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -92332,27 +92385,84 @@ function Profile(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
           className: "section-title",
           children: "Personal Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "info-grid",
-          children: [['Full Name', 'name'], ['Email Address', 'email'], ['Contact Number', 'personal_info'], ['TIN', 'tin'], ['Address', 'address']].map(function (_ref4) {
-            var _ref5 = _slicedToArray(_ref4, 2),
-              label = _ref5[0],
-              key = _ref5[1];
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "info-field",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                children: label
-              }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-                type: "text",
-                value: formData[key] || '',
-                onChange: function onChange(e) {
-                  return setFormData(_objectSpread(_objectSpread({}, formData), {}, _defineProperty({}, key, e.target.value)));
-                }
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-                children: profileData[key] || 'Not set'
-              })]
-            }, key);
-          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "info-grid-two-column",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "info-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+              children: "Full Name"
+            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              type: "text",
+              value: formData.name || '',
+              onChange: function onChange(e) {
+                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                  name: e.target.value
+                }));
+              }
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: profileData.name || 'Not set'
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "info-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+              children: "Email Address"
+            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              type: "text",
+              value: formData.email || '',
+              onChange: function onChange(e) {
+                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                  email: e.target.value
+                }));
+              }
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: profileData.email || 'Not set'
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "info-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+              children: "Contact Number"
+            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              type: "text",
+              value: formData.personal_info || '',
+              onChange: function onChange(e) {
+                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                  personal_info: e.target.value
+                }));
+              }
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: profileData.personal_info || 'Not set'
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "info-field",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+              children: "TIN"
+            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              type: "text",
+              value: formData.tin || '',
+              onChange: function onChange(e) {
+                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                  tin: e.target.value
+                }));
+              }
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: profileData.tin || 'Not set'
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "info-field info-field-full",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+              children: "Address"
+            }), isEditing ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+              type: "text",
+              value: formData.address || '',
+              onChange: function onChange(e) {
+                return setFormData(_objectSpread(_objectSpread({}, formData), {}, {
+                  address: e.target.value
+                }));
+              }
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+              children: profileData.address || 'Not set'
+            })]
+          })]
         }), isEditing && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "edit-actions",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
@@ -92375,14 +92485,6 @@ function Profile(_ref) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
             size: 20
           }), "Change Password"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
-          className: "action-btn",
-          onClick: function onClick() {
-            return profileData.two_fa_enabled ? handleDisable2FA() : setShowEnable2FA(true);
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            size: 20
-          }), profileData.two_fa_enabled ? 'Disable 2FA' : 'Enable 2FA']
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
           className: "action-btn",
           onClick: function onClick() {
@@ -93195,41 +93297,54 @@ function Settings() {
                   children: dept.head
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                    className: "status-badge ".concat(dept.status),
+                    className: "status-badge ".concat(dept.status.toLowerCase()),
                     children: dept.status
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "action-buttons",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return openForm(dept);
-                      },
-                      className: "btn-icon btn-edit",
-                      title: "Edit",
-                      disabled: dept.status === 'Archived',
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                        size: 16
-                      })
-                    }), dept.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return handleArchive(dept.id);
-                      },
-                      className: "btn-icon btn-archive",
-                      title: "Archive",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                        size: 16
-                      })
+                    children: dept.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return openForm(dept);
+                        },
+                        className: "btn-icon btn-edit",
+                        title: "Edit",
+                        style: {
+                          borderColor: '#10b981',
+                          color: '#10b981'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                          size: 16
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return handleArchive(dept.id);
+                        },
+                        className: "btn-icon btn-archive",
+                        title: "Archive",
+                        style: {
+                          borderColor: '#ef4444',
+                          color: '#ef4444'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                          size: 16
+                        })
+                      })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       onClick: function onClick() {
                         return handleRestore(dept.id);
                       },
                       className: "btn-icon btn-restore",
                       title: "Restore",
+                      style: {
+                        borderColor: '#10b981',
+                        color: '#10b981'
+                      },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
                         size: 16
                       })
-                    })]
+                    })
                   })
                 })]
               }, dept.id);
@@ -93272,41 +93387,54 @@ function Settings() {
                   children: course.credits
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                    className: "status-badge ".concat(course.status),
+                    className: "status-badge ".concat(course.status.toLowerCase()),
                     children: course.status
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "action-buttons",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return openForm(course);
-                      },
-                      className: "btn-icon btn-edit",
-                      title: "Edit",
-                      disabled: course.status === 'Archived',
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                        size: 16
-                      })
-                    }), course.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return handleArchive(course.id);
-                      },
-                      className: "btn-icon btn-archive",
-                      title: "Archive",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                        size: 16
-                      })
+                    children: course.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return openForm(course);
+                        },
+                        className: "btn-icon btn-edit",
+                        title: "Edit",
+                        style: {
+                          borderColor: '#10b981',
+                          color: '#10b981'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                          size: 16
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return handleArchive(course.id);
+                        },
+                        className: "btn-icon btn-archive",
+                        title: "Archive",
+                        style: {
+                          borderColor: '#ef4444',
+                          color: '#ef4444'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                          size: 16
+                        })
+                      })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       onClick: function onClick() {
                         return handleRestore(course.id);
                       },
                       className: "btn-icon btn-restore",
                       title: "Restore",
+                      style: {
+                        borderColor: '#10b981',
+                        color: '#10b981'
+                      },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
                         size: 16
                       })
-                    })]
+                    })
                   })
                 })]
               }, course.id);
@@ -93345,41 +93473,54 @@ function Settings() {
                   children: year.end_date
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                    className: "status-badge ".concat(year.status),
+                    className: "status-badge ".concat(year.status.toLowerCase()),
                     children: year.status
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "action-buttons",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return openForm(year);
-                      },
-                      className: "btn-icon btn-edit",
-                      title: "Edit",
-                      disabled: year.status === 'Archived',
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                        size: 16
-                      })
-                    }), year.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-                      onClick: function onClick() {
-                        return handleArchive(year.id);
-                      },
-                      className: "btn-icon btn-archive",
-                      title: "Archive",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                        size: 16
-                      })
+                    children: year.status !== 'Archived' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return openForm(year);
+                        },
+                        className: "btn-icon btn-edit",
+                        title: "Edit",
+                        style: {
+                          borderColor: '#10b981',
+                          color: '#10b981'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                          size: 16
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                        onClick: function onClick() {
+                          return handleArchive(year.id);
+                        },
+                        className: "btn-icon btn-archive",
+                        title: "Archive",
+                        style: {
+                          borderColor: '#ef4444',
+                          color: '#ef4444'
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                          size: 16
+                        })
+                      })]
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       onClick: function onClick() {
                         return handleRestore(year.id);
                       },
                       className: "btn-icon btn-restore",
                       title: "Restore",
+                      style: {
+                        borderColor: '#10b981',
+                        color: '#10b981'
+                      },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
                         size: 16
                       })
-                    })]
+                    })
                   })
                 })]
               }, year.id);

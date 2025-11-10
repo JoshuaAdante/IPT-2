@@ -23,11 +23,9 @@ class Student extends Model
         'sex',
         'phone',
         'address',
-        'photo',
         'department',
         'course',
         'year_level',
-        'date_hired',
         'status',
     ];
 }

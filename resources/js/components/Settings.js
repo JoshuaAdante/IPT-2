@@ -185,33 +185,37 @@ export default function Settings() {
                   <td>{dept.name}</td>
                   <td>{dept.head}</td>
                   <td>
-                    <span className={`status-badge ${dept.status}`}>
+                    <span className={`status-badge ${dept.status.toLowerCase()}`}>
                       {dept.status}
                     </span>
                   </td>
                   <td>
                     <div className="action-buttons">
-                      <button
-                        onClick={() => openForm(dept)}
-                        className="btn-icon btn-edit"
-                        title="Edit"
-                        disabled={dept.status === 'Archived'}
-                      >
-                        <Edit2 size={16} />
-                      </button>
                       {dept.status !== 'Archived' ? (
-                        <button
-                          onClick={() => handleArchive(dept.id)}
-                          className="btn-icon btn-archive"
-                          title="Archive"
-                        >
-                          <Archive size={16} />
-                        </button>
+                        <>
+                          <button
+                            onClick={() => openForm(dept)}
+                            className="btn-icon btn-edit"
+                            title="Edit"
+                            style={{borderColor: '#10b981', color: '#10b981'}}
+                          >
+                            <Edit2 size={16} />
+                          </button>
+                          <button
+                            onClick={() => handleArchive(dept.id)}
+                            className="btn-icon btn-archive"
+                            title="Archive"
+                            style={{borderColor: '#ef4444', color: '#ef4444'}}
+                          >
+                            <Archive size={16} />
+                          </button>
+                        </>
                       ) : (
                         <button
                           onClick={() => handleRestore(dept.id)}
                           className="btn-icon btn-restore"
                           title="Restore"
+                          style={{borderColor: '#10b981', color: '#10b981'}}
                         >
                           <ArchiveRestore size={16} />
                         </button>
@@ -246,33 +250,37 @@ export default function Settings() {
                   <td>{course.department}</td>
                   <td>{course.credits}</td>
                   <td>
-                    <span className={`status-badge ${course.status}`}>
+                    <span className={`status-badge ${course.status.toLowerCase()}`}>
                       {course.status}
                     </span>
                   </td>
                   <td>
                     <div className="action-buttons">
-                      <button
-                        onClick={() => openForm(course)}
-                        className="btn-icon btn-edit"
-                        title="Edit"
-                        disabled={course.status === 'Archived'}
-                      >
-                        <Edit2 size={16} />
-                      </button>
                       {course.status !== 'Archived' ? (
-                        <button
-                          onClick={() => handleArchive(course.id)}
-                          className="btn-icon btn-archive"
-                          title="Archive"
-                        >
-                          <Archive size={16} />
-                        </button>
+                        <>
+                          <button
+                            onClick={() => openForm(course)}
+                            className="btn-icon btn-edit"
+                            title="Edit"
+                            style={{borderColor: '#10b981', color: '#10b981'}}
+                          >
+                            <Edit2 size={16} />
+                          </button>
+                          <button
+                            onClick={() => handleArchive(course.id)}
+                            className="btn-icon btn-archive"
+                            title="Archive"
+                            style={{borderColor: '#ef4444', color: '#ef4444'}}
+                          >
+                            <Archive size={16} />
+                          </button>
+                        </>
                       ) : (
                         <button
                           onClick={() => handleRestore(course.id)}
                           className="btn-icon btn-restore"
                           title="Restore"
+                          style={{borderColor: '#10b981', color: '#10b981'}}
                         >
                           <ArchiveRestore size={16} />
                         </button>
@@ -305,33 +313,37 @@ export default function Settings() {
                   <td>{year.start_date}</td>
                   <td>{year.end_date}</td>
                   <td>
-                    <span className={`status-badge ${year.status}`}>
+                    <span className={`status-badge ${year.status.toLowerCase()}`}>
                       {year.status}
                     </span>
                   </td>
                   <td>
                     <div className="action-buttons">
-                      <button
-                        onClick={() => openForm(year)}
-                        className="btn-icon btn-edit"
-                        title="Edit"
-                        disabled={year.status === 'Archived'}
-                      >
-                        <Edit2 size={16} />
-                      </button>
                       {year.status !== 'Archived' ? (
-                        <button
-                          onClick={() => handleArchive(year.id)}
-                          className="btn-icon btn-archive"
-                          title="Archive"
-                        >
-                          <Archive size={16} />
-                        </button>
+                        <>
+                          <button
+                            onClick={() => openForm(year)}
+                            className="btn-icon btn-edit"
+                            title="Edit"
+                            style={{borderColor: '#10b981', color: '#10b981'}}
+                          >
+                            <Edit2 size={16} />
+                          </button>
+                          <button
+                            onClick={() => handleArchive(year.id)}
+                            className="btn-icon btn-archive"
+                            title="Archive"
+                            style={{borderColor: '#ef4444', color: '#ef4444'}}
+                          >
+                            <Archive size={16} />
+                          </button>
+                        </>
                       ) : (
                         <button
                           onClick={() => handleRestore(year.id)}
                           className="btn-icon btn-restore"
                           title="Restore"
+                          style={{borderColor: '#10b981', color: '#10b981'}}
                         >
                           <ArchiveRestore size={16} />
                         </button>
