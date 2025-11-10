@@ -25,14 +25,13 @@ export default function Students() {
     sex: '',
     phone: '',
     address: '',
-    photo: null,
     department: '',
     course: '',
     year_level: '',
     status: 'Active'
   });
 
-  const [photoPreview, setPhotoPreview] = useState(null);
+  // photo upload/preview removed
 
   const fetchStudents = async () => {
     try {
@@ -88,17 +87,7 @@ export default function Students() {
     };
   }, []);
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setForm({ ...form, photo: file });
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPhotoPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  // photo handler removed
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -113,9 +102,11 @@ export default function Students() {
     
     try {
       const formData = new FormData();
+      // append only form fields (photo removed)
       Object.keys(form).forEach(key => {
-        if (form[key] !== null && form[key] !== '') {
-          formData.append(key, form[key]);
+        const val = form[key];
+        if (val !== null && val !== '') {
+          formData.append(key, val);
         }
       });
 
@@ -176,24 +167,13 @@ export default function Students() {
         sex: student.sex || '',
         phone: student.phone || '',
         address: student.address || '',
-        photo: null,
         department: student.department || '',
         course: student.course || '',
         year_level: student.year_level || '',
         status: student.status || 'Active'
       });
       
-      // Set photo preview with proper path handling
-      if (student.photo) {
-        const photoPath = student.photo.startsWith('http') 
-          ? student.photo
-          : student.photo.startsWith('storage/') || student.photo.startsWith('/storage/')
-            ? student.photo.startsWith('/') ? student.photo : `/${student.photo}`
-            : `/${student.photo}`;
-        setPhotoPreview(photoPath);
-      } else {
-        setPhotoPreview(null);
-      }
+      // photo preview removed
     } else {
       setEditingId(null);
       setForm({
@@ -207,13 +187,12 @@ export default function Students() {
         sex: '',
         phone: '',
         address: '',
-        photo: null,
         department: '',
         course: '',
         year_level: '',
         status: 'Active'
       });
-      setPhotoPreview(null);
+      // photo preview removed
     }
     setShowForm(true);
   };
@@ -322,28 +301,7 @@ export default function Students() {
             </h3>
 
             <form onSubmit={handleSubmit} className='modal-form'>
-              {/* Photo Preview */}
-              {photoPreview && (
-                <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1.5rem'}}>
-                  <img 
-                    src={photoPreview} 
-                    alt="Student" 
-                    onError={(e) => {
-                      console.error('Failed to load student photo:', photoPreview);
-                      e.target.style.display = 'none';
-                      setPhotoPreview(null);
-                    }}
-                    style={{
-                      width: '120px', 
-                      height: '120px', 
-                      borderRadius: '50%', 
-                      objectFit: 'cover',
-                      border: '3px solid #1e3a8a',
-                      boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                </div>
-              )}
+              {/* Photo functionality removed - preview not shown */}
 
               <h4 style={{marginTop: 0, color: '#1e3a8a'}}>Personal Information</h4>
               
@@ -444,24 +402,6 @@ export default function Students() {
                   value={form.address}
                   onChange={(e) => setForm({ ...form, address: e.target.value })}
                 />
-              </div>
-
-              <div className='form-group'>
-                <label>Photo</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={handlePhotoChange}
-                  style={{
-                    padding: '0.75rem',
-                    border: '2px dashed #d0d7de',
-                    borderRadius: '6px',
-                    cursor: 'pointer'
-                  }}
-                />
-                <small style={{display: 'block', marginTop: '0.5rem', color: '#78909c'}}>
-                  Recommended: Square image, at least 200x200px
-                </small>
               </div>
 
               <h4 style={{marginTop: '1.5rem', color: '#1e3a8a'}}>Academic Information *</h4>

@@ -19,7 +19,6 @@ export default function Faculty() {
     title: "",
     first_name: "",
     last_name: "",
-    age: "",
     email: "",
     phone: "",
     department: "",
@@ -28,11 +27,8 @@ export default function Faculty() {
     employment_type: "Full-Time",
     date_hired: "",
     office_phone: "",
-    photo: null,
     status: "Active",
   });
-
-  const [photoPreview, setPhotoPreview] = useState(null);
 
   // Fetch data
   const fetchFaculties = async () => {
@@ -88,18 +84,6 @@ export default function Faculty() {
   const employmentTypes = ['Full-Time', 'Part-Time', 'Adjunct'];
   const degrees = ['Ph.D.', 'M.Sc.', 'M.A.', 'M.B.A.', 'B.Sc.', 'B.A.', 'Ed.D.', 'Other'];
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setForm({ ...form, photo: file });
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPhotoPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -112,12 +96,30 @@ export default function Faculty() {
     console.log('Submitting faculty form:', form);
     
     try {
+      // build payload explicitly so we don't send fields not present in DB (like removed 'age')
+      const payload = {
+        faculty_id: form.faculty_id,
+        employee_id: form.employee_id,
+        title: form.title,
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        phone: form.phone,
+        department: form.department,
+        faculty_rank: form.faculty_rank,
+        position: form.position,
+        employment_type: form.employment_type,
+        date_hired: form.date_hired,
+        office_phone: form.office_phone,
+        status: form.status,
+      };
+
       if (editingId) {
-        const response = await axios.put(`/api/faculties/${editingId}`, form);
+        const response = await axios.put(`/api/faculties/${editingId}`, payload);
         console.log('Update response:', response.data);
         alert("✅ Faculty updated successfully!");
       } else {
-        const response = await axios.post("/api/faculties", form);
+        const response = await axios.post("/api/faculties", payload);
         console.log('Create response:', response.data);
         alert("✅ Faculty added successfully!");
       }
@@ -160,7 +162,6 @@ export default function Faculty() {
         title: faculty.title || "",
         first_name: faculty.first_name || "",
         last_name: faculty.last_name || "",
-        age: faculty.age || "",
         email: faculty.email || "",
         phone: faculty.phone || "",
         department: faculty.department || "",
@@ -169,21 +170,8 @@ export default function Faculty() {
         employment_type: faculty.employment_type || "Full-Time",
         date_hired: faculty.date_hired || "",
         office_phone: faculty.office_phone || "",
-        photo: null,
         status: faculty.status || "Active",
       });
-      
-      // Set photo preview with proper path handling
-      if (faculty.photo) {
-        const photoPath = faculty.photo.startsWith('http') 
-          ? faculty.photo
-          : faculty.photo.startsWith('storage/') || faculty.photo.startsWith('/storage/')
-            ? faculty.photo.startsWith('/') ? faculty.photo : `/${faculty.photo}`
-            : `/${faculty.photo}`;
-        setPhotoPreview(photoPath);
-      } else {
-        setPhotoPreview(null);
-      }
     } else {
       setEditingId(null);
       setForm({
@@ -192,7 +180,6 @@ export default function Faculty() {
         title: "",
         first_name: "",
         last_name: "",
-        age: "",
         email: "",
         phone: "",
         department: "",
@@ -201,10 +188,8 @@ export default function Faculty() {
         employment_type: "Full-Time",
         date_hired: "",
         office_phone: "",
-        photo: null,
         status: "Active",
       });
-      setPhotoPreview(null);
     }
     setShowForm(true);
   };
@@ -332,29 +317,6 @@ export default function Faculty() {
             </h3>
 
             <form onSubmit={handleSubmit} className="modal-form">
-              {/* Photo Preview */}
-              {photoPreview && (
-                <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1.5rem'}}>
-                  <img 
-                    src={photoPreview} 
-                    alt="Faculty"
-                    onError={(e) => {
-                      console.error('Failed to load faculty photo:', photoPreview);
-                      e.target.style.display = 'none';
-                      setPhotoPreview(null);
-                    }}
-                    style={{
-                      width: '120px', 
-                      height: '120px', 
-                      borderRadius: '50%', 
-                      objectFit: 'cover',
-                      border: '3px solid #003366',
-                      boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                </div>
-              )}
-
               <h4 style={{marginTop: 0, color: '#003366', borderBottom: '2px solid #d4af37', paddingBottom: '0.5rem'}}>📋 Personal Information</h4>
               
               <div className="form-row">
@@ -369,17 +331,6 @@ export default function Faculty() {
                       <option key={title} value={title}>{title}</option>
                     ))}
                   </select>
-                </div>
-                <div className="form-group">
-                  <label>Age</label>
-                  <input
-                    type="number"
-                    placeholder="Age (optional)"
-                    value={form.age}
-                    onChange={(e) => setForm({ ...form, age: e.target.value })}
-                    min="22"
-                    max="70"
-                  />
                 </div>
               </div>
 
@@ -495,24 +446,6 @@ export default function Faculty() {
                     onChange={(e) => setForm({ ...form, date_hired: e.target.value })}
                   />
                 </div>
-              </div>
-
-              <div className="form-group">
-                <label>Profile Photo</label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handlePhotoChange}
-                  style={{
-                    padding: '0.75rem',
-                    border: '2px dashed #d0d7de',
-                    borderRadius: '6px',
-                    cursor: 'pointer'
-                  }}
-                />
-                <small style={{display: 'block', marginTop: '0.5rem', color: '#78909c'}}>
-                  Recommended: Square image, at least 200x200px
-                </small>
               </div>
 
               <div className="modal-actions" style={{marginTop: '1.5rem', paddingTop: '1rem', borderTop: '1px solid #ddd', display: 'flex', justifyContent: 'space-between'}}>
